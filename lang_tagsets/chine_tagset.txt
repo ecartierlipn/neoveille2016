@@ -1,0 +1,51 @@
+a	Adj	adjective
+ad	Adv	adjective as adverbial
+ag	Adj	adjective morpheme
+an	Adj	adjective with nominal function
+b	Adj	non-predicate adjective
+bg	Adj	non-predicate adjective morpheme
+c	Conj	conjunction
+cg	Conj	conjunction morpheme
+d	Adv	adverb
+dg	Adv	adverb morpheme
+e	Interj	interjection
+ew	Punct	sentential punctuation
+f	Loc	directional locality
+fg	Loc	locality morpheme
+g	Morph	morpheme
+h	Pref	prefix
+i	XXX	idiom
+j	Abr	abbreviation
+k	Suff	suffix
+l	Expr	fixed expressions
+m	Num	numeral
+mg	Num	numeric morpheme
+n	Noun	common noun
+nh	Noun	common noun
+ng	Noun	noun morpheme
+nr	Np	personal name
+ns	Np	place name
+nt	Np	organization name
+nx	Noun	nominal character string
+nz	Np	other proper noun
+o	Onom	onomatopoeia
+p	Prep	preposition
+pg	Prep	preposition morpheme
+q	NounClass	classifier
+qg	Class	classifier morpheme
+r	Pro	pronoun
+rg	Pro	pronoun morpheme
+s	Class	space word
+t	Class	time word
+tg	Class	time word morpheme
+u	Aux	auxiliary
+v	Verb	verb
+vd	Verb	verb as adverbial
+vg	Verb	verb morpheme
+vn	Verb	verb with nominal function
+w	XXX	symbol and non-sentential punctuation
+x	XXX	unclassified items
+y	Modal	modal particle 
+yg	Modal	modal particle morpheme
+z	XXX	descriptive
+zg	XXX	descriptive morpheme

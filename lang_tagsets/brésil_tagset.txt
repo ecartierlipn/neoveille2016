@@ -1,0 +1,12 @@
+A	Adj	Adjectif
+R	Adv	Adverbe
+D	Det	Déterminant
+NC	Noun	Nom
+NP	Np	Nom
+V	Verb	Verbe
+P	Pro	Pronom
+C	Conj	Conjonction
+I	Interj	Interjection
+S	Prep	Préposition
+F	Punct	Ponctuation
+Z	Num	Nombre
