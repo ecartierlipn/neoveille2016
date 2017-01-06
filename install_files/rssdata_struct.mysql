@@ -1,0 +1,352 @@
+-- MySQL dump 10.13  Distrib 5.7.11, for osx10.10 (x86_64)
+--
+-- Host: localhost    Database: rssdata
+-- ------------------------------------------------------
+-- Server version	5.7.11
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `RSS_ENCODING`
+--
+
+DROP TABLE IF EXISTS `RSS_ENCODING`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_ENCODING` (
+  `ID_ENCODING` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_ENCODING` varchar(45) NOT NULL DEFAULT 'rss',
+  `DATE_CREATED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `DESC_ENCODING` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID_ENCODING`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_FORMAT`
+--
+
+DROP TABLE IF EXISTS `RSS_FORMAT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_FORMAT` (
+  `ID_FORMAT` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_FORMAT` varchar(250) NOT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `DESC_FORMAT` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID_FORMAT`),
+  UNIQUE KEY `UNIQUE_NAME_FORMAT` (`NAME_FORMAT`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_FREQUENCE`
+--
+
+DROP TABLE IF EXISTS `RSS_FREQUENCE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_FREQUENCE` (
+  `ID_FREQUENCE` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_FREQUENCE` varchar(50) NOT NULL,
+  `DESC_FREQUENCE` varchar(50) DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_FREQUENCE`),
+  UNIQUE KEY `UNIQUE_NAME_FREQUENCE` (`NAME_FREQUENCE`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_INFO`
+--
+
+DROP TABLE IF EXISTS `RSS_INFO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_INFO` (
+  `ID_RSS` int(11) NOT NULL AUTO_INCREMENT,
+  `NAME_RSS` varchar(100) NOT NULL COMMENT 'url du fil rss',
+  `ID_PAYS` int(10) NOT NULL,
+  `ID_LANGUE` int(10) NOT NULL,
+  `ID_JOURNAL` int(10) NOT NULL,
+  `ID_TYPE` int(10) NOT NULL,
+  `ID_REGISTER` int(10) DEFAULT '1',
+  `ID_FREQUENCE` int(10) NOT NULL DEFAULT '0',
+  `ID_LOCALITE` int(10) NOT NULL,
+  `ID_FORMAT` int(10) NOT NULL DEFAULT '1',
+  `ID_ENCODING` int(10) NOT NULL DEFAULT '1',
+  `etag` varchar(100) DEFAULT NULL COMMENT 'etag parameter enables to check if new feeds are available since last retrieval. See https://universal-feedparser.readthedocs.org/en/latest/#using-etags-to-reduce-bandwidth for additional information',
+  `last_modified_by` varchar(100) DEFAULT NULL COMMENT 'idem as tag but more explicitly giving the last update as a kind of date',
+  `created_by` varchar(100) DEFAULT NULL,
+  `date_created_by` datetime DEFAULT NULL,
+  `date_modified_by` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID_RSS`),
+  UNIQUE KEY `UNIQUE_NAME_RSS` (`NAME_RSS`),
+  KEY `FK_PAYS` (`ID_PAYS`),
+  KEY `FK_LANGUE` (`ID_LANGUE`),
+  KEY `FK_JOURNAL` (`ID_JOURNAL`),
+  KEY `FK_TYPE` (`ID_TYPE`),
+  KEY `FK_LOCALITE` (`ID_LOCALITE`),
+  KEY `FK_FREQUENCE` (`ID_FREQUENCE`),
+  CONSTRAINT `FK_JOURNAL` FOREIGN KEY (`ID_JOURNAL`) REFERENCES `RSS_JOURNAL` (`ID_JOURNAL`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_LANGUE` FOREIGN KEY (`ID_LANGUE`) REFERENCES `RSS_LANGUE` (`ID_LANGUE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_LOCALITE` FOREIGN KEY (`ID_LOCALITE`) REFERENCES `RSS_LOCALITE` (`ID_LOCALITE`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_PAYS` FOREIGN KEY (`ID_PAYS`) REFERENCES `RSS_PAYS` (`ID_PAYS`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_TYPE` FOREIGN KEY (`ID_TYPE`) REFERENCES `RSS_TYPE` (`ID_TYPE`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=526 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_JOURNAL`
+--
+
+DROP TABLE IF EXISTS `RSS_JOURNAL`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_JOURNAL` (
+  `ID_JOURNAL` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_JOURNAL` varchar(50) NOT NULL,
+  `DESC_JOURNAL` varchar(50) DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_JOURNAL`),
+  UNIQUE KEY `UNIQUE_NAME_JOURNAL` (`NAME_JOURNAL`)
+) ENGINE=InnoDB AUTO_INCREMENT=411 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_LANGUE`
+--
+
+DROP TABLE IF EXISTS `RSS_LANGUE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_LANGUE` (
+  `ID_LANGUE` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_LANGUE` varchar(50) NOT NULL,
+  `CODE_LANGUE` varchar(20) DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_LANGUE`),
+  UNIQUE KEY `UNIQUE_NAME_LANGUE` (`NAME_LANGUE`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_LOCALITE`
+--
+
+DROP TABLE IF EXISTS `RSS_LOCALITE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_LOCALITE` (
+  `ID_LOCALITE` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_LOCALITE` varchar(50) NOT NULL,
+  `DESC_LOCALITE` varchar(50) DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_LOCALITE`),
+  UNIQUE KEY `UNIQUE_NAME_LOCALITE` (`NAME_LOCALITE`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_PAYS`
+--
+
+DROP TABLE IF EXISTS `RSS_PAYS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_PAYS` (
+  `ID_PAYS` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_PAYS` varchar(50) NOT NULL,
+  `CODE_PAYS` varchar(10) DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_PAYS`),
+  UNIQUE KEY `UNIQUE_NAME_PAYS` (`NAME_PAYS`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_REGISTER`
+--
+
+DROP TABLE IF EXISTS `RSS_REGISTER`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_REGISTER` (
+  `ID_REGISTER` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_REGISTER` varchar(50) NOT NULL,
+  `DESC_REGISTER` varchar(50) DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_REGISTER`),
+  UNIQUE KEY `UNIQUE_NAME_REGISTER` (`NAME_REGISTER`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `RSS_TYPE`
+--
+
+DROP TABLE IF EXISTS `RSS_TYPE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `RSS_TYPE` (
+  `ID_TYPE` int(10) NOT NULL AUTO_INCREMENT,
+  `NAME_TYPE` varchar(50) NOT NULL,
+  `DESC_TYPE` varchar(50) DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_TYPE`),
+  UNIQUE KEY `UNIQUE_NAME_TYPE` (`NAME_TYPE`)
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `pos_types`
+--
+
+DROP TABLE IF EXISTS `pos_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pos_types` (
+  `ID_TYPE` int(11) NOT NULL AUTO_INCREMENT,
+  `TYPE_NAME` varchar(100) NOT NULL,
+  `TYPE_DESCRIPTION` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID_TYPE`),
+  UNIQUE KEY `TYPE_NAME_UNIQUE` (`TYPE_NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `rss_data2`
+--
+
+DROP TABLE IF EXISTS `rss_data2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rss_data2` (
+  `source_link` varchar(255) NOT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `ID_RSS` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `contents` longtext,
+  `category` varchar(100) DEFAULT NULL,
+  `keywords` varchar(100) DEFAULT NULL,
+  `DATE_CREATED` datetime DEFAULT CURRENT_TIMESTAMP,
+  `IS_INDEXED` int(11) DEFAULT '0',
+  PRIMARY KEY (`source_link`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `termes_neoveille`
+--
+
+DROP TABLE IF EXISTS `termes_neoveille`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `termes_neoveille` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `langue` varchar(2) NOT NULL,
+  `terme` varchar(100) NOT NULL,
+  `cat_synt` int(2) NOT NULL,
+  `cat_sem` int(2) NOT NULL,
+  `hyperclass` int(11) NOT NULL,
+  `definition` text NOT NULL,
+  `note` text NOT NULL,
+  `auteur` varchar(100) NOT NULL,
+  `statut` int(2) NOT NULL,
+  `matrice_neo` varchar(50) NOT NULL,
+  `config_morpho` varchar(100) NOT NULL,
+  `config_phonol` varchar(100) NOT NULL,
+  `date` datetime NOT NULL,
+  `last_update` datetime NOT NULL,
+  `last_update_author` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `langue` (`langue`),
+  KEY `cat_synt` (`cat_synt`),
+  KEY `cat_sem` (`cat_sem`),
+  KEY `hyperclass` (`hyperclass`),
+  KEY `statut` (`statut`),
+  KEY `matrice_neo` (`matrice_neo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `joining_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `language` int(11) NOT NULL,
+  `user_rights` int(1) NOT NULL DEFAULT '1',
+  `rights_corpus` int(1) NOT NULL DEFAULT '1',
+  `rights_corpus_params` int(1) NOT NULL DEFAULT '0',
+  `rights_dict` int(1) NOT NULL DEFAULT '1',
+  `rights_neoform` int(1) NOT NULL DEFAULT '1',
+  `rights_neoform_params` int(1) NOT NULL DEFAULT '0',
+  `rights_neosem` int(1) NOT NULL DEFAULT '1',
+  `rights_neosem_params` int(1) NOT NULL DEFAULT '0',
+  `rights_neodb` int(1) NOT NULL DEFAULT '1',
+  `rights_neodb_params` int(1) NOT NULL DEFAULT '0',
+  `rights_users` int(1) NOT NULL DEFAULT '0',
+  `last_visit` datetime DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users_right_def`
+--
+
+DROP TABLE IF EXISTS `users_right_def`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_right_def` (
+  `uid` int(3) NOT NULL AUTO_INCREMENT,
+  `description` varchar(45) NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users_roles_def`
+--
+
+DROP TABLE IF EXISTS `users_roles_def`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_roles_def` (
+  `uid` int(3) NOT NULL AUTO_INCREMENT,
+  `description` varchar(45) NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-01-04 12:38:35
