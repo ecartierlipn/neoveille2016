@@ -1,6 +1,7 @@
 # Neoveille
 This is the main place for Neoveille Technical documentation. 
 Neoveille is a Sorbonne Paris Cité-funded  Research Project from 2015 to 2018. Its main goals are :
+
 1. Develop programs to detect, analyse and track neologisms in big corpora, in seven languages;
 2. Develop a web-based front-end to enable linguists to interact with the main modules : corpus management, neologisms detection results (both formal and semantic neologisms), neologisms manual description and finally analysing neologism lifecycle;
 
@@ -48,6 +49,7 @@ You should install the langdetect Python module from Google code [https://pypi.p
 
 #Installation
 After installing and checking the software above, you just have to copy the two main python programs : 
+
 1. corpus_all.py : main program to retrieve corpora from RSS feeds; NLPutils.py is one dependency of it. corpus_all.py first retrieve available RSS feeds (and the complete linked articles) in the rssdata database for a given language, then retrieve the feeds items, ans store them and their metadata in the mysql database rssdata, and also in Apache Solr;
 2. detect_neologism_all.py : main program to POStag the documents, and detect formal neologisms. The detected neologisms are stored in the datatables database forhuman expert validation (with the front-end).
 
