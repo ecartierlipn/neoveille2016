@@ -48,6 +48,10 @@ You should install the langdetect Python module from Google code [https://pypi.p
 
 
 #Installation
-Please installing and checking 
+After installing and checking the software above, you just have to copy the two main python programs : 
+1. corpus_all.py : main program to retrieve corpora from RSS feeds; NLPutils.py is one dependency of it. corpus_all.py first retrieve available RSS feeds (and the complete linked articles) in the rssdata database for a given language, then retrieve the feeds items, ans store them and their metadata in the mysql database rssdata, and also in Apache Solr;
+2. detect_neologism_all.py : main program to POStag the documents, and detect formal neologisms. The detected neologisms are stored in the datatables database forhuman expert validation (with the front-end).
+
 
 #Quick Start
+Just launch the two programs above. Consider adding these programs in your cron scheduler to get more and more corpora and neologisms.
