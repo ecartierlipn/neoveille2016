@@ -8,18 +8,17 @@ To obtain more information on the project, please refer to documentation on the 
 
 This documentation has three main sections :
 
-[Requirements and dependencies](requirements)
-
-[Installation](installation)
-
-[Quick Start](quick-start)
+1. Requirements
+2. Installation
+3. Quick Start
 
 
 #Requirements
 To be working, the Neoveille platform requires several other tools installed, and a Python version >= 2.7 (Python 3+ not tested). For the front-end, you should also have a working Apache-Php-Mysql environment.
 
 ##Mysql Database
-a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, import the mysql scripts contained the install/subdirectory, to create the four databases used : 
+a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, import in Mysql the mysql scripts contained the install_files subdirectory, to create the four databases used : 
+
 1. rssdata (manage the corpus sources)
 2. datatables (manage the exclusion dictionaries and neologism candidates for each language)
 3. neo3 (database for neology manual linguistic description through front-end)
