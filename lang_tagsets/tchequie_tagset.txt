@@ -1,0 +1,12 @@
+A	Adj	Adjective
+C	Num	Numeral
+D	Adv	Adverb
+I	Interj	Interjection
+J	Conj	Conjunction
+N	Noun	Noun
+P	Pro	Pronoun
+V	Verb	Verb
+R	Prep	Preposition
+T	Part	Particle
+X	UNK	Unknown, Not Determined, Unclassifiable
+Z	Punct	Punctuation (also used for the Sentence Boundary token)

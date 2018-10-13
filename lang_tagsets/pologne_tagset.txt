@@ -1,0 +1,37 @@
+abbreviation	Abr	flexeme:base form
+subst	Noun	noun:singular nominative
+depr	Noun	depreciative form:singular nominative form of the corresponding noun
+num	Num	main numeral:inanimate masculine nominative form
+numcol	Num	collective numeral:inanimate masculine nominative form of the main numeral
+adj	Adj	adjective:singular nominative masculine positive form
+adja	Adj	ad-adjectival adjective:singular nominative masculine positive form of the adjective
+adjp	Adj	post-prepositional adjective:singular nominative masculine positive form of the adjective
+adjc	Adj	predicative adjective:singular nominative masculine positive form of the adjective
+adv	Adv	adverb:positive form
+ppron12	Pro	non-3rd person pronoun:singular nominative
+ppron3	Pro	3rd-person pronoun:singular nominative
+siebie	Pro	pronoun siebie:accusative
+fin	Verb	non-past form:infinitive
+bedzie	Verb	future być:infinitive
+aglt	Verb	agglutinate być:infinitive
+praet	Verb	l-participle:infinitive
+impt	Verb	imperative:infinitive
+imps	Verb	impersonal:infinitive
+inf	Verb	infinitive:infinitive
+pcon	Adv	contemporary adv. participle:infinitive
+pant	Adv	anterior adv. participle:infinitive
+ger	Adv	gerund:infinitive
+pact	Adj	active adj. participle:infinitive
+ppas	Verb	passive adj. participle:infinitive
+winien	XXX	winien:singular masculine form
+pred	Verb	predicative:the only form of that flexeme
+prep	Prep	preposition:the non-vocalic form of that flexeme
+conj	Conj	coordinating conjunction:the only form of that flexeme
+comp	Conj	subordinating conjunction:the only form of that flexeme
+qub	Adv	particle-adverb:the only form of that flexeme
+brev	Abr	abbreviation:the full dictionary form
+burk	XXX	bound word:the only form of that flexeme
+interj	Interj	interjection:the only form of that flexeme
+interp	Punct	punctuation:the only form of that flexeme
+xxx	OtherW	alien:the only form of that flexeme
+ign	Unknown	unknown form:the only form of that flexeme

@@ -1,0 +1,35 @@
+ABR	Abr	abreviation
+ADJ	Adj	adjective
+ADV	Adv	adverb
+DET	Det	Determiner
+DET:ART	Det	article
+DET:POS	Det	possessive pronoun (ma, ta, ...)
+INT	Interj	interjection
+KON	Conj	conjunction
+NAM	Np	proper name
+NOM	Noun	noun
+NUM	Num	numeral
+PRO	Pro	pronoun
+PRO:DEM	Pro	demonstrative pronoun
+PRO:IND	Pro	indefinite pronoun
+PRO:PER	Pro	personal pronoun
+PRO:POS	Pro	possessive pronoun (mien, tien, ...)
+PRO:REL	Pro	relative pronoun
+PRP	Prep	preposition
+PRP:det	Prep	preposition plus article (au,du,aux,des)
+PUN	Punct	punctuation
+PUN:cit	Punct	punctuation citation
+SENT	Sent	sentence tag
+SYM	Symb	symbol
+VER	Verb	Verb
+VER:cond	Verb	verb conditional
+VER:futu	Verb	verb futur
+VER:impe	Verb	verb imperative
+VER:impf	Verb	verb imperfect
+VER:infi	Verb	verb infinitive
+VER:pper	Verb	verb past participle
+VER:ppre	Verb	verb present participle
+VER:pres	Verb	verb present
+VER:simp	Verb	verb simple past
+VER:subi	Verb	verb subjunctive imperfect
+VER:subp	Verb	verb subjunctive present

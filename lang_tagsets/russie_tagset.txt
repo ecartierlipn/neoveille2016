@@ -1,0 +1,367 @@
+Af	Adj	Adjective
+Afc	Adj	Adjective
+Afp	Adj	Adjective
+Afpfsa	Adj	Adjective
+Afpfsaf	Adj	Adjective
+Afpfsd	Adj	Adjective
+Afpfsdf	Adj	Adjective
+Afpfs	Adj	Adjective
+Afpfsg	Adj	Adjective
+Afpfsgf	Adj	Adjective
+Afpfsi	Adj	Adjective
+Afpfsif	Adj	Adjective
+Afpfsl	Adj	Adjective
+Afpfslf	Adj	Adjective
+Afpfsn	Adj	Adjective
+Afpfsnf	Adj	Adjective
+Afpmpgf	Adj	Adjective
+Afpmsa	Adj	Adjective
+Afpmsaf	Adj	Adjective
+Afpmsd	Adj	Adjective
+Afpmsdf	Adj	Adjective
+Afpmsg	Adj	Adjective
+Afpmsgf	Adj	Adjective
+Afpmsi	Adj	Adjective
+Afpmsif	Adj	Adjective
+Afpmsl	Adj	Adjective
+Afpmslf	Adj	Adjective
+Afpmsn	Adj	Adjective
+Afpmsnf	Adj	Adjective
+Afpms	Adj	Adjective
+Afpnpif	Adj	Adjective
+Afpnsa	Adj	Adjective
+Afpnsaf	Adj	Adjective
+Afpnsd	Adj	Adjective
+Afpnsdf	Adj	Adjective
+Afpnsg	Adj	Adjective
+Afpnsgf	Adj	Adjective
+Afpnsi	Adj	Adjective
+Afpnsif	Adj	Adjective
+Afpnsl	Adj	Adjective
+Afpnslf	Adj	Adjective
+Afpnsn	Adj	Adjective
+Afpnsnf	Adj	Adjective
+Afpns	Adj	Adjective
+Afpp	Adj	Adjective
+Afsfsn	Adj	Adjective
+C	Conj	Conjunction
+I	Interj	Interjection
+Mc	Num	Numeral
+Mcf	Num	Numeral
+Mcfpg	Num	Numeral
+Mcfpl	Num	Numeral
+Mcfpn	Num	Numeral
+Mcfsa	Num	Numeral
+Mcfsd	Num	Numeral
+Mcfsg	Num	Numeral
+Mcfsi	Num	Numeral
+Mcfsl	Num	Numeral
+Mcfsn	Num	Numeral
+Mcm	Num	Numeral
+Mcmpa	Num	Numeral
+Mcmpd	Num	Numeral
+Mcmpg	Num	Numeral
+Mcmpi	Num	Numeral
+Mcmpl	Num	Numeral
+Mcmpn	Num	Numeral
+Mcmsa	Num	Numeral
+Mcmsd	Num	Numeral
+Mcmsg	Num	Numeral
+Mcmsi	Num	Numeral
+Mcmsl	Num	Numeral
+Mcmsn	Num	Numeral
+Mcn	Num	Numeral
+Mcnpd	Num	Numeral
+Mcnpg	Num	Numeral
+Mcnpi	Num	Numeral
+Mcnsa	Num	Numeral
+Mcnsg	Num	Numeral
+Mcnsl	Num	Numeral
+Mcnsn	Num	Numeral
+Mcns	Num	Numeral
+Mcsn	Num	Numeral
+Mo	Num	Numeral
+Mofpa	Num	Numeral
+Mofpg	Num	Numeral
+Mofpl	Num	Numeral
+Mofpn	Num	Numeral
+Mofsa	Num	Numeral
+Mofsd	Num	Numeral
+Mofsg	Num	Numeral
+Mofsi	Num	Numeral
+Mofsl	Num	Numeral
+Mofsn	Num	Numeral
+Mofs	Num	Numeral
+Mompa	Num	Numeral
+Mompd	Num	Numeral
+Mompg	Num	Numeral
+Mompi	Num	Numeral
+Mompl	Num	Numeral
+Mompn	Num	Numeral
+Momsa	Num	Numeral
+Momsd	Num	Numeral
+Momsg	Num	Numeral
+Momsi	Num	Numeral
+Momsl	Num	Numeral
+Momsn	Num	Numeral
+Moms	Num	Numeral
+Monpa	Num	Numeral
+Monpd	Num	Numeral
+Monpg	Num	Numeral
+Monpi	Num	Numeral
+Monsa	Num	Numeral
+Monsd	Num	Numeral
+Monsg	Num	Numeral
+Monsi	Num	Numeral
+Monsl	Num	Numeral
+Monsn	Num	Numeral
+Mpfsd	Num	Numeral
+Mpfsg	Num	Numeral
+Mpfsi	Num	Numeral
+Mpfsl	Num	Numeral
+Mpfsn	Num	Numeral
+Mpmsa	Num	Numeral
+Mpmsd	Num	Numeral
+Mpmsg	Num	Numeral
+Mpmsi	Num	Numeral
+Mpmsl	Num	Numeral
+Mpmsn	Num	Numeral
+Nccpay	Noun	Noun
+Nccpdy	Noun	Noun
+Nccpgy	Noun	Noun
+Nccpiy	Noun	Noun
+Nccply	Noun	Noun
+Nccpny	Noun	Noun
+Nccsay	Noun	Noun
+Nccsdy	Noun	Noun
+Nccsgy	Noun	Noun
+Nccsiy	Noun	Noun
+Nccsly	Noun	Noun
+Nccsny	Noun	Noun
+Ncfpan	Noun	Noun
+Ncfpay	Noun	Noun
+Ncfpdn	Noun	Noun
+Ncfpdy	Noun	Noun
+Ncfpgn	Noun	Noun
+Ncfpgy	Noun	Noun
+Ncfpin	Noun	Noun
+Ncfpiy	Noun	Noun
+Ncfpln	Noun	Noun
+Ncfply	Noun	Noun
+Ncfpnn	Noun	Noun
+Ncfpny	Noun	Noun
+Ncfsan	Noun	Noun
+Ncfsay	Noun	Noun
+Ncfsdn	Noun	Noun
+Ncfsdy	Noun	Noun
+Ncfsgn	Noun	Noun
+Ncfsgy	Noun	Noun
+Ncfsin	Noun	Noun
+Ncfsiy	Noun	Noun
+Ncfsln	Noun	Noun
+Ncfsly	Noun	Noun
+Ncfsnn	Noun	Noun
+Ncfsny	Noun	Noun
+Ncfsvy	Noun	Noun
+Ncmpan	Noun	Noun
+Ncmpay	Noun	Noun
+Ncmpdn	Noun	Noun
+Ncmpdy	Noun	Noun
+Ncmpgn	Noun	Noun
+Ncmpgy	Noun	Noun
+Ncmpin	Noun	Noun
+Ncmpiy	Noun	Noun
+Ncmpln	Noun	Noun
+Ncmply	Noun	Noun
+Ncmpnn	Noun	Noun
+Ncmpny	Noun	Noun
+Ncmsan	Noun	Noun
+Ncmsay	Noun	Noun
+Ncmsdn	Noun	Noun
+Ncmsdy	Noun	Noun
+Ncmsgn	Noun	Noun
+Ncmsgy	Noun	Noun
+Ncmsin	Noun	Noun
+Ncmsiy	Noun	Noun
+Ncmsln	Noun	Noun
+Ncmsly	Noun	Noun
+Ncmsnn	Noun	Noun
+Ncmsny	Noun	Noun
+Ncmsvy	Noun	Noun
+Nc	Noun	Noun
+Ncnpan	Noun	Noun
+Ncnpay	Noun	Noun
+Ncnpdn	Noun	Noun
+Ncnpdy	Noun	Noun
+Ncnpgn	Noun	Noun
+Ncnpgy	Noun	Noun
+Ncnpin	Noun	Noun
+Ncnpiy	Noun	Noun
+Ncnpln	Noun	Noun
+Ncnply	Noun	Noun
+Ncnpnn	Noun	Noun
+Ncnpny	Noun	Noun
+Ncnsan	Noun	Noun
+Ncnsay	Noun	Noun
+Ncnsdn	Noun	Noun
+Ncnsdy	Noun	Noun
+Ncnsgn	Noun	Noun
+Ncnsgy	Noun	Noun
+Ncnsin	Noun	Noun
+Ncnsiy	Noun	Noun
+Ncnsln	Noun	Noun
+Ncnsly	Noun	Noun
+Ncnsnn	Noun	Noun
+Ncnsny	Noun	Noun
+Np	Np	Noun Proper
+Npcpay	Np	Noun Proper
+Npcpdy	Np	Noun Proper
+Npcpgy	Np	Noun Proper
+Npcpiy	Np	Noun Proper
+Npcply	Np	Noun Proper
+Npcpny	Np	Noun Proper
+Npcsay	Np	Noun Proper
+Npcsdy	Np	Noun Proper
+Npcsgy	Np	Noun Proper
+Npcsiy	Np	Noun Proper
+Npcsly	Np	Noun Proper
+Npcsny	Np	Noun Proper
+Npfpay	Np	Noun Proper
+Npfpdy	Np	Noun Proper
+Npfpgy	Np	Noun Proper
+Npfpiy	Np	Noun Proper
+Npfsay	Np	Noun Proper
+Npfsdy	Np	Noun Proper
+Npfsgy	Np	Noun Proper
+Npfsiy	Np	Noun Proper
+Npfsly	Np	Noun Proper
+Npfsny	Np	Noun Proper
+Npmpay	Np	Noun Proper
+Npmpdy	Np	Noun Proper
+Npmpgy	Np	Noun Proper
+Npmpiy	Np	Noun Proper
+Npmply	Np	Noun Proper
+Npmpny	Np	Noun Proper
+Npmsay	Np	Noun Proper
+Npmsdy	Np	Noun Proper
+Npmsgy	Np	Noun Proper
+Npmsiy	Np	Noun Proper
+Npmsly	Np	Noun Proper
+Npmsny	Np	Noun Proper
+P1	Pro	Pronoun
+P2	Pro	Pronoun
+P	Pro	Pronoun
+P3	Pro	Pronoun
+Pfsn	Pro	Pronoun
+Pmsd	Pro	Pronoun
+Pmsi	Pro	Pronoun
+Pmsn	Pro	Pronoun
+Pnpi	Pro	Pronoun
+Pnsd	Pro	Pronoun
+Pnsg	Pro	Pronoun
+Pnsi	Pro	Pronoun
+Pnsl	Pro	Pronoun
+Ppd	Pro	Pronoun
+Ppg	Pro	Pronoun
+Ppi	Pro	Pronoun
+Ppn	Pro	Pronoun
+Psi	Pro	Pronoun
+Psl	Pro	Pronoun
+Psn	Pro	Pronoun
+Q	Part	Particle
+R	Adv	Adverb
+Rc	Adv	Adverb
+Sp	Adpos	Adposition
+Sc	Adpos	Adposition
+Vm1s	Verb	Verb
+Vm	Verb	Verb
+Vmf1pa	Verb	Verb
+Vmf1sa	Verb	Verb
+Vmf2pa	Verb	Verb
+Vmf2sa	Verb	Verb
+Vmf3pa	Verb	Verb
+Vmf3sa	Verb	Verb
+Vmga	Verb	Verb
+Vmgfa	Verb	Verb
+Vmgm	Verb	Verb
+Vmgpa	Verb	Verb
+Vmgpm	Verb	Verb
+Vmgsa	Verb	Verb
+Vmgsm	Verb	Verb
+Vmi1pa	Verb	Verb
+Vmi1pm	Verb	Verb
+Vmi1sa	Verb	Verb
+Vmi1sm	Verb	Verb
+Vmi2pa	Verb	Verb
+Vmi2pm	Verb	Verb
+Vmi2sa	Verb	Verb
+Vmi2sm	Verb	Verb
+Vmif1pa	Verb	Verb
+Vmif1pm	Verb	Verb
+Vmif1sa	Verb	Verb
+Vmif1sm	Verb	Verb
+Vmif2pa	Verb	Verb
+Vmif2pm	Verb	Verb
+Vmif2sa	Verb	Verb
+Vmif2sm	Verb	Verb
+Vmif3pa	Verb	Verb
+Vmif3pm	Verb	Verb
+Vmif3sa	Verb	Verb
+Vmif3sm	Verb	Verb
+Vmi	Verb	Verb
+Vmip1pa	Verb	Verb
+Vmip1pm	Verb	Verb
+Vmip1pmpsp	Verb	Verb
+Vmip1sa	Verb	Verb
+Vmip1sm	Verb	Verb
+Vmip2pa	Verb	Verb
+Vmip2pm	Verb	Verb
+Vmip2sa	Verb	Verb
+Vmip2sm	Verb	Verb
+Vmip3pa	Verb	Verb
+Vmip3pm	Verb	Verb
+Vmip3sa	Verb	Verb
+Vmip3sm	Verb	Verb
+Vmipa	Verb	Verb
+Vmis3pmpse	Verb	Verb
+Vmisma	Verb	Verb
+Vmisna	Verb	Verb
+Vmisnm	Verb	Verb
+Vmispa	Verb	Verb
+Vmispm	Verb	Verb
+Vmissfa	Verb	Verb
+Vmissfm	Verb	Verb
+Vmissma	Verb	Verb
+Vmissmm	Verb	Verb
+Vmissna	Verb	Verb
+Vmissnm	Verb	Verb
+Vmm1pa	Verb	Verb
+Vmm2pa	Verb	Verb
+Vmm2pm	Verb	Verb
+Vmm2sa	Verb	Verb
+Vmm2sm	Verb	Verb
+Vmna	Verb	Verb
+Vmnm	Verb	Verb
+Vmp1pa	Verb	Verb
+Vmp1sa	Verb	Verb
+Vmp2pa	Verb	Verb
+Vmp2sa	Verb	Verb
+Vmp3pa	Verb	Verb
+Vmp3sa	Verb	Verb
+Vmp3sm	Verb	Verb
+Vmpp	Verb	Verb
+Vmp	Verb	Verb
+Vmppp	Verb	Verb
+Vmpsp	Verb	Verb
+Vmps	Verb	Verb
+Vmsf	Verb	Verb
+Vmsmf	Verb	Verb
+Vmsm	Verb	Verb
+Vmsn	Verb	Verb
+Vmspa	Verb	Verb
+Vmsp	Verb	Verb
+Vmspm	Verb	Verb
+Vms	Verb	Verb
+Vmssfa	Verb	Verb
+Vmssma	Verb	Verb
+Vmssna	Verb	Verb
