@@ -15,7 +15,7 @@ This documentation has three main sections :
 3. Quick Start
 
 # Architecture of the project
-![Alt text](docs/neoveille_archi.png?raw=true "Néoveille Architecture")
+![Néoveille Architecture](docs/neoveille_archi.png?raw=true "Néoveille Architecture")
 
 
 # Requirements
