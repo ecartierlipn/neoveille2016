@@ -14,6 +14,9 @@ This documentation has three main sections :
 2. Installation
 3. Quick Start
 
+# Architecture of the project
+![Alt text](relative/path/to/img.jpg?raw=true "Néoveille Architecture")
+
 
 # Requirements
 To be working, the Neoveille platform requires several other tools installed, and a Python version >= 2.7 (Python 3+ not tested). For the front-end, you should also have a working Apache-Php-Mysql environment.
