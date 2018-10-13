@@ -54,3 +54,7 @@ You should install the langdetect Python module from Google code [https://pypi.p
 After installing and checking the software above, you just have to clone all the files from the Github repository (here).
 
 See Installation instructions in 
+
+# References
+Cartier, Emmanuel (2017), Neoveille, a Web Platform for Neologism Tracking, Proceedi ngs of the EACL 2017 Software Demonstrations, Valencia, Spain, April 3-7 2017. [https://www.aclweb.org/anthology/E/E17/E17-3024.pdf]
+Cartier, Emmanuel (2018), « Neoveille, plateforme de détection, de repérage et de suivi des néologismes en dix langues », 
