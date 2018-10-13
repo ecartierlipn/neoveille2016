@@ -19,29 +19,28 @@ This documentation has three main sections :
 
 
 # Requirements
-To be working, the Neoveille platform requires several other tools installed, and a Python version >= 2.7 (Python 3+ not tested). For the front-end, you should also have a working Apache-Php-Mysql environment.
+- (for the backend) A Python compiler version >= 2.7 (Python 3+ not tested),
+- A MySql Server, 
+- An Apache Solr server,
+- (for the front-end) a working Apache-Php-Mysql environment.
 
 ## Mysql Database
-a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, import in Mysql the mysql scripts contained the install_files subdirectory, to create the four databases used : 
+a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, create the three databases (rssdata, datatables, neo3), import the mysql scripts (to populate them) contained in resources/mysql subdirectory, to create the three databases: 
 
 1. rssdata (manage the corpus sources)
 2. datatables (manage the exclusion dictionaries and neologism candidates for each language)
 3. neo3 (database for neology manual linguistic description through front-end)
-4. neosem (data for semantic neology).
-
-Please change directory parameters in corpus_all.py and file detect_neologisms_all.py to mirror your configuration.
 
 ## Apache Solr server
-The Apache Solr server is the main storage point and search engine for retrieved and analyzed corpus. Version 5.3.2 is tested, but more recent build should also work (up to but excluding Apache Solr 6). Once installed, you must create the cores for each language, using the config files (conf.zip, for french, please name the French core as rss_french) contained in the install subdirectory. A simple copy should work where the cores are stored (by default in solr_install_dir/server/solr). Please change directory parameters in corpus_all.py and file detect_neologisms_all.py to mirror your configuration.
+The Apache Solr server is the main storage point and search engine for retrieved and analyzed corpus. Version 5.3.2 is tested. Once installed, you must create the cores for each language. You can use the example configuration files in resources/apachesolr for French. A simple copy inside the cores root location (by default in <solr_install_dir>/server/solr) should be enough. restart Solr and check the admin page to see if everuthing is ok. See Apache Solr Installation here : [http://lucene.apache.org/solr/resources.html]. 
 
 ## POS Taggers
-a POS tagger must be available for every parsed language. As a default, we use treetagger for every language except Greek and Czech. The default installation is in a subdirectory "pos-taggers" with respective tagger files in sub-sub-directories. Please consider also using for example TensorFlow / SyntaxNet which is much more robust than Treetagger. 
+a POS tagger must be available for every parsed language. As a default, we use treetagger for every language except Greek and Czech. The default installation is in a subdirectory "backend/formal_neology/pos-taggers", but whatever place you choose, adapt the path in backend/formal_neology/detect_neologisms.py. Check the Treetagger website : [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/].
 
-Please change directory parameters in file detect_neologisms_all.py to mirror your configuration.
-Please also note that lang-tagsets are provided in the lang-tagsets directory, to map specific pos tags to a unified one.
+Please also note that lang-tagsets are provided in the resources/lang-tagsets directory, to map specific pos tags to a unified one.
 
 ## Hunspell
-Hunspell is installed by default in every Linux and Mac OS distribution. Just take care of dictionary files for every language. By default, dictionary files are assumed to be in a subdirectory hunspell-dicos (with a sub-subdirectory for every language). For your convenience, this structure and dictionary are available in the install_files directory that you can unzip from the main directory of the repository. Otherwise, Please change directory parameters in file detect_neologisms_all.py to mirror your configuration.
+Hunspell is installed by default in every Linux and Mac OS distribution. Just take care of dictionary files for every language. Hunspell dictionaries are available in the resources/hunspell directory that you can unzip on your installation directory. Check also the parameter location in backend/formal_neology/detect_neologisms.py.
 
 ## Python 2.7
 
@@ -52,11 +51,6 @@ You should install the langdetect Python module from Google code [https://pypi.p
 
 
 # Installation
-After installing and checking the software above, you just have to copy the two main python programs : 
+After installing and checking the software above, you just have to clone all the files from the Github repository (here).
 
-1. corpus_all.py : main program to retrieve corpora from RSS feeds; NLPutils.py is one dependency of it. corpus_all.py first retrieve available RSS feeds (and the complete linked articles) in the rssdata database for a given language, then retrieve the feeds items, ans store them and their metadata in the mysql database rssdata, and also in Apache Solr;
-2. detect_neologism_all.py : main program to POStag the documents, and detect formal neologisms. The detected neologisms are stored in the datatables database forhuman expert validation (with the front-end).
-
-
-# Quick Start
-Just launch the two programs above. Consider adding these programs in your cron scheduler to get more and more corpora and neologisms.
+See Installation instructions in 
