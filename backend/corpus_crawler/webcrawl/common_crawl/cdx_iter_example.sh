@@ -1,0 +1,1 @@
+python3 /Users/emmanuelcartier/anaconda3/bin/cdx_iter 'lemonde.fr/*' --cc --limit 1000000 --filter '=status:200' --filter '=mime:text/html'  --from 2009 --jsonl --all-fields

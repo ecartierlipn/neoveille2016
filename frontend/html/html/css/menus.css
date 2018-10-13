@@ -1,0 +1,50 @@
+.drop_menu {
+position: fixed;
+background:#c1c1d7;
+margin:0 0 3px 3px;
+list-style-type:none;
+height:45px;
+width:100%;
+top:0;
+right:0;
+box-shadow:5px 5px 5px grey;
+border-radius:5px 5px 5px 5px;
+z-index : 1;
+}
+
+.drop_menu div { float:left; width:100px; display:inline;padding:10px 25px 10px 10px;font:16px arial, verdana, sans-serif;}
+.drop_menu li { float:right; }
+.drop_menu li a {
+margin:5px;
+padding:9px 10px 10px 5px;
+display:block;
+color:#fff;
+text-decoration:none;
+font:12px arial, verdana, sans-serif;
+}
+ 
+/* Submenu */
+.drop_menu ul {
+position:absolute;
+left:-9999px;
+top:-9999px;
+list-style-type:none;
+}
+.drop_menu li:hover { position:relative; background:#3f94bf; }
+.drop_menu li:hover ul {
+left:0px;
+top:30px;
+background:#3f94bf;
+padding:0px;
+box-shadow:5px 5px 5px 5px grey;
+	border-radius:0 0 2px 2px;
+}
+ 
+.drop_menu li:hover ul li a {
+padding:5px;
+display:block;
+width:168px;
+text-indent:15px;
+background-color:#3f94bf;
+}
+.drop_menu li:hover ul li a:hover { background:#005555; }

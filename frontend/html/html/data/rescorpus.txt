@@ -1,0 +1,453 @@
+<div class="panel-heading"><h4 class="panel-title">Français (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>France</td><td colspan="2"></td><td><b>1242411</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_fr1"></td></tr>
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Général</td><td></td><td>987569</td><td class="corpus-details toggler" data-corpus-cat="fr1"></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>L'Express</td><td>75658</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>France Soir</td><td>66279</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Parisien</td><td>48737</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>La Nouvelle République</td><td>48119</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>La Croix</td><td>44640</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>20 Minutes</td><td>43165</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Huffington Post</td><td>42994</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>La voix du nord</td><td>36045</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Libération</td><td>31474</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Figaro</td><td>31303</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Dauphiné Libéré</td><td>29740</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Monde</td><td>29409</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>BFM TV</td><td>29330</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Bien Public</td><td>28419</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Point</td><td>27755</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>L'Est Républicain</td><td>27258</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Nice Matin</td><td>25466</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Progrès</td><td>24394</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>La Dépèche du Midi</td><td>24324</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Républicain Lorrain</td><td>23143</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Nouvel Observateur</td><td>22975</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Sud Ouest</td><td>22811</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Journal de Saone et Loire</td><td>21142</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Charente Libre</td><td>20440</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Midi Libre</td><td>18474</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Ouest France</td><td>17575</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>L'Indépendant</td><td>17448</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Elle</td><td>15605</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Télégramme</td><td>13403</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Courrier International</td><td>11693</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Slate</td><td>10665</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Cosmo</td><td>10338</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>L'Humanité</td><td>10230</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Marianne</td><td>7550</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Science et Avenir</td><td>6373</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>France Net Infos</td><td>5048</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Styles</td><td>4899</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Cosmopolitan</td><td>3274</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>L'Informateur</td><td>2429</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>L'Yonne Républicaine</td><td>2420</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Regards</td><td>1562</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Monde Diplomatique</td><td>1536</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>La Montagne</td><td>854</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>La Regeneration</td><td>458</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le JDD</td><td>248</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Paris Match</td><td>176</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Charlie Hebdo</td><td>165</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Science et Santé (Inserm)</td><td>82</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Toufaux</td><td>23</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Le Journal du Pays Basque</td><td>11</td><td></td></tr>
+<tr class="cat_fr1" style="display:none"><td></td><td></td><td>Glamour</td><td>10</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Sport</td><td></td><td>133066</td><td class="corpus-details toggler" data-corpus-cat="fr2"></td></tr>
+<tr class="cat_fr2" style="display:none"><td></td><td></td><td>L'Equipe</td><td>89668</td><td></td></tr>
+<tr class="cat_fr2" style="display:none"><td></td><td></td><td>Sportregions.fr</td><td>33195</td><td></td></tr>
+<tr class="cat_fr2" style="display:none"><td></td><td></td><td>Le Monde</td><td>6939</td><td></td></tr>
+<tr class="cat_fr2" style="display:none"><td></td><td></td><td>Le 10 sport</td><td>1274</td><td></td></tr>
+<tr class="cat_fr2" style="display:none"><td></td><td></td><td>France 24</td><td>1216</td><td></td></tr>
+<tr class="cat_fr2" style="display:none"><td></td><td></td><td>Sport.fr</td><td>774</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Presse féminine</td><td></td><td>35811</td><td class="corpus-details toggler" data-corpus-cat="fr3"></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Grazia</td><td>9484</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Biba</td><td>9212</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Elle</td><td>5653</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Styles</td><td>2620</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Madame Figaro</td><td>2535</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Santé Magazine</td><td>2396</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Cosmopolitan</td><td>1232</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Cosmo</td><td>1103</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Modes et travaux</td><td>815</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Prima</td><td>680</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Minsili mi Zanga</td><td>55</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Horoscope</td><td>24</td><td></td></tr>
+<tr class="cat_fr3" style="display:none"><td></td><td></td><td>Glamour</td><td>2</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Informatique</td><td></td><td>17700</td><td class="corpus-details toggler" data-corpus-cat="fr4"></td></tr>
+<tr class="cat_fr4" style="display:none"><td></td><td></td><td>01Net</td><td>9769</td><td></td></tr>
+<tr class="cat_fr4" style="display:none"><td></td><td></td><td>Le Monde Informatique</td><td>7870</td><td></td></tr>
+<tr class="cat_fr4" style="display:none"><td></td><td></td><td>TIC & Société</td><td>47</td><td></td></tr>
+<tr class="cat_fr4" style="display:none"><td></td><td></td><td>TIC&Société</td><td>14</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Politique</td><td></td><td>16155</td><td class="corpus-details toggler" data-corpus-cat="fr5"></td></tr>
+<tr class="cat_fr5" style="display:none"><td></td><td></td><td>LCP</td><td>11786</td><td></td></tr>
+<tr class="cat_fr5" style="display:none"><td></td><td></td><td>Le JDD</td><td>2766</td><td></td></tr>
+<tr class="cat_fr5" style="display:none"><td></td><td></td><td>Les Echos</td><td>1603</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Industrie</td><td></td><td>14346</td><td class="corpus-details toggler" data-corpus-cat="fr6"></td></tr>
+<tr class="cat_fr6" style="display:none"><td></td><td></td><td>L'Usine Nouvelle</td><td>14346</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Economie</td><td></td><td>10277</td><td class="corpus-details toggler" data-corpus-cat="fr7"></td></tr>
+<tr class="cat_fr7" style="display:none"><td></td><td></td><td>Challenges</td><td>5454</td><td></td></tr>
+<tr class="cat_fr7" style="display:none"><td></td><td></td><td>BFM TV</td><td>2715</td><td></td></tr>
+<tr class="cat_fr7" style="display:none"><td></td><td></td><td>Alternatives économiques</td><td>717</td><td></td></tr>
+<tr class="cat_fr7" style="display:none"><td></td><td></td><td>Le Nouvel Economiste</td><td>649</td><td></td></tr>
+<tr class="cat_fr7" style="display:none"><td></td><td></td><td>Le JDD</td><td>417</td><td></td></tr>
+<tr class="cat_fr7" style="display:none"><td></td><td></td><td>Les Echos</td><td>325</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Nature</td><td></td><td>6538</td><td class="corpus-details toggler" data-corpus-cat="fr8"></td></tr>
+<tr class="cat_fr8" style="display:none"><td></td><td></td><td>Science et Avenir</td><td>6538</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Santé</td><td></td><td>6232</td><td class="corpus-details toggler" data-corpus-cat="fr9"></td></tr>
+<tr class="cat_fr9" style="display:none"><td></td><td></td><td>Science et Avenir</td><td>6232</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Sciences</td><td></td><td>5936</td><td class="corpus-details toggler" data-corpus-cat="fr10"></td></tr>
+<tr class="cat_fr10" style="display:none"><td></td><td></td><td>Futura Sciences</td><td>4666</td><td></td></tr>
+<tr class="cat_fr10" style="display:none"><td></td><td></td><td>Science et Avenir</td><td>1054</td><td></td></tr>
+<tr class="cat_fr10" style="display:none"><td></td><td></td><td>Nature Sciences Société</td><td>142</td><td></td></tr>
+<tr class="cat_fr10" style="display:none"><td></td><td></td><td>Reflets de la physique</td><td>74</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Langue des jeunes</td><td></td><td>4201</td><td class="corpus-details toggler" data-corpus-cat="fr11"></td></tr>
+<tr class="cat_fr11" style="display:none"><td></td><td></td><td>Comment ça marche</td><td>2945</td><td></td></tr>
+<tr class="cat_fr11" style="display:none"><td></td><td></td><td>So foot</td><td>1255</td><td></td></tr>
+<tr class="cat_fr11" style="display:none"><td></td><td></td><td>Le Monde des ados</td><td>1</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>High Tech</td><td></td><td>2766</td><td class="corpus-details toggler" data-corpus-cat="fr12"></td></tr>
+<tr class="cat_fr12" style="display:none"><td></td><td></td><td>Science et Avenir</td><td>2766</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Société</td><td></td><td>1581</td><td class="corpus-details toggler" data-corpus-cat="fr13"></td></tr>
+<tr class="cat_fr13" style="display:none"><td></td><td></td><td>Le JDD</td><td>1549</td><td></td></tr>
+<tr class="cat_fr13" style="display:none"><td></td><td></td><td>Science et Santé (Inserm)</td><td>32</td><td></td></tr>
+
+<tr class="cat_cnt_fr1" style="display:none"><td></td><td>Recherche</td><td></td><td>233</td><td class="corpus-details toggler" data-corpus-cat="fr14"></td></tr>
+<tr class="cat_fr14" style="display:none"><td></td><td></td><td>Science et Santé (Inserm)</td><td>233</td><td></td></tr>
+<tr><td>Algérie</td><td colspan="2"></td><td><b>120112</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_fr2"></td></tr>
+<tr class="cat_cnt_fr2" style="display:none"><td></td><td>Général</td><td></td><td>105915</td><td class="corpus-details toggler" data-corpus-cat="fr15"></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>La Dépêche de Kabylie</td><td>21534</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>DK NEWS</td><td>11987</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Liberté Algérie</td><td>10267</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>L'Expression</td><td>10184</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Reflexion</td><td>7337</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Al Watan</td><td>6830</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>AL HUFFINGTON POST ALGERIE</td><td>6391</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Le Jeune Independant</td><td>5732</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Algérie Presse Service</td><td>5273</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Tribune des lecteurs</td><td>4789</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Dernières Informations d'Algerie</td><td>4153</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Le-Matin</td><td>2558</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Live News Algérie</td><td>2292</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>El Moudjahid</td><td>1564</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Kabyle</td><td>791</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>L'INFORMATION ECONOMIQUE ET FINANCIÈRE EN CONTINU </td><td>661</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Vinyculture</td><td>619</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Kabylie</td><td>603</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>L'actualité</td><td>577</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Dziri</td><td>430</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Algérie Patriotique</td><td>421</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Siwel</td><td>342</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Reporters</td><td>334</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Kabylie news</td><td>99</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Presse Algérie</td><td>73</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Tadukli - le Kabyle Magazine</td><td>59</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Alger info</td><td>11</td><td></td></tr>
+<tr class="cat_fr15" style="display:none"><td></td><td></td><td>Le</td><td>4</td><td></td></tr>
+
+<tr class="cat_cnt_fr2" style="display:none"><td></td><td>Sport</td><td></td><td>12661</td><td class="corpus-details toggler" data-corpus-cat="fr16"></td></tr>
+<tr class="cat_fr16" style="display:none"><td></td><td></td><td>Le buteur</td><td>12651</td><td></td></tr>
+<tr class="cat_fr16" style="display:none"><td></td><td></td><td>Dzair Sports</td><td>10</td><td></td></tr>
+
+<tr class="cat_cnt_fr2" style="display:none"><td></td><td>Presse féminine</td><td></td><td>668</td><td class="corpus-details toggler" data-corpus-cat="fr17"></td></tr>
+<tr class="cat_fr17" style="display:none"><td></td><td></td><td>Dzeriet magazine</td><td>668</td><td></td></tr>
+
+<tr class="cat_cnt_fr2" style="display:none"><td></td><td>High Tech</td><td></td><td>454</td><td class="corpus-details toggler" data-corpus-cat="fr18"></td></tr>
+<tr class="cat_fr18" style="display:none"><td></td><td></td><td>NTIC Web</td><td>297</td><td></td></tr>
+<tr class="cat_fr18" style="display:none"><td></td><td></td><td>Mobile Algérie</td><td>157</td><td></td></tr>
+
+<tr class="cat_cnt_fr2" style="display:none"><td></td><td>Economie</td><td></td><td>414</td><td class="corpus-details toggler" data-corpus-cat="fr19"></td></tr>
+<tr class="cat_fr19" style="display:none"><td></td><td></td><td>DZ Entreprise</td><td>349</td><td></td></tr>
+<tr class="cat_fr19" style="display:none"><td></td><td></td><td>Le Chiffre d'Affaires</td><td>65</td><td></td></tr>
+<tr><td>Canada</td><td colspan="2"></td><td><b>94725</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_fr3"></td></tr>
+<tr class="cat_cnt_fr3" style="display:none"><td></td><td>Général</td><td></td><td>94206</td><td class="corpus-details toggler" data-corpus-cat="fr20"></td></tr>
+<tr class="cat_fr20" style="display:none"><td></td><td></td><td>Le Journal de Québec</td><td>42535</td><td></td></tr>
+<tr class="cat_fr20" style="display:none"><td></td><td></td><td>Le Journal de Montréal</td><td>40256</td><td></td></tr>
+<tr class="cat_fr20" style="display:none"><td></td><td></td><td>La Presse</td><td>11415</td><td></td></tr>
+
+<tr class="cat_cnt_fr3" style="display:none"><td></td><td>Dictionnaire</td><td></td><td>519</td><td class="corpus-details toggler" data-corpus-cat="fr21"></td></tr>
+<tr class="cat_fr21" style="display:none"><td></td><td></td><td>La parlure</td><td>519</td><td></td></tr>
+<tr><td>Sénégal</td><td colspan="2"></td><td><b>57370</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_fr4"></td></tr>
+<tr class="cat_cnt_fr4" style="display:none"><td></td><td>Général</td><td></td><td>55602</td><td class="corpus-details toggler" data-corpus-cat="fr22"></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>APS</td><td>16594</td><td></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>Dakaractu</td><td>13134</td><td></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>Enquête Plus</td><td>7047</td><td></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>Koldanews</td><td>6300</td><td></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>Walfadjri</td><td>5803</td><td></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>Ndarinfo</td><td>4536</td><td></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>Senxibaar</td><td>1419</td><td></td></tr>
+<tr class="cat_fr22" style="display:none"><td></td><td></td><td>Arenbi</td><td>769</td><td></td></tr>
+
+<tr class="cat_cnt_fr4" style="display:none"><td></td><td>Sport</td><td></td><td>1768</td><td class="corpus-details toggler" data-corpus-cat="fr23"></td></tr>
+<tr class="cat_fr23" style="display:none"><td></td><td></td><td>Wiwsport</td><td>1768</td><td></td></tr>
+<tr><td>Belgique Francophone</td><td colspan="2"></td><td><b>53404</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_fr5"></td></tr>
+<tr class="cat_cnt_fr5" style="display:none"><td></td><td>Sport</td><td></td><td>31570</td><td class="corpus-details toggler" data-corpus-cat="fr24"></td></tr>
+<tr class="cat_fr24" style="display:none"><td></td><td></td><td>Radio Télévision Belge Francophone</td><td>19562</td><td></td></tr>
+<tr class="cat_fr24" style="display:none"><td></td><td></td><td>Sport.be</td><td>12008</td><td></td></tr>
+
+<tr class="cat_cnt_fr5" style="display:none"><td></td><td>Général</td><td></td><td>21834</td><td class="corpus-details toggler" data-corpus-cat="fr25"></td></tr>
+<tr class="cat_fr25" style="display:none"><td></td><td></td><td>La Libre Belgique</td><td>21834</td><td></td></tr>
+<tr><td>Maroc</td><td colspan="2"></td><td><b>12040</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_fr6"></td></tr>
+<tr class="cat_cnt_fr6" style="display:none"><td></td><td>Général</td><td></td><td>12040</td><td class="corpus-details toggler" data-corpus-cat="fr26"></td></tr>
+<tr class="cat_fr26" style="display:none"><td></td><td></td><td>JeuneAfrique</td><td>8619</td><td></td></tr>
+<tr class="cat_fr26" style="display:none"><td></td><td></td><td>Le Matin</td><td>3421</td><td></td></tr>
+<tr><td>Ile Maurice</td><td colspan="2"></td><td><b>3673</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_fr7"></td></tr>
+<tr class="cat_cnt_fr7" style="display:none"><td></td><td>Général</td><td></td><td>3673</td><td class="corpus-details toggler" data-corpus-cat="fr27"></td></tr>
+<tr class="cat_fr27" style="display:none"><td></td><td></td><td>Le Mauricien</td><td>3673</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>1592066</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Italien (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Italie</td><td colspan="2"></td><td><b>254840</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_it1"></td></tr>
+<tr class="cat_cnt_it1" style="display:none"><td></td><td>Général</td><td></td><td>254840</td><td class="corpus-details toggler" data-corpus-cat="it1"></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Corriere della Sera</td><td>46647</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Il Giornale</td><td>32354</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>La Repubblica</td><td>28096</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Il Fatto quotidiano</td><td>24649</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Il Secolo XIX</td><td>23311</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Libero quotidiano</td><td>20674</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Il Mattino</td><td>17441</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Il Messaggero</td><td>16740</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>La Stampa</td><td>15249</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Il Foglio</td><td>14857</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Il Tempo</td><td>8598</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>Gazzetta del Sud</td><td>6159</td><td></td></tr>
+<tr class="cat_it1" style="display:none"><td></td><td></td><td>L'Unità</td><td>65</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>256520</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Tchèque (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Rép. Tchèque</td><td colspan="2"></td><td><b>484418</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_cz1"></td></tr>
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Général</td><td></td><td>403904</td><td class="corpus-details toggler" data-corpus-cat="cz1"></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Blesk</td><td>77755</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Aktualne</td><td>52785</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Novinky.cz</td><td>43624</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Hospodarske Noviny</td><td>42266</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>E15</td><td>29673</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Idnes</td><td>26815</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Aha</td><td>22519</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Halo Noviny</td><td>18384</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Ceske Noviny</td><td>15768</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Denik</td><td>14343</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Neviditelny Pes</td><td>10779</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Reflex</td><td>10283</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Blisty</td><td>10047</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Respekt</td><td>6652</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Metro</td><td>3587</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Plzensky denik</td><td>3029</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Benevosky Denik</td><td>2984</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Prahapress</td><td>2394</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Regionalist</td><td>2185</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Karlovarsky denik</td><td>2139</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Azathabar</td><td>1970</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Tol</td><td>1813</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Berounsky Denik</td><td>1812</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>CTK</td><td>152</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Czech Journal</td><td>106</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Narodni Noviny</td><td>28</td><td></td></tr>
+<tr class="cat_cz1" style="display:none"><td></td><td></td><td>Chzech Today</td><td>12</td><td></td></tr>
+
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Sport</td><td></td><td>39580</td><td class="corpus-details toggler" data-corpus-cat="cz2"></td></tr>
+<tr class="cat_cz2" style="display:none"><td></td><td></td><td>Sport.cz</td><td>24902</td><td></td></tr>
+<tr class="cat_cz2" style="display:none"><td></td><td></td><td>Sportovni Noviny</td><td>14678</td><td></td></tr>
+
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Economie</td><td></td><td>15434</td><td class="corpus-details toggler" data-corpus-cat="cz3"></td></tr>
+<tr class="cat_cz3" style="display:none"><td></td><td></td><td>Euro</td><td>15424</td><td></td></tr>
+<tr class="cat_cz3" style="display:none"><td></td><td></td><td>Obozrevatel</td><td>10</td><td></td></tr>
+
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Société</td><td></td><td>13890</td><td class="corpus-details toggler" data-corpus-cat="cz4"></td></tr>
+<tr class="cat_cz4" style="display:none"><td></td><td></td><td>Super.cz</td><td>11020</td><td></td></tr>
+<tr class="cat_cz4" style="display:none"><td></td><td></td><td>Kafe.cz</td><td>2460</td><td></td></tr>
+<tr class="cat_cz4" style="display:none"><td></td><td></td><td>Story</td><td>410</td><td></td></tr>
+
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Presse féminine</td><td></td><td>5615</td><td class="corpus-details toggler" data-corpus-cat="cz5"></td></tr>
+<tr class="cat_cz5" style="display:none"><td></td><td></td><td>Jen pro muze.cz</td><td>5615</td><td></td></tr>
+
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Divertissements</td><td></td><td>3638</td><td class="corpus-details toggler" data-corpus-cat="cz6"></td></tr>
+<tr class="cat_cz6" style="display:none"><td></td><td></td><td>100+1</td><td>3638</td><td></td></tr>
+
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Informatique</td><td></td><td>2328</td><td class="corpus-details toggler" data-corpus-cat="cz7"></td></tr>
+<tr class="cat_cz7" style="display:none"><td></td><td></td><td>Chip</td><td>2328</td><td></td></tr>
+
+<tr class="cat_cnt_cz1" style="display:none"><td></td><td>Santé</td><td></td><td>29</td><td class="corpus-details toggler" data-corpus-cat="cz8"></td></tr>
+<tr class="cat_cz8" style="display:none"><td></td><td></td><td>Zahady Zivota</td><td>29</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>492493</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Russe (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Russie</td><td colspan="2"></td><td><b>1194484</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_ru1"></td></tr>
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Général</td><td></td><td>979552</td><td class="corpus-details toggler" data-corpus-cat="ru1"></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Izvestia</td><td>203577</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>MK</td><td>147706</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Lenta</td><td>116995</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Interfax Vremia</td><td>76851</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>NewsRu</td><td>49383</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>AIF NEWS</td><td>38065</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>DP</td><td>34268</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Novaya Gazeta</td><td>29935</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>RG</td><td>29765</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>AIF</td><td>29625</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Pravda</td><td>29010</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Korrrespondent</td><td>26145</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Wek</td><td>22828</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Nezavisimaja Gazeta</td><td>22355</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Gordon</td><td>21981</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>meduza</td><td>20977</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Stavropol'skaya Pravda</td><td>15685</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Stolica S</td><td>15417</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Vashe Zdorovie</td><td>14278</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Evening Kazan</td><td>13124</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>EG</td><td>7955</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Zelenograd</td><td>4290</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Nevskoe Vremya</td><td>3503</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Chaspik Newspaper</td><td>2572</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Segodnyashnija Gazeta</td><td>1055</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Express Arménie</td><td>854</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Caucasian Review</td><td>502</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Tomskaya Nedelya</td><td>493</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Riga</td><td>199</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>News.ru</td><td>118</td><td></td></tr>
+<tr class="cat_ru1" style="display:none"><td></td><td></td><td>Karavan</td><td>41</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Sport</td><td></td><td>141601</td><td class="corpus-details toggler" data-corpus-cat="ru2"></td></tr>
+<tr class="cat_ru2" style="display:none"><td></td><td></td><td>SovSport</td><td>141601</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Divertissements</td><td></td><td>32097</td><td class="corpus-details toggler" data-corpus-cat="ru3"></td></tr>
+<tr class="cat_ru3" style="display:none"><td></td><td></td><td>Sobesednik</td><td>32097</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Socio-Politique</td><td></td><td>19913</td><td class="corpus-details toggler" data-corpus-cat="ru4"></td></tr>
+<tr class="cat_ru4" style="display:none"><td></td><td></td><td>Ryazanskie Vedomosty</td><td>19913</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Société</td><td></td><td>9396</td><td class="corpus-details toggler" data-corpus-cat="ru5"></td></tr>
+<tr class="cat_ru5" style="display:none"><td></td><td></td><td>Spb Sobaka ru</td><td>9396</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Politique</td><td></td><td>6119</td><td class="corpus-details toggler" data-corpus-cat="ru6"></td></tr>
+<tr class="cat_ru6" style="display:none"><td></td><td></td><td>59.MVD</td><td>6119</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Littérature</td><td></td><td>3435</td><td class="corpus-details toggler" data-corpus-cat="ru7"></td></tr>
+<tr class="cat_ru7" style="display:none"><td></td><td></td><td>Literaturnaya Gazeta</td><td>3435</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Arts</td><td></td><td>1780</td><td class="corpus-details toggler" data-corpus-cat="ru8"></td></tr>
+<tr class="cat_ru8" style="display:none"><td></td><td></td><td>Literaturnaya Gazeta</td><td>1780</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Presse féminine</td><td></td><td>565</td><td class="corpus-details toggler" data-corpus-cat="ru9"></td></tr>
+<tr class="cat_ru9" style="display:none"><td></td><td></td><td>LookBio</td><td>565</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>Informatique</td><td></td><td>16</td><td class="corpus-details toggler" data-corpus-cat="ru10"></td></tr>
+<tr class="cat_ru10" style="display:none"><td></td><td></td><td>Trubka</td><td>16</td><td></td></tr>
+
+<tr class="cat_cnt_ru1" style="display:none"><td></td><td>High Tech</td><td></td><td>10</td><td class="corpus-details toggler" data-corpus-cat="ru11"></td></tr>
+<tr class="cat_ru11" style="display:none"><td></td><td></td><td>Russian Digital</td><td>10</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>1212961</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Portugais du Brésil (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Brésil</td><td colspan="2"></td><td><b>191358</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_br1"></td></tr>
+<tr class="cat_cnt_br1" style="display:none"><td></td><td>Général</td><td></td><td>175987</td><td class="corpus-details toggler" data-corpus-cat="br1"></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Diario da Regiao</td><td>45003</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Anoticia</td><td>34158</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Diario do Grande ABC</td><td>20075</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Veja</td><td>16826</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Folha de S. Paulo</td><td>15070</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Atarde</td><td>8498</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Cruzeiro do sul</td><td>8486</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Época</td><td>7650</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Correio Braziliense</td><td>5908</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>A Voz da Serra</td><td>4320</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>A Razao</td><td>3568</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Diario de Araxa</td><td>2430</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Bastidores do Poder</td><td>1727</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Gazeta de Joinville</td><td>1552</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>A Nova Democracia</td><td>550</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Aliberdade</td><td>139</td><td></td></tr>
+<tr class="cat_br1" style="display:none"><td></td><td></td><td>Agora</td><td>27</td><td></td></tr>
+
+<tr class="cat_cnt_br1" style="display:none"><td></td><td>Economie</td><td></td><td>15371</td><td class="corpus-details toggler" data-corpus-cat="br2"></td></tr>
+<tr class="cat_br2" style="display:none"><td></td><td></td><td>Valor Econômico</td><td>15371</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>206006</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Grec (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Grèce</td><td colspan="2"></td><td><b>570306</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_gr1"></td></tr>
+<tr class="cat_cnt_gr1" style="display:none"><td></td><td>Général</td><td></td><td>544280</td><td class="corpus-details toggler" data-corpus-cat="gr1"></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Voria</td><td>82904</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Taxydromos</td><td>57163</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Stoxos</td><td>49975</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Protothema</td><td>49593</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Madata</td><td>41046</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Tanea</td><td>35022</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Dimokratiki</td><td>30161</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Haniotkia Nea</td><td>29077</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Kathimerini</td><td>25243</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Kosmos Larissa</td><td>22460</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Naftemporiki</td><td>19937</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>To vima</td><td>18224</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>In</td><td>16722</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Statesmen</td><td>14830</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Rizospastis</td><td>12888</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Expresso New</td><td>10089</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>PolisPress</td><td>7557</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Emprosnet</td><td>6391</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Anexartitos</td><td>4532</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Zonews</td><td>3661</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Athens Times</td><td>2644</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>PressTime</td><td>2096</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Chios News</td><td>652</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Pavlos Melas News (PVNews)</td><td>643</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Styx</td><td>495</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Ikypros</td><td>234</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Enet</td><td>15</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Exelixeis</td><td>15</td><td></td></tr>
+<tr class="cat_gr1" style="display:none"><td></td><td></td><td>Pyxida</td><td>11</td><td></td></tr>
+
+<tr class="cat_cnt_gr1" style="display:none"><td></td><td>Politique</td><td></td><td>13732</td><td class="corpus-details toggler" data-corpus-cat="gr2"></td></tr>
+<tr class="cat_gr2" style="display:none"><td></td><td></td><td>Eklogika</td><td>13732</td><td></td></tr>
+
+<tr class="cat_cnt_gr1" style="display:none"><td></td><td>Sport</td><td></td><td>6740</td><td class="corpus-details toggler" data-corpus-cat="gr3"></td></tr>
+<tr class="cat_gr3" style="display:none"><td></td><td></td><td>Pamesports</td><td>6740</td><td></td></tr>
+
+<tr class="cat_cnt_gr1" style="display:none"><td></td><td>Touristique</td><td></td><td>3920</td><td class="corpus-details toggler" data-corpus-cat="gr4"></td></tr>
+<tr class="cat_gr4" style="display:none"><td></td><td></td><td>Travel Daily News</td><td>3920</td><td></td></tr>
+
+<tr class="cat_cnt_gr1" style="display:none"><td></td><td>Finance</td><td></td><td>1634</td><td class="corpus-details toggler" data-corpus-cat="gr5"></td></tr>
+<tr class="cat_gr5" style="display:none"><td></td><td></td><td>Kerdos</td><td>1634</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>570306</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Chinois (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Chine</td><td colspan="2"></td><td><b>377536</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_zh1"></td></tr>
+<tr class="cat_cnt_zh1" style="display:none"><td></td><td>Général</td><td></td><td>377497</td><td class="corpus-details toggler" data-corpus-cat="zh1"></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>Gucheng</td><td>233957</td><td></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>ChinaNews</td><td>56545</td><td></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>Xinhua</td><td>47189</td><td></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>Huanqiu</td><td>39706</td><td></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>Sina</td><td>30</td><td></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>Sohu</td><td>30</td><td></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>Caixin</td><td>20</td><td></td></tr>
+<tr class="cat_zh1" style="display:none"><td></td><td></td><td>Ifeng</td><td>20</td><td></td></tr>
+
+<tr class="cat_cnt_zh1" style="display:none"><td></td><td>Economie</td><td></td><td>39</td><td class="corpus-details toggler" data-corpus-cat="zh2"></td></tr>
+<tr class="cat_zh2" style="display:none"><td></td><td></td><td>Caijing</td><td>39</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>388611</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Allemand (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Allemagne</td><td colspan="2"></td><td><b>42503</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_de1"></td></tr>
+<tr class="cat_cnt_de1" style="display:none"><td></td><td>Général</td><td></td><td>42503</td><td class="corpus-details toggler" data-corpus-cat="de1"></td></tr>
+<tr class="cat_de1" style="display:none"><td></td><td></td><td>Der Spiegel</td><td>16189</td><td></td></tr>
+<tr class="cat_de1" style="display:none"><td></td><td></td><td>Die Welt</td><td>16124</td><td></td></tr>
+<tr class="cat_de1" style="display:none"><td></td><td></td><td>Bild</td><td>10190</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>42503</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Néerlandais (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Pays-Bas</td><td colspan="2"></td><td><b>10849</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_nl1"></td></tr>
+<tr class="cat_cnt_nl1" style="display:none"><td></td><td>Général</td><td></td><td>10849</td><td class="corpus-details toggler" data-corpus-cat="nl1"></td></tr>
+<tr class="cat_nl1" style="display:none"><td></td><td></td><td>De Telegraf</td><td>10760</td><td></td></tr>
+<tr class="cat_nl1" style="display:none"><td></td><td></td><td>Nu.nl</td><td>89</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>10849</b></td></tr></tbody></table><div class="panel-heading"><h4 class="panel-title">Polonais (dernière mise à jour : 2018-09-30 05:10:01)</h4></div><table class="table table-bordered table-hover" id="table_corpus"><thead><tr><th>Pays</th><th>Thématique</th><th>Source</th><th>Nbre articles</th></tr></thead><tbody><tr><td>Pologne</td><td colspan="2"></td><td><b>222089</b></td><td class="corpus-details toggler" data-corpus-cat="cnt_pl1"></td></tr>
+<tr class="cat_cnt_pl1" style="display:none"><td></td><td>Général</td><td></td><td>186821</td><td class="corpus-details toggler" data-corpus-cat="pl1"></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Dziennik</td><td>46073</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Gazeta Prawna</td><td>25852</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>NiedZiela</td><td>14733</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>News Week</td><td>14631</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Tygodnik Zamojski</td><td>13525</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Gazeta olsztynska</td><td>10602</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Zycie</td><td>9561</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Glos WielKopolski</td><td>8340</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Kurier Lubelski</td><td>8197</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Gazeta Pomorska</td><td>7727</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Dziennik Baltycki</td><td>5698</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Nasz Dziennik</td><td>4418</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Nowiny 24</td><td>3443</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Zycie Warszawy</td><td>3084</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Nowa Trybuna Opolska</td><td>2392</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Gazeta Lubuska</td><td>1822</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Tygodnik Ostrolecki</td><td>1666</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>The News</td><td>1659</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Wprost</td><td>1538</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Poluki</td><td>898</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Nowosci</td><td>548</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Express Bydgoski</td><td>244</td><td></td></tr>
+<tr class="cat_pl1" style="display:none"><td></td><td></td><td>Krakowpost</td><td>170</td><td></td></tr>
+
+<tr class="cat_cnt_pl1" style="display:none"><td></td><td>Sport</td><td></td><td>35268</td><td class="corpus-details toggler" data-corpus-cat="pl2"></td></tr>
+<tr class="cat_pl2" style="display:none"><td></td><td></td><td>Przeglad Sport</td><td>35268</td><td></td></tr>
+<tr><td colspan="3" align="left">Total</td><td><b>237063</b></td></tr></tbody></table>
