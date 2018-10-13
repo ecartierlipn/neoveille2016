@@ -32,15 +32,15 @@ a working Mysql Server (5.7+) is required. The mysql database is both used by th
 3. neo3 (database for neology manual linguistic description through front-end)
 
 ## Apache Solr server
-The Apache Solr server is the main storage point and search engine for retrieved and analyzed corpus. Version 5.3.2 is tested. Once installed, you must create the cores for each language. You can use the example configuration files in [resources/apachesolr](resources/apachesolr) for French. A simple copy inside the cores root location (by default in <solr_install_dir>/server/solr) should be enough. restart Solr and check the admin page to see if everuthing is ok. See Apache Solr Installation here : [http://lucene.apache.org/solr/resources.html]. 
+The Apache Solr server is the main storage point and search engine for retrieved and analyzed corpus. Version 5.3.2 is tested. Once installed, you must create the cores for each language. You can use the example configuration files in [resources/apachesolr/](resources/apachesolr/) for French. A simple copy inside the cores root location (by default in <solr_install_dir>/server/solr) should be enough. restart Solr and check the admin page to see if everuthing is ok. See Apache Solr Installation here : [http://lucene.apache.org/solr/resources.html]. 
 
 ## POS Taggers
-a POS tagger must be available for every parsed language. As a default, we use treetagger for every language except Greek and Czech. The default installation is in a subdirectory [backend/formal_neology/pos-taggers], but whatever place you choose, adapt the path in backend/formal_neology/detect_neologisms.py. Check the Treetagger website : [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/].
+a POS tagger must be available for every parsed language. As a default, we use treetagger for every language except Greek and Czech. Wherever you install the parser, adapt the path in [backend/formal_neology/detect_neologisms.py](backend/formal_neology/detect_neologisms.py). Check the Treetagger website : [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/].
 
 Please also note that lang-tagsets are provided in the resources/lang-tagsets directory, to map specific pos tags to a unified one.
 
 ## Hunspell
-Hunspell is installed by default in every Linux and Mac OS distribution. Just take care of dictionary files for every language. Hunspell dictionaries are available in the [resources/hunspell] directory that you can unzip on your installation directory. Check also the parameter location in [backend/formal_neology/detect_neologisms.py].
+Hunspell is installed by default in every Linux and Mac OS distribution. Just take care of dictionary files for every language. Hunspell dictionaries are available in the [resources/hunspell] directory that you can unzip on your installation directory. Check also the parameter location in [backend/formal_neology/detect_neologisms.py](backend/formal_neology/detect_neologisms.py).
 
 ## Python 2.7
 
