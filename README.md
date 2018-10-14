@@ -3,10 +3,10 @@
 This is the main place for Neoveille Technical documentation. 
 Neoveille is a Sorbonne Paris Cité-funded  Research Project from 2015 to 2018. Its main goals are :
 
-1. Develop programs to detect, analyse and track neologisms in big corpora, in seven languages;
-2. Develop a web-based front-end to enable linguists to interact with the main modules : corpus management, neologisms detection results (both formal and semantic neologisms), neologisms manual description and finally analysing neologism lifecycle;
+1. to develop programs to detect, analyse and track neologisms in big monitor corpora, in several languages;
+2. to develop a web-based front-end to enable linguists to interact with the main modules : corpus management, neologisms detection results (both formal and semantic neologisms), neologisms manual description and finally analysing neologism lifecycle;
 
-To obtain more information on the project, please refer to documentation on the website : [www.neoveille.org](www.neoveille.org). The present documentation will focus on technical details.
+To obtain more information on the project, please refer to documentation on the website : [www.neoveille.org](www.neoveille.org). The present documentation will focus on technical details. A more detailed documentation (in French, at the moment) is available here : (/docs/neoveille-web-doc.pdf "Detailled documentation").
 
 This documentation has three main sections :
 
@@ -15,14 +15,14 @@ This documentation has three main sections :
 3. Quick Start
 
 # Architecture of the project
-![Néoveille Architecture](docs/neoveille_archi.png?raw=true "Néoveille Architecture")
+![Néoveille Architecture](/docs/neoveille-archi.png "Néoveille Architecture")
 
 
 # Requirements
 - (for the backend) A Python compiler version >= 2.7 (Python 3+ not tested),
 - A MySql Server, 
 - An Apache Solr server,
-- (for the front-end) a working Apache-Php-Mysql environment.
+- (for the front-end) a working web server (Apache-Php-Mysql).
 
 ## Mysql Database
 a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, create the three databases (rssdata, datatables, neo3), import the mysql scripts (to populate them) contained in resources/mysql subdirectory, to create the three databases: 
@@ -49,12 +49,25 @@ You should install the langdetect Python module from Google code [https://pypi.p
 
 
 
-
 # Installation
 After installing and checking the software above, you just have to clone all the files from the Github repository (here).
 
-See Installation instructions in 
+```github clone https://github.com/ecartierlipn/neoveille2016.git```
+
+Or simply download the whole package.
+
+The frontend subdirectory must be placed inside a web-aware directory of your web server. The others parts can be saved in whatever place that suits your needs. All programs have been tested on Mac OS X and Linux.
+
+See detailed installation instructions in (/docs/neoveille-web-doc.pdf "Detailled documentation").
 
 # References
 Cartier, Emmanuel (2017), Neoveille, a Web Platform for Neologism Tracking, Proceedi ngs of the EACL 2017 Software Demonstrations, Valencia, Spain, April 3-7 2017. [https://www.aclweb.org/anthology/E/E17/E17-3024.pdf]
+
 Cartier, Emmanuel (2018), « Neoveille, plateforme de détection, de repérage et de suivi des néologismes en dix langues », 
+
+
+# Licence
+This software is 
+
+
+# Contact
