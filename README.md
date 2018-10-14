@@ -10,45 +10,56 @@ To obtain more information on the project, please refer to documentation on the 
 
 This documentation has three main sections :
 
-1. Requirements
-2. Installation
-3. Quick Start
+1. Architecture
+2. Requirements
+3. Installation
+4. Quick Start
+
 
 # Architecture of the project
 ![Néoveille Architecture](/docs/neoveille-archi.png "Néoveille Architecture")
 
+******
 
 # Requirements
 - (for the backend) A Python compiler version >= 2.7 (Python 3+ not tested),
 - A MySql Server, 
 - An Apache Solr server,
-- (for the front-end) a working web server (Apache-Php-Mysql).
+- (for the front-end) a working web server (Apache-Php-Mysql),
+- and several javascript librairies (for the frontend).
 
 ## Mysql Database
-a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, create the three databases (rssdata, datatables, neo3), import the mysql scripts (to populate them) contained in resources/mysql subdirectory, to create the three databases: 
+a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, create the three databases (rssdata, datatables, neo3), import the mysql scripts (to populate them) contained in [/resources/mysql] subdirectory, to create the three databases: 
 
-1. rssdata (manage the corpus sources)
-2. datatables (manage the exclusion dictionaries and neologism candidates for each language)
-3. neo3 (database for neology manual linguistic description through front-end)
+1. **rssdata** (manage the corpus sources)
+1. **datatables** (manage the exclusion dictionaries and neologism candidates for each language)
+1. **neo3** (database for neology manual linguistic description through front-end)
 
 ## Apache Solr server
-The Apache Solr server is the main storage point and search engine for retrieved and analyzed corpus. Version 5.3.2 is tested. Once installed, you must create the cores for each language. You can use the example configuration files in [resources/apachesolr/](resources/apachesolr/) for French. A simple copy inside the cores root location (by default in <solr_install_dir>/server/solr) should be enough. restart Solr and check the admin page to see if everuthing is ok. See Apache Solr Installation here : [http://lucene.apache.org/solr/resources.html]. 
+The Apache Solr server is the main storage point and search engine for retrieved and analyzed corpus. Version 5.3.2 is tested. Once installed, you must create the cores for each language. You can use the example configuration files in [/resources/apachesolr/](/resources/apachesolr/) for French. A simple copy inside the cores root location (by default in <solr_install_dir>/server/solr) should be enough. Restart Solr and check the admin page to see if everything is ok. See Apache Solr Installation here : [http://lucene.apache.org/solr/resources.html]. 
 
 ## POS Taggers
 a POS tagger must be available for every parsed language. As a default, we use treetagger for every language except Greek and Czech. Wherever you install the parser, adapt the path in [backend/formal_neology/detect_neologisms.py](backend/formal_neology/detect_neologisms.py). Check the Treetagger website : [http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/].
 
-Please also note that lang-tagsets are provided in the resources/lang-tagsets directory, to map specific pos tags to a unified one.
+Please also note that lang-tagsets are provided in the [/resources/lang-tagsets] directory, to map specific pos tags to a unified one.
 
 ## Hunspell
-Hunspell is installed by default in every Linux and Mac OS distribution. Just take care of dictionary files for every language. Hunspell dictionaries are available in the [resources/hunspell] directory that you can unzip on your installation directory. Check also the parameter location in [backend/formal_neology/detect_neologisms.py](backend/formal_neology/detect_neologisms.py).
+Hunspell is installed by default in every Linux and Mac OS distribution. Just take care of dictionary files for every language. Up-to-date Hunspell dictionaries are available in the [/resources/hunspell] directory that you can unzip on your installation directory. Check also the parameter location in [backend/formal_neology/detect_neologisms.py](backend/formal_neology/detect_neologisms.py).
 
 ## Python 2.7
 
 ##Python dependencies
 You should install the langdetect Python module from Google code [https://pypi.python.org/pypi/langdetect].
 
+## Javascript libraries
 
+### dc.js
+dc.js is a great softawre for generating multidimensional graphs and interacting with them. Check [https://dc-js.github.io/dc.js/]. We have already included this library in the frontend.
 
+### datatable Editor
+You should acquire a license for this software. Check the website : [https://editor.datatables.net/]. You should acquire the php server-side version
+
+******
 # Installation
 After installing and checking the software above, you just have to clone all the files from the Github repository (here).
 
@@ -60,14 +71,14 @@ The frontend subdirectory must be placed inside a web-aware directory of your we
 
 See detailed installation instructions in (/docs/neoveille-web-doc.pdf "Detailled documentation").
 
+******
 # References
-Cartier, Emmanuel (2017), Neoveille, a Web Platform for Neologism Tracking, Proceedi ngs of the EACL 2017 Software Demonstrations, Valencia, Spain, April 3-7 2017. [https://www.aclweb.org/anthology/E/E17/E17-3024.pdf]
+Cartier, Emmanuel (2017), Neoveille, a Web Platform for Neologism Tracking, Proceedings of the EACL 2017, Software Demonstrations, Valencia, Spain, April 3-7 2017. [https://www.aclweb.org/anthology/E/E17/E17-3024.pdf]
 
 Cartier, Emmanuel (2018), « Neoveille, plateforme de détection, de repérage et de suivi des néologismes en dix langues », 
 
-
+******
 # Licence
-This software is 
+This software is distributed within an Apache Licenses 2.0. Check the license file.
 
 
-# Contact
