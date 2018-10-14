@@ -6,7 +6,7 @@ Neoveille is a Sorbonne Paris Cité-funded  Research Project from 2015 to 2018. 
 1. to develop programs to detect, analyse and track neologisms in big monitor corpora, in several languages;
 2. to develop a web-based front-end to enable linguists to interact with the main modules : corpus management, neologisms detection results (both formal and semantic neologisms), neologisms manual description and finally analysing neologism lifecycle;
 
-To obtain more information on the project, please refer to documentation on the website : [www.neoveille.org](www.neoveille.org). The present documentation will focus on technical details. A more detailed documentation (in French, at the moment) is available here [https://github.com/ecartierlipn/neoveille2016/blob/master/docs/neoveille-web-doc.pdf].
+To obtain more information on the project, please refer to documentation on the website : [www.neoveille.org](www.neoveille.org). The present documentation will focus on technical details. A more detailed documentation (in French, at the moment) is available here : (/docs/neoveille-web-doc.pdf "Detailled documentation").
 
 This documentation has three main sections :
 
@@ -49,12 +49,22 @@ You should install the langdetect Python module from Google code [https://pypi.p
 
 
 
-
 # Installation
 After installing and checking the software above, you just have to clone all the files from the Github repository (here).
 
-See Installation instructions in 
+```github clone https://github.com/ecartierlipn/neoveille2016.git```
+The frontend subdirectory must be placed inside a web-aware directory of your web server. The others parts can be saved in whatever place which suits your needs.
+
+See detailed installation instructions in (/docs/neoveille-web-doc.pdf "Detailled documentation").
 
 # References
 Cartier, Emmanuel (2017), Neoveille, a Web Platform for Neologism Tracking, Proceedi ngs of the EACL 2017 Software Demonstrations, Valencia, Spain, April 3-7 2017. [https://www.aclweb.org/anthology/E/E17/E17-3024.pdf]
+
 Cartier, Emmanuel (2018), « Neoveille, plateforme de détection, de repérage et de suivi des néologismes en dix langues », 
+
+
+# Licence
+This software is 
+
+
+# Contact
