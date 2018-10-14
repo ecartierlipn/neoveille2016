@@ -53,7 +53,10 @@ You should install the langdetect Python module from Google code [https://pypi.p
 After installing and checking the software above, you just have to clone all the files from the Github repository (here).
 
 ```github clone https://github.com/ecartierlipn/neoveille2016.git```
-The frontend subdirectory must be placed inside a web-aware directory of your web server. The others parts can be saved in whatever place which suits your needs.
+
+Or simply download the whole package.
+
+The frontend subdirectory must be placed inside a web-aware directory of your web server. The others parts can be saved in whatever place that suits your needs. All programs have been tested on Mac OS X and Linux.
 
 See detailed installation instructions in (/docs/neoveille-web-doc.pdf "Detailled documentation").
 
