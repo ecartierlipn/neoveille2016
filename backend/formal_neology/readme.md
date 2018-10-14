@@ -1,0 +1,10 @@
+This directory contains the main file for detecting neologisms. Several files are provided, one per language (detect_neologisms_<lang>.py, and one is for all languages (detect_neologisms_all.py).
+The .sh file is an example to launcg the programs as a scheduled task (cron job).
+
+Some comments inside the .py files enable to understand the processes implied. Do not forget to change the global parameters (at the beginning of each file) for:
+
+* Treetagger or other POS tagger
+* Hunspell dictionaries
+* Apache Solr web adress
+* Mysql parameters.
+
