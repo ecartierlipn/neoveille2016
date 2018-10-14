@@ -22,7 +22,7 @@ This documentation has three main sections :
 - (for the backend) A Python compiler version >= 2.7 (Python 3+ not tested),
 - A MySql Server, 
 - An Apache Solr server,
-- (for the front-end) a working Apache-Php-Mysql environment.
+- (for the front-end) a working web server (Apache-Php-Mysql).
 
 ## Mysql Database
 a working Mysql Server (5.7+) is required. The mysql database is both used by the backend and front-end programs. After installation, create the three databases (rssdata, datatables, neo3), import the mysql scripts (to populate them) contained in resources/mysql subdirectory, to create the three databases: 
