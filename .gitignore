@@ -1,3 +1,5 @@
 .DS_Store
-frontend/html/html/Editor
 frontend/html/html/Editor/*
+
+# exception to the rule
+!frontend/html/html/Editor/.gitkeep
