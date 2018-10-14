@@ -2,4 +2,4 @@
 frontend/html/html/Editor/*
 
 # exception to the rule
-!frontend/html/html/Editor/.gitkeep
+!frontend/html/html/Editor/readme.md
