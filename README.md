@@ -79,6 +79,6 @@ Cartier, Emmanuel (2018), « Neoveille, plateforme de détection, de repérage e
 
 ******
 # Licence
-This software is distributed within an Apache Licenses 2.0. Check the license file.
+This software is distributed within an Apache License 2.0. Check the license file.
 
 
