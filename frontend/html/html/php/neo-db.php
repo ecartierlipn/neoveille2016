@@ -9,8 +9,8 @@ ini_set('memory_limit','512M');
 include '../credentials.php';
 $sql_details = array(
 	"type" => "Mysql",
-	"user" => "root",
-	"pass" => "neoveille",
+	"user" => $usermysql,//"root",
+	"pass" => $passmysql,//"neoveille",
 	"host" => "localhost",
 	"port" => "3306",
 	"db"   => "neo3",
@@ -20,7 +20,7 @@ $sql_details = array(
 
 $lang='';
 // DataTables PHP library
-include( "lib/DataTables.php" );
+include( "../Editor/php/DataTables.php" );
 if (is_ajax()) {
   if (isset($_GET["lang"]) && !empty($_GET["lang"])) { //Checks if lang value exists
     $lang = $_GET["lang"];

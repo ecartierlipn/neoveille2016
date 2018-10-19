@@ -1,4 +1,7 @@
 <?php
+include 'credentials.php';
+//echo "<script>alert( 'mysql user : ' . $usermysql . ', password : ' . $passmysql );</script>";
+
 error_reporting(E_ALL);
 session_start();
 // check user
@@ -10,15 +13,18 @@ else if(isSet($_GET['action']) && $_GET['action']=='checkemail')
 {
 	checkemail($_GET['email']);
 }
+// login form (only used action at the moment) 
 else if(isSet($_POST['action']) && $_POST['action']=='login')
 {
-	login($_POST['username'],$_POST['password']);
+	login($_POST['username'],$_POST['password'],$usermysql,$passmysql);
 }
 else if (isSet($_POST['action']) && $_POST['action']=='signup')
 {
 	register($_POST['username'],$_POST['password'],$_POST['email'],$_POST['firstname'],$_POST['lastname']);
 }
 
+
+// functions
 function checkuser($name){
     $db = mysqli_connect('localhost','root','neoveille','rssdata');
     if (!$db) {
@@ -72,11 +78,13 @@ function checkemail($name){
 }
 
 
-function login($user,$password){
+function login($user,$password,$usermysql,$passmysql){
 
-	$db = mysqli_connect('localhost','root','neoveille','rssdata');
+	$db = mysqli_connect('localhost',$usermysql,$passmysql,'rssdata');
 	if (!$db) {
-    	echo("Erreur de connexion : " . mysqli_connect_error());
+		echo "<script>alert( 'erreur de connexion : ' . mysqli_connect_error() . '. Contactez l administrateur.' );</script>";
+
+    	//echo("Erreur de connexion : " . mysqli_connect_error());
     	die;
 	}
 	//$q = "SELECT uid, username, user_rights, language FROM users WHERE username='$user' and password='$password'";
@@ -94,16 +102,16 @@ function login($user,$password){
 		$_SESSION['user']=$row['username'];
 		$_SESSION['user_rights']=$row['user_rights'];
 		echo "<script>console.log( 'LANGUAGE  : " . $row['language'] . "' );</script>";
-		$langcode = get_country_code($row['language']);
+		$langcode = get_country_code($row['language'],$usermysql,$passmysql);
 		$_SESSION['language']=$langcode;
 		echo $row['uid'];
 	}
 }
 
 
-function get_country_code($lang){
+function get_country_code($lang,$usermysql,$passmysql){
 
-        $db = mysqli_connect('localhost','root','neoveille','rssdata');
+        $db = mysqli_connect('localhost',$usermysql,$passmysql,'rssdata');
         if (!$db) {
         echo("Erreur de connexion : " . mysqli_connect_error());
         die;

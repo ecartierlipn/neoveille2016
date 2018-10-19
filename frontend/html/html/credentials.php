@@ -1,7 +1,7 @@
 <?php
 $usermysql='root';
-$passmysl='neoveille';
-
+$passmysl='root';
+$passmysql='root';
 
 
 function debug_to_console( $data ) {

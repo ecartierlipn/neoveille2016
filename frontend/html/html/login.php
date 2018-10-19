@@ -214,7 +214,7 @@ td.corpus-details.shown {
             </div>
             <!-- Main Content -->
             <div class="container-fluid">
-	   <!-- search neologisms -->
+	   		<!-- search neologisms -->
                 <div id="neo-search2" style="display:none;" class="side-body"></div>
             <!-- recent neologisms -->
             	<div id="neoval" style="display:none;" class="side-body"></div>
@@ -224,7 +224,7 @@ td.corpus-details.shown {
                 <div id="neovalsynth" style="display:none;" class="side-body"></div>
 
             <!-- presentation generale -->
-            	<div id="presentation-gen" class="side-body">
+            <div id="presentation-gen" class="side-body">
                     <div class="page-title">
                         <span class="title">Présentation</span>
                     </div>
@@ -441,9 +441,10 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
                         </div>
                     </div>
                 </div>
-			<!-- loginbox et signupbox -->
-		        <div id="loginbox" style="display:none;" class="side-body"> 
-        			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+<!-- loginbox et signupbox -->
+<div id="loginbox" style="display:none;" class="side-body"> 
+     <!-- div for login form -->
+     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
                         <div class="panel-title">Connexion</div>
@@ -454,7 +455,8 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
 
                         <div style="display:none" id="login-info" class="info col-sm-12"></div>
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                        <form id="loginform" class="form-horizontal" role="form">
+             			<!-- form for login -->
+             			<form id="loginform" class="form-horizontal" role="form">
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -486,10 +488,11 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
                                     </div>
                                 </div>    
                             </form>     
-                        </div>                     
-                    </div>  
-        </div>
-        			<div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            		</div>                     
+            </div>  
+    </div>
+    <!-- div for signup form -->
+    <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="panel-title">Enregistrement</div>
@@ -506,6 +509,7 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
                                 <div class="form-group">
                                     <label for="username" class="col-md-3 control-label">Nom d'utilisateur</label>
                                     <div class="col-md-9">
+                                    <!-- warning : same id as in loginform for username -->
                                         <input type="text" data-error="Ce nom d'utilisateur est déjà utilisé"  data-remote="ajaxLoginRegister.php?action=checkuser" class="form-control" id="username" name="username" placeholder="Nom d'utilisateur" required>
                                         <div class="help-block with-errors">Minimum de 5 caractères sans espace</div>
                                     </div>
@@ -560,8 +564,9 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
                 
          </div> 
     			</div>
-    		</div>
-        </div>
+	</div>
+</div>
+<!-- footer -->
         <footer class="app-footer">
             <div class="wrapper">
                 <table border="0" width="100%">
@@ -629,8 +634,11 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
             	var languageW = 'fr';
 			$(document).ready(function() {
 			console.log(languageW);
+// login action
 $('#btn-login').click(function()
 			{
+			//console.log($("form#loginform #username").val());
+			//console.log($("form#loginform #password").val());
 			var username=$("form#loginform #username").val();
 			var password=$("form#loginform #password").val();
 		    var dataString = 'username='+username+'&password='+password+'&action=login';
@@ -644,7 +652,7 @@ $('#btn-login').click(function()
             cache: false,
             beforeSend: function(){$("#btn-login").val('Connecting...');},
             success: function(data){
-            //alert(data);
+			//alert(data);
             if(data)
             {
             //alert("ok");

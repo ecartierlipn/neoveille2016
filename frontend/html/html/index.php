@@ -4,7 +4,7 @@ session_start();
 //include './credentials.php';
 $timeout = 1800; // Number of seconds until it times out.
 
-include($_SERVER["DOCUMENT_ROOT"] . '/html/credentials.php');
+include('./credentials.php');
  
 // Check if the timeout field exists.
 if(isset($_SESSION['timeout'])) {
