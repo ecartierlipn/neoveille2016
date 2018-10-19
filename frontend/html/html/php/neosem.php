@@ -67,7 +67,7 @@ function is_ajax() {
 
 
 // DataTables PHP library
-include( "lib/DataTables.php" );
+include( "../Editor/php/DataTables.php" );
 
 
 // Alias Editor classes so they are easy to use

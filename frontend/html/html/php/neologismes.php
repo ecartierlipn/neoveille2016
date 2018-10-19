@@ -17,7 +17,7 @@ $sql_details = array(
 
 
 // DataTables PHP library
-include( "lib/DataTables.php" );
+include( "../Editor/php/DataTables.php" );
 
 
 

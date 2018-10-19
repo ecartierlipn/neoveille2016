@@ -17,7 +17,7 @@ $sql_details = array(
 
 
 // DataTables PHP library
-include( "lib/DataTables.php" );
+include( "../Editor/php/DataTables.php" );
 if (isset($_GET["lang"]) && !empty($_GET["lang"])) { //Checks if lang value exists
     $lang = $_GET["lang"];
  	$table = 'excluded_' . $lang;

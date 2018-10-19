@@ -16,10 +16,11 @@ ini_set('display_errors', '1');
 /*
  * Edit the following with your database connection options
  */
+include '../credentials.php'
 $sql_details = array(
 	"type" => "Mysql",
-	"user" => "root",
-	"pass" => "neoveille",
+	"user" => $usermysql,
+	"pass" => $passmysql,
 	"host" => "localhost",
 	"port" => "3306",
 	"db"   => "rssdata",
@@ -33,7 +34,7 @@ $sql_details = array(
  */
 
 // DataTables PHP library and database connection
-include( "lib/DataTables.php" );
+ include( "../Editor/php/DataTables.php" );
 
 // Alias Editor classes so they are easy to use
 use

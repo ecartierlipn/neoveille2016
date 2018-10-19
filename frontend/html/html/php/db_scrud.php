@@ -1,16 +1,6 @@
 <?php
 error_reporting(E_ALL);
-
-
-
-// one to one relation
-function get_look_up_data(){
-}
-
-
-function get_one_to_many(){
-
-}
+include '../credentials.php'
 
 if (isset($_GET["action"]) && !empty($_GET["action"])) { //Checks if action value exists
     $action = $_GET["action"];
@@ -224,7 +214,7 @@ function get_google_search($expr){
 
 
 function save_to_neo($lang){
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -247,7 +237,7 @@ function save_to_dict_global($lang){
   $return = $_POST;
   $tab1 = 'datatables.dico_termino_' . $lang;
   $tab2 = 'datatables.neologismes_' . $lang;
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -282,7 +272,7 @@ function save_to_dict_global($lang){
 }
 function save_to_dict(){
   $return = $_POST;
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -319,7 +309,7 @@ function save_to_dict(){
 
 function getcorpusinfo(){
   $res="";
-  $conn= mysqli_connect('localhost','root','neoveille','rssdata'); 
+  $conn= mysqli_connect('localhost',$usermysql,$passmysql,'rssdata'); 
   mysqli_set_charset($conn,"utf8");
 	if (!$conn)
 	{
@@ -350,7 +340,7 @@ function getcorpusinfo(){
 
 function getcorpusinfo2($lang){
   $res="";
-  $conn= mysqli_connect('localhost','root','neoveille','rssdata'); 
+  $conn= mysqli_connect('localhost',$usermysql,$passmysql,'rssdata'); 
   mysqli_set_charset($conn,"utf8");
 	if (!$conn)
 	{

@@ -1,4 +1,5 @@
 <?php
+include '../credentials.php';
 session_start();
 error_reporting(E_ALL);
 if (is_ajax()) {
@@ -242,7 +243,7 @@ function get_google_search($expr){
 
 // for all users
 function save_to_neo($lang){
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -260,7 +261,7 @@ function save_to_neo($lang){
 }
 // for current user
 function save_to_neo2($lang,$user){
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -288,7 +289,7 @@ function save_to_dict_global2($lang,$user){
   else{
       $tab2 = 'datatables.neologismes_' . $lang;
   }
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -327,7 +328,7 @@ function save_to_dict_global($lang){
   $return = $_POST;
   $tab1 = 'datatables.dico_termino_' . $lang;
   $tab2 = 'datatables.neologismes_' . $lang;
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -362,7 +363,7 @@ function save_to_dict_global($lang){
 }
 function save_to_dict(){
   $return = $_POST;
-  $connect= mysqli_connect('localhost','root','neoveille','datatables'); 
+  $connect= mysqli_connect('localhost',$usermysql,$passmysql,'datatables'); 
 	if (!$connect)
 	{
 		echo("Can't connect to MySQL Server." . mysqli_connect_error());
@@ -426,7 +427,7 @@ function getcorpusinfo(){
 }
 function getcorpusinfo2($lang){
   $res="";
-  $conn= mysqli_connect('localhost','root','neoveille','rssdata'); 
+  $conn= mysqli_connect('localhost',$usermysql,$passmysql,'rssdata'); 
   mysqli_set_charset($conn,"utf8");
 	if (!$conn)
 	{
@@ -460,7 +461,7 @@ function getcorpusinfo2($lang){
 }
 function getneodbinfo(){
   $res="";
-  $conn= mysqli_connect('localhost','root','neoveille','neo3'); 
+  $conn= mysqli_connect('localhost',$usermysql,$passmysql,'neo3'); 
   mysqli_set_charset($conn,"utf8");
 	if (!$conn)
 	{

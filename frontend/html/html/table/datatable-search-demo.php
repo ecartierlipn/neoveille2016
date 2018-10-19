@@ -112,8 +112,8 @@ session_start();
 <hr/>
 </div>
 </div>
-            <!-- resultats-->
-            <div class="row row-example" id="corpusResultsfr" style="display:none;">
+<!-- resultats-->
+<div class="row row-example" id="corpusResultsfr" style="display:none;">
             							<!-- global results -->
 					<!--<div class="col-xs-12 dc-data-countfr" style = 'float:left;'>
 						<h3>Résultats
@@ -211,7 +211,7 @@ session_start();
                                         </div>
 
 		  		</div>
-            <div class="row row-example" id="corpusResults" style="display:none;">
+  <div class="row row-example" id="corpusResults" style="display:none;">
             							<!-- overall results -->
             							
            							<div class="col-sm-12">
