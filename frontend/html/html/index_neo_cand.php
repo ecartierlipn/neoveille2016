@@ -5,32 +5,40 @@
 
 	<div class="side-body">
     	<div class="page-title">
-        	<span class="title">Gestionnaire des néologismes candidats</span>
+        	<span class="title">Gestionnaire des néologismes candidats
+			</span>
 		</div>
-		<div class="alert alert-warning alert-dismissible" role="alert">
+<!--		<div class="alert alert-warning alert-dismissible" role="alert">
         	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         	<strong>Attention!</strong> Dorénavant les néologismes typés comme tels et envoyés dans la base principale (bouton "sauvegarder les néologismes validés") n'apparaîtront plus ici, mais sont accessibles dans la base principale (Analyse/ suivi des néologismes - base générale), en filtrant les données par lexie ou par auteur.
         </div>
+-->
         <div class="description">
-
+				
 <?php
 #echo $_SESSION['user_rights'];
 if ($_SESSION['user_rights'] == 2){
 ?>
 				<button lang="<?php echo $_SESSION['language'];?>" type="button" onclick="save_to_dict_all(this.lang);" id="validateb" class="btn btn-warning" title="En cliquant, les données validées de tous les utilisateurs seront envoyées dans le dictionnaire d'exclusion, ou dans le dictionnaire de référence, soit mots simples, soit mots à traits d'union. Elles ne seront ensuite plus visible dans les candidats néologismes">Valider les faux néologismes (tous utilisateurs)</button>
 				<button lang="<?php echo $_SESSION['language'];?>" type="button" class="btn btn-warning" onclick="save_to_neo_all(this.lang);" id="validate2b" title="En cliquant, les néologismes validées de tous les utilisateurs seront envoyés dans la base des néologismes">Sauvegarder les néologismes validés (tous utilisateurs)</button>			
-				<br/>
 				<button lang="<?php echo $_SESSION['language'];?>" type="button" onclick="save_to_dict(this.lang);" id="validate" class="btn btn-info" title="En cliquant, les données validées seront envoyées dans le dictionnaire d'exclusion, ou dans le dictionnaire de référence, soit mots simples, soit mots à traits d'union. Elles ne seront ensuite plus visible dans les candidats néologismes">Valider les faux néologismes</button>
 				<button lang="<?php echo $_SESSION['language'];?>" type="button" class="btn btn-info" onclick="save_to_neo(this.lang);" id="validate2" title="En cliquant, les néologismes validées seront envoyés dans la base des néologismes">Sauvegarder les néologismes validés</button>			
+        		<a href="neologismes-cand-help.png" target="new"><button type="button" class="btn btn-success">Aide sur l'interface</button></a>
+        		<a href="typologie-neologismes.png" target="new2"><button type="button" class="btn btn-success">Typologie des néologismes</button></a>		
+
 <?php
 }
 elseif ($_SESSION['user_rights'] == 1){
 ?>
 				<button lang="<?php echo $_SESSION['language'];?>" type="button" onclick="save_to_dict(this.lang);" id="validate" class="btn btn-info" title="En cliquant, les données validées seront envoyées dans le dictionnaire d'exclusion, ou dans le dictionnaire de référence, soit mots simples, soit mots à traits d'union. Elles ne seront ensuite plus visible dans les candidats néologismes">Valider les faux néologismes</button>
 				<button lang="<?php echo $_SESSION['language'];?>" type="button" class="btn btn-info" onclick="save_to_neo(this.lang);" id="validate2" title="En cliquant, les néologismes validées seront envoyés dans la base des néologismes">Sauvegarder les néologismes validés</button>			
+        		<a href="neologismes-cand-help.png" target="new"><button type="button" class="btn btn-success">Aide sur l'interface</button></a>
+        		<a href="typologie-neologismes.png" target="new2"><button type="button" class="btn btn-success">Typologie des néologismes</button></a>		
+
 <?php
 }
 ?>
+<hr/>
 
           <!-- choix langue -->
            <h5>Choisissez une langue : 
