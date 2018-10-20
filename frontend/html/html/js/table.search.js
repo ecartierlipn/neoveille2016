@@ -1,44 +1,35 @@
 jQuery.support.cors = true;
 
+
+
+// button search
 $('#searchbtn').on('click', function () {
 		console.log('search btn clicked');
 		$("#resneg").hide();
 		$('#progress').show();
-		//$("#searchbtn").replaceWith('<button class="btn btn-info" id="searchbtn"><i class="fa fa-circle-o-notch fa-spin"></i> Recherche en cours...</button>');
-
 		req = $('input#req').val();
 		lang2 = $('select#langsearch').val();
 		max = $('select#limitres').val();
 		console.log(req);
 		console.log(lang2);
-		//$('#corpusResultssearch').show()
-//		resdiv = $('#corpusResults'+ lang2);
 		resdiv = $('#corpusResults');
-		//resdiv.removeClass('shown');
 		resdiv.hide();
-            get_neologism_stat(lang2, req, max, function(data)
-            {
-        	    //resdiv.addClass('shown');
-        	    //resdiv.addClass('stat_res');
-        	    console.log("Data " + data);
-            	if (typeof data == 'number'){
-            		if (data == 0){
-						$("#progress").hide();
-						$("#resneg").show();
-//					    $("#corpusResults" + lang2).show();            		
-            		}
-            		else{
-	//				    $('#corpusResults'+ lang2).clone().appendTo('.stat_res td');
-						//$("#searchbtn").replaceWith('<button type="button" class="btn btn-info" id="searchbtn">Rechercher</button>');
-//					    $("#corpusResults" + lang2).show();
-						$('#progress').hide();
-					    $("#corpusResults").show();
-					}
+        get_neologism_stat(lang2, req, max, function(data)
+        {
+        	console.log("Data " + data);
+            if (typeof data == 'number'){
+            	if (data == 0){
+					$("#progress").hide();
+					$("#resneg").show();
+            	}
+            	else{
+					$('#progress').hide();
+					$("#corpusResults").show();
 				}
-        	    
-            }
-            );
-    } );
+			}    
+        }
+        );
+} );
 
 //  term search
 $('#termbtn').on('click', function () {
@@ -199,36 +190,23 @@ function get_terms_from_seq(lang,neo, max, callback)
 // ajax call to retrieve from apache solr the json data for the given language and given neologism 4/11/2016
 function get_neologism_stat(lang,neo, max, callback) 
 {
-		//alert(d.lexie)
 		if (max=='all'){max=1000;}
 		var langues = {'es':'rss_spanish','de':'rss_german','nl':"rss_netherlands",'it':"rss_italian",'fr':"rss_french", 'pl':"RSS_polish", 'br':'RSS_brasilian', 'ch':'RSS_chinese', 'ru':'RSS_russian', 'cz':'RSS_czech', 'gr':'RSS_greek'};
 		console.log("get_neologism_stat : " + langues[lang] + " : " + neo);
         var request= $.ajax({
-//        url:'http://tal.lipn.univ-paris13.fr/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
         url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[lang] + '/select',
-//        data:{  "q":'dateS:* AND neologismes:"' +neo.lexie+ '"',
-//        data:{  "q":'"' +neo.lexie+ '"',
         data:{  q: '"' +neo + '"',
         		rows:max,
-        		//fl:"dateS,source,link,subject,subject2, neologismes, country, contents",
         		"wt":"json",
-        		//"df":"contents",
         		"indent":"false",
-        		//"hl":"true",
-        		//"hl.fl":"*",
-        		//"hl.simple.pre":'<span style="background-color: #FFFF00">',
-        		//"hl.simple.post":"</span>"
         		},
         dataType: "jsonp",
         jsonp:'json.wrf',
         type:'POST',
         async:false,
         success: function( result) {
-        	console.log(JSON.stringify(result));
+        	//console.log(JSON.stringify(result));
             docsdata =result.response.docs;/// main results
-           // highlight = result.highlighting;
-            //alert(highlight)
-//            alert(docsdata);
             num = result.response.numFound;
             console.log(num)
             if (num == 0){
@@ -646,20 +624,28 @@ var dataTableDC = dc.dataTable("#dc-table-chart"+lang);
     //console.log(dataTableDC);
 
 function highlight(text, neo){
-	
-	var regexp = new RegExp( "(.{0,70})(" + neo.toString() + ")(.{0,70})", 'gi');
-	console.log(text);
-	console.log(typeof text);
-	console.log(regexp);
-	console.log(typeof regexp)
+	var neo2 = neo.split(' ').join('.{0,5}');
+	//console.log("Neo : " + neo2);
+	//text = text.replace(regex, '.\\{0,5\\}'));
+	var regexp = new RegExp( "(.{0,70})(" + neo2.toString() + ")(.{0,70})", 'gi');
+	//console.log(text);
+	//console.log(typeof text);
+	//console.log(regexp);
+	//console.log(typeof regexp)
 	var res = text.match(regexp);
 	match = regexp.exec(text);
 	var res = ''
-	while (match != null){
-		res = res + "<br/>..." + match[1] + "<mark>" + match[2] + "</mark>" + match[3] + "...";
-		match = regexp.exec(text);
+	if (match == null)
+	{
+		res = "Aucun résultat exact&nbsp;"
 	}
-	console.log(res);
+	else{
+		while (match != null){
+			res = res + "<br/>..." + match[1] + "<mark>" + match[2] + "</mark>" + match[3] + "...";
+			match = regexp.exec(text);
+		}
+	}
+	//console.log(res);
 	return res;
 }    
     
