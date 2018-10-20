@@ -77,17 +77,14 @@ function checkemail($name){
 	}
 }
 
-
+// check $user and $password exist in database/table and put info in global session variable
 function login($user,$password,$usermysql,$passmysql){
 
 	$db = mysqli_connect('localhost',$usermysql,$passmysql,'rssdata');
 	if (!$db) {
 		echo "<script>alert( 'erreur de connexion : ' . mysqli_connect_error() . '. Contactez l administrateur.' );</script>";
-
-    	//echo("Erreur de connexion : " . mysqli_connect_error());
     	die;
 	}
-	//$q = "SELECT uid, username, user_rights, language FROM users WHERE username='$user' and password='$password'";
 	$q = "SELECT uid, username, user_rights, language FROM users WHERE username='$user' and password='$password'";
 	$result=mysqli_query($db,$q);
 	if ( false===$result ) {
@@ -108,7 +105,7 @@ function login($user,$password,$usermysql,$passmysql){
 	}
 }
 
-
+// retrieve country code and return it to calling function
 function get_country_code($lang,$usermysql,$passmysql){
 
         $db = mysqli_connect('localhost',$usermysql,$passmysql,'rssdata');
@@ -117,7 +114,6 @@ function get_country_code($lang,$usermysql,$passmysql){
         die;
         }
         $q = "SELECT CODE_LANGUE FROM RSS_LANGUE WHERE ID_LANGUE='$lang'";
-        //$q = "SELECT uid, username, user_rights, language FROM users WHERE username='$user' and password='$password'";
         $result=mysqli_query($db,$q);
         if ( false===$result ) {
                 printf("error: %s\n", mysqli_error($db));

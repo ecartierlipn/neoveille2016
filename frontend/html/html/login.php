@@ -637,44 +637,40 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
 // login action
 $('#btn-login').click(function()
 			{
-			//console.log($("form#loginform #username").val());
-			//console.log($("form#loginform #password").val());
+			// retrieve username and password from form
 			var username=$("form#loginform #username").val();
 			var password=$("form#loginform #password").val();
 		    var dataString = 'username='+username+'&password='+password+'&action=login';
-		    //alert(dataString);
+		    //if username and password "exists", ajax call to ajaxLoginRegister to check validity
 			if($.trim(username).length>0 && $.trim(password).length>0)
 			{
-			$.ajax({
-            type: "POST",
-            url: "ajaxLoginRegister.php",
-            data: dataString,
-            cache: false,
-            beforeSend: function(){$("#btn-login").val('Connecting...');},
-            success: function(data){
-			//alert(data);
-            if(data)
-            {
-            //alert("ok");
-            window.location = "index.php"
-//            $("body").load("../index.php").hide().fadeIn(1500).delay(6000);
-            }
-            else
-            {
-            //	alert ("No data");
-             /*$('#box').shake();*/
-             $("#login-info").show();
-			 $("#login-info").html('<div class="alert fresh-color alert-danger" role="alert">Utilisateur ou mot de passe invalide</div>');
-            }
-            }
-            });
+				$.ajax({
+	            	type: "POST",
+    	        	url: "ajaxLoginRegister.php",
+        	    	data: dataString,
+            		cache: false,
+            		beforeSend: function(){$("#btn-login").val('Connecting...');},
+            		success: function(data){
+						// data returned => go to main internal page
+            			if(data)
+            			{
+			            	window.location = "index.php"
+		            	}
+		            	// no data returned => return to login-form and tell what happened
+        		    	else
+            			{
+			            	$("#login-info").show();
+						 	$("#login-info").html('<div class="alert fresh-color alert-danger" role="alert">Utilisateur ou mot de passe invalide</div>');
+            			}
+            		}
+            	});
 			
 			}
 			return false;
 			});
 			
 			
-			
+// signup (desactivated)	
 $('#signup').click(function()
 			{
 			var username=$("form#signupform #username").val();
@@ -712,7 +708,8 @@ $('#signup').click(function()
 			}
 			return false;
 			});		
-			
+
+// Néologismes récents	
 $('#neoval').click(function()
 			{
 					//alert($("#container-fluid").html());
@@ -732,6 +729,7 @@ $('#neoval').click(function()
     				});
 });
 
+// Néologismes validés
 $('#neovaldemo').click(function()
 			{
 					//alert($("#container-fluid").html());
@@ -751,21 +749,20 @@ $('#neovaldemo').click(function()
     				});
 });
 
+// recherche
 $('#neo-search2').click(function()
                         {
-                                        //alert($("#container-fluid").html());
-                                        jQuery('div#signupbox').hide(); 
-                                        jQuery('div#loginbox').hide();
-                                        jQuery('div#presentation-gen').hide();
-                                        jQuery('div#neoval').hide();
-                                        jQuery('div#neovaldemo').hide();
+                    //alert($("#container-fluid").html());
+                    jQuery('div#signupbox').hide(); 
+                    jQuery('div#loginbox').hide();
+                    jQuery('div#presentation-gen').hide();
+                    jQuery('div#neoval').hide();
+                    jQuery('div#neovaldemo').hide();
 					jQuery('div#neovalsynth').hide();
 					jQuery('div#neo-search2').show();
 					var languageW ='fr';
                         $("div#neo-search2").load("table/datatable-search-demo.php",function(responseTxt, statusTxt, xhr)
                         {
-                                //if(statusTxt == "success")
-                                //alert("External content loaded successfully!");
                                 if(statusTxt == "error")
                                 alert("Error: " + xhr.status + ": " + xhr.statusText);
                                 });

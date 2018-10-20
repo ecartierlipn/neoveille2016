@@ -624,20 +624,36 @@ var dataTableDC = dc.dataTable("#dc-table-chart"+lang);
     //console.log(dataTableDC);
 
 function highlight(text, neo){
-	var neo2 = neo.split(' ').join('.{0,5}');
-	//console.log("Neo : " + neo2);
+//	if (neo.match(" "){
+	neo = neo.split(' ').join('.{0,3}');
+	//var neo2 = neo.split(' ').join('.{0,3}');
+	console.log("Neo : " + neo);
 	//text = text.replace(regex, '.\\{0,5\\}'));
-	var regexp = new RegExp( "(.{0,70})(" + neo2.toString() + ")(.{0,70})", 'gi');
+	var regexp = new RegExp( "(.{0,70})(" + neo.toString() + ")(.{0,70})", 'gi');
 	//console.log(text);
 	//console.log(typeof text);
 	//console.log(regexp);
 	//console.log(typeof regexp)
-	var res = text.match(regexp);
+	//var res = text.match(regexp);
 	match = regexp.exec(text);
 	var res = ''
 	if (match == null)
 	{
-		res = "Aucun résultat exact&nbsp;"
+		neo3 = neo.substring(0, neo.length - 2);
+		var regexp = new RegExp( "(.{0,70})(" + neo3.toString() + ")(.{0,70})", 'gi');
+		//var res = text.match(regexp);
+		match = regexp.exec(text);
+		var res = ''
+		if (match == null)
+		{
+			res = "Aucun résultat exact&nbsp;"
+		}
+		else{
+			while (match != null){
+				res = res + "<br/>..." + match[1] + "<mark>" + match[2] + "</mark>" + match[3] + "...";
+				match = regexp.exec(text);
+			}
+		}
 	}
 	else{
 		while (match != null){

@@ -162,12 +162,11 @@ $('#example tbody').on('click', 'td.details-control2', function () {
 /// highlight from apache solr
 function formatajax(d,callback) 
 {
-		//alert(d.lexie)
 		if (editor.lang == undefined){editor.lang='fr';}
 		var restable='';
 		var langues = {'it':"rss_italian",'fr':"rss_french", 'pl':"RSS_polish", 'br':'RSS_brasilian', 'ch':'RSS_chinese', 'ru':'RSS_russian', 'cz':'RSS_czech', 'gr':'RSS_greek'};
+        // Ajax request to Apache Solr collection
         var request= $.ajax({
-//        url:'http://tal.lipn.univ-paris13.fr/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
         url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[editor.lang] + '/select',
         data:{  q: 'contents:"'+d.lexie+'"~2',
         		rows:20,
@@ -183,6 +182,7 @@ function formatajax(d,callback)
         jsonp:'json.wrf',
         type:'GET',
         async:false,
+        // retrieve results and build html structure with data
         success: function( result) {
             data = result.highlighting;
             meta = result.response;
@@ -191,29 +191,17 @@ function formatajax(d,callback)
             for (var key in data) 
             {
                 var resultRE = key.match(/^.{30}/);
-//                var resultRE = key.match(/^.+\.(pl|com|fr|org|net)/);
                 tbody += '<tr><td><a title="Voir la source" href="' + key + '" target="source">' + resultRE[0]+ '...</a></td><td>';
                 var cts = data[key].contents;
                 for (var extr in cts)
                 {
                 	tbody += "..." + cts[extr] +'...<br/>' ;
                 }
-                //alert(JSON.stringify(data)); 
                 tbody += '</td></tr>';
-                //$.each(data, function (i, d) {
-            	//   tbody += d[i].contents +'<br/>' ;
-            	 //  });
-
             tbody += '</td></tr>';
-
-
             }
-             //   $.each(data, function (i, d) {
-            //	   tbody += d.contents +'<br/>' ;
-            //	   });
-
-           // tbody += '</td></tr>';
             restable = '<table width="100%">' + thead + tbody + '</table>';
+            // return result
             callback(restable);
     	},
         error: function (request) {
@@ -222,7 +210,6 @@ function formatajax(d,callback)
             callback(restable)
         }
     });
-	//return restable;
 }
 
 
