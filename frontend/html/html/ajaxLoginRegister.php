@@ -156,8 +156,8 @@ function send_mail($email,$message,$subject){
   $mail->Host       = "smtp.gmail.com";      
   $mail->Port       = 465;             
   $mail->AddAddress($email);
-  $mail->Username="ecartierdijon@gmail.com";  
-  $mail->Password="dijon200";            
+  $mail->Username="YOUR EMAIL";  
+  $mail->Password="YOUR PASSWORD";            
   $mail->SetFrom('admin@neoveille.org','Néoveille');
   $mail->AddReplyTo("admin@neoveille.org","Néoveille");
   $mail->Subject    = $subject;

@@ -631,9 +631,8 @@ Cartier E. (2018). « Emprunts en français contemporain : étude linguistique e
 
             <!-- Javascript -->
             	<script>
-            	var languageW = 'fr';
 			$(document).ready(function() {
-			console.log(languageW);
+
 // login action
 $('#btn-login').click(function()
 			{
