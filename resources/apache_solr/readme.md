@@ -1,4 +1,4 @@
-#Apache Solr examples of configuration files
+# Apache Solr examples of configuration files
 
 This directory contains illustrative configurations for your corpus collections in Apache Solr. You can use them as examples. One zip file ```solr_collection_example.solr5.3.rss_french.zip``` works with Apache Solr 5.x and the other one   ```solr_collection_example.solr7.5.rss_english.zip ``` for Apache Solr 7.5+.
 
