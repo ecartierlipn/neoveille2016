@@ -22,7 +22,8 @@ You can also rename the folder name. In this cas, please change the name attribu
 
 To restart the Apache Solr server, if your installation is standard, just emit :
 
-```<apache solr installation path>/bin/solr restart
+```
+<apache solr installation path>/bin/solr restart
 ```
 
 
