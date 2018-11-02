@@ -3,15 +3,16 @@
 This directory contains illustrative configurations for your corpus collections in Apache Solr. You can use them as examples. One zip file ```solr_collection_example.solr5.3.rss_french.zip``` works with Apache Solr 5.x and the other one   ```solr_collection_example.solr7.5.rss_english.zip ``` for Apache Solr 7.5+.
 
 ## Installation
-You just need to unzip the files into the collection directory of your Apache Solr installation ```<solr installation directory>/server/solr```. 
-From here just type (Linux) (Solr 5.x):
+You just need to unzip the files into the collection directory of your Apache Solr installation ```<solr installation directory>/server/solr```.  Copy the zip files in this directory and just type (on Linux) (Solr 5.x):
 
 
 ```
 tar -xzvf solr_collection_example.solr5.3.rss_french.zip
 ```
 It will create a subdirectory ``` rss_french ``` which will be available after restarting the Apache server.
-or (Solr 7.5+):
+
+
+For (Solr 7.5+):
 ```
 tar -xzvf solr_collection_example.solr7.5.rss_english.zip
 ```
