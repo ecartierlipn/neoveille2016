@@ -1,6 +1,8 @@
+#Apache Solr examples of configuration files
+
 This directory contains illustrative configurations for your corpus collections in Apache Solr. You can use them as examples. One zip file ```solr_collection_example.solr5.3.rss_french.zip``` works with Apache Solr 5.x and the other one   ```solr_collection_example.solr7.5.rss_english.zip ``` for Apache Solr 7.5+.
 
-# Installation
+## Installation
 You just need to unzip the files into the collection directory of your Apache Solr installation ```<solr installation directory>/server/solr```. 
 From here just type (Linux) (Solr 5.x):
 
@@ -15,7 +17,7 @@ tar -xzvf solr_collection_example.solr7.5.rss_english.zip
 ```
 It will create a subdirectory ``` rss_english ``` which will be available after restarting the Apache server.
 
-# Schema.xml
+## Schema.xml
 
 The default configuration file is ``` <rss_english|rss_french>/conf/schema.xml ```. In this file, you define the fields for every item of information (article or more generally a text in Néoveille parlance). Here is an example (from Apache Solr 7.5 example file)
 ```
@@ -47,5 +49,5 @@ The default configuration file is ``` <rss_english|rss_french>/conf/schema.xml `
 
 Please note that you have to tune the type of the fields for title, description and contents, depending on the language you work on. Apache Solr has some examples for a bunch of languages in schema Solr. The ```text_ws``` field type is just splitting the input data by the white space.
 
-# References
+## References
 Please go to Apache Solr for additional information : https://lucene.apache.org/solr/guide/7_5/index.html.
