@@ -45,7 +45,7 @@ The default configuration file is ``` <rss_english|rss_french>/conf/schema.xml `
   <field name="oov" type="text_ws" indexed="true" stored="true"/><!-- Out of vocabulary tokens (from Linguistic analysis) -->
 ```
 
-Please note that you have to tune the type of the fields for title, description and contents, depending on the language you work on. Apache Solr has some exemples for a bunch of languages in schema Solr. The ```text_ws``` field type is just splitting the input data by the white space.
+Please note that you have to tune the type of the fields for title, description and contents, depending on the language you work on. Apache Solr has some examples for a bunch of languages in schema Solr. The ```text_ws``` field type is just splitting the input data by the white space.
 
 # References
 Please go to Apache Solr for additional information : https://lucene.apache.org/solr/guide/7_5/index.html.
