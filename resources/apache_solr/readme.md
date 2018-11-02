@@ -18,6 +18,14 @@ tar -xzvf solr_collection_example.solr7.5.rss_english.zip
 ```
 It will create a subdirectory ``` rss_english ``` which will be available after restarting the Apache server.
 
+You can also rename the folder name. In this cas, please change the name attribute in the ```<apache solr installation path>/server/solr/<new folder name>/core.properties``` file.
+
+To restart the Apache Solr server, if your installation is standard, just emit :
+
+```<apache solr installation path>/bin/solr restart
+```
+
+
 ## Schema.xml
 
 The default configuration file is ``` <rss_english|rss_french>/conf/schema.xml ```. In this file, you define the fields for every item of information (article or more generally a text in Néoveille parlance). Here is an example (from Apache Solr 7.5 example file)
