@@ -77,7 +77,7 @@ dictionary=
 Once these settings are OK, you can run the main program ```python corpus_crawl_and_analysis.py <configuration_file>```, for example for English :
 
 ```
-python corpus_crawl_and_analysis.py lib/settings.en.ini
+python corpus_crawl_and_analysis.py config/settings.en.ini
 ```
 
 
