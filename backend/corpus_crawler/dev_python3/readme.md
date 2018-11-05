@@ -84,3 +84,4 @@ This program will retrieve the RSS web sources defined in the Mysql table rssdat
 
 If you like this program to retrieve corpora on a regular basis, please install it as a cron task.
 
+**Attention** :  for this program to work, you must have a running Apache Solr server, a running Mysql Server, and if you have chosen the Spacy or spacy+hunspell linguistic pipeline, a running Spacy server (you can launch it with lib/spacy_server.py <lang_iso>).
