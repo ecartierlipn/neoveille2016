@@ -1,8 +1,8 @@
 .DS_Store
 frontend/html/html/Editor/*
-log/*
-tobeindexed/*
-webcrawl/
+log
+tobeindexed
+webcrawl
 *.pickle
 # exception to the rule
 !frontend/html/html/Editor/readme.md
