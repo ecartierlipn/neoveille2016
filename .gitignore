@@ -1,7 +1,7 @@
 .DS_Store
 frontend/html/html/Editor/*
-log/
-tobeindexed/
+log/*
+tobeindexed/*
 webcrawl/
 # exception to the rule
 !frontend/html/html/Editor/readme.md
