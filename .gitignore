@@ -2,6 +2,7 @@
 frontend/html/html/Editor/*
 log/
 *.log
+*.pyc
 tobeindexed/
 webcrawl/
 __pycache__/
