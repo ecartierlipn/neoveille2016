@@ -3,6 +3,7 @@ frontend/html/html/Editor/*
 log/
 tobeindexed/
 webcrawl/
+__pycache__/
 *.pickle
 *.dump
 # exception to the rule
