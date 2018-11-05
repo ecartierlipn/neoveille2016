@@ -1,0 +1,12 @@
+feedparser==5.2.1
+pysolr==3.8.1
+jusText==2.2.0
+requests==2.18.4
+polyglot==16.7.4
+chardet==3.0.4
+spacy==2.0.11
+editdistance==0.5.2
+langdetect==1.0.7
+Flask==0.12.2
+beautifulsoup4==4.6.3
+mysql_connector_repackaged==0.3.1

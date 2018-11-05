@@ -1,2 +1,0 @@
-/Library/Python/2.7/site-packages/bs4/__init__.py:182: UserWarning: "." looks like a filename, not markup. You should probably open this file and pass the filehandle into Beautiful Soup.
-  '"%s" looks like a filename, not markup. You should probably open this file and pass the filehandle into Beautiful Soup.' % markup)
