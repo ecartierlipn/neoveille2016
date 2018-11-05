@@ -82,3 +82,5 @@ python corpus_crawl_and_analysis.py config/settings.en.ini
 
 This program will retrieve the RSS web sources defined in the Mysql table rssdata.RSS_INFO for the given language, retrieve for each item the metadata contained in the RSS feed, retrieve the whole web article, boiler-plate it (with Justext), analyse the textual parts linguistically (depending on the ling_pipeline parameter in the config file), and store the results (the annotated article and its metadata) in Apache Solr (in the collection defined in the config file : SOLR.solr_collection), and store the candidate neologisms in Mysql (database defined in the config file : MYSQL.db_neo). It also generates a log file in a log subdirectory (automatically created).
 
+If you like this program to retrieve corpora on a regular basis, please install it as a cron task.
+
