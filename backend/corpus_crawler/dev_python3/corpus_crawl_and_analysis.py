@@ -380,7 +380,7 @@ if __name__ == '__main__':
     
     # logger
     FORMAT = "%(levelname)s:%(asctime)s:%(message)s[%(filename)s:%(lineno)s - %(funcName)s()]"
-    logging.basicConfig(format=FORMAT, datefmt='%m/%d/%Y %I:%M:%S %p', filename="./log/corpus_crawl_and_analysis_" + configfile + ".log", filemode='w', level=logging.INFO)
+    logging.basicConfig(format=FORMAT, datefmt='%m/%d/%Y %I:%M:%S %p', filename="./log/corpus_crawl_and_analysis_" + os.path.basename(configfile) + ".log", filemode='w', level=logging.INFO)
     log = logging.getLogger(__name__)
     # to log also on the console. Desactivate in production
     stream_handler = logging.StreamHandler()
