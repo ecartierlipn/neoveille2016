@@ -4,6 +4,7 @@ log/
 tobeindexed/
 webcrawl/
 __pycache__/
+hunspell-dicos/
 *.pickle
 *.dump
 # exception to the rule
