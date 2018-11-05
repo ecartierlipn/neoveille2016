@@ -5,3 +5,4 @@ tobeindexed/
 webcrawl/
 # exception to the rule
 !frontend/html/html/Editor/readme.md
+!.gitignore
