@@ -44,6 +44,7 @@ elseif ($_SESSION['user_rights'] == 1){
            <h5>Choisissez une langue : 
 			<select name="lang" id="lang" class="lang">
 			<option value="de" <?php if ($_SESSION['language']== 'de'){echo 'selected';}?>>Allemand</option>
+			<option value="en" <?php if ($_SESSION['language']== 'en'){echo 'selected';}?>>Anglais</option>
       			<option value="ch" <?php if ($_SESSION['language']== 'ch'){echo 'selected';}?>>Chinois</option>
 			<option value="es" <?php if ($_SESSION['language']== 'es'){echo 'selected';}?>>Espagnol</option>
       			<option value="fr" <?php if ($_SESSION['language']== 'fr'){echo 'selected';}?>>Français</option>

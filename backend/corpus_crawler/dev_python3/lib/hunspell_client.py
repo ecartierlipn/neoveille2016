@@ -10,6 +10,7 @@
 import subprocess
 import re
 import logging
+log = logging.getLogger(__name__)
 import editdistance
 from shlex import quote
 
@@ -24,6 +25,7 @@ hunspell_dico['gr']='/opt/nlp_tools/dictionaries/el_GR/el_GR'
 hunspell_dico['cs']='/opt/nlp_tools/dictionaries/cs_CS/cs_CS'
 hunspell_dico['en']='/Users/emmanuelcartier/Desktop/GitHub/neoveille/neoveille-dev/resources/hunspell/hunspell-dicos/anglais/en_US'
 hunspell_dico['nl']='/Users/emmanuelcartier/Desktop/GitHub/neoveille/neoveille-dev/resources/hunspell/hunspell-dicos/pays-bas/nl_NL'
+
 
 def hunspell_check_text(s,lang):
         ''' This function deals with a text and return the candidate neologisms. 
@@ -41,8 +43,7 @@ def hunspell_check_text(s,lang):
         + commencer
         & commencear 3 0: commencera, commencer, commencement
         '''
-        log = logging.getLogger(__name__)
-        cmd = 'echo "' + s + '" | hunspell -i UTF-8 --check-apostrophe -d ' + hunspell_dico[lang]
+        cmd = 'echo "' + s + '" | hunspell -i UTF-8 --check-apostrophe -d ' + lang
         log.info("Input : " + s + "\n")
         try:
                 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -51,18 +52,20 @@ def hunspell_check_text(s,lang):
                 if result:
                         print(result.decode("utf-8"))
                         lines = re.split("\n", result.decode("utf-8"))
-                        res = []
+                        res = {}
                         for l2 in lines[1:-2]:
                                 l = l2.rstrip()
                                 if l[0] in ('*','+') and re.search(r"-",s):
                                         log.info("Compound word : " + l + "\n")
+                                        res[l]="Hunspell : compound word"
                                         #res.append((l[2:],"Compound word"))
-                                if l[0] in ('*','+'):
+                                elif l[0] in ('*','+'):
                                         log.info("Simple word : " + l + "\n")
                                         #res.append((l[2:],"Existing word"))
                                 elif l[0] in ('#'):
                                         log.info("Unknwon word, no suggestion : " + l + "\n")
-                                        res.append((l[2:],"No suggestion"))
+                                        res[l[2:]]="Hunspell : no suggestion"
+                                        #res.append((l[2:],"No suggestion"))
                                 elif l[0] == '&':
                                         m = re.search(r"^& (.+?) ([0-9]+) [0-9]+: (.+)$", l,re.UNICODE)
                                         if (m):
@@ -72,19 +75,22 @@ def hunspell_check_text(s,lang):
                                                 print (str(dist),m.group(1),sugg[0])
                                                 if dist<2:
                                                         log.info(m.group(1) + "Possible typo with : "+sugg[0])
+                                                        res[m.group(1)]= "Hunspell : possible typo with : "+m.group(3)
                                                         #res.append((m.group(1),"Possible typo with : "+sugg[0]))
                                                 else:
-                                                        res.append((m.group(1),"Neologism"))
+                                                        res[m.group(1)]= "Hunspell : (distance > 2) - possible typo with : "+m.group(3)                                                        
+                                                        #res.append((m.group(1),"Neologism"))
                                         else:
+                                                res[l]="Hunspell : no suggestion"                                                
                                                 res.append((l,"Neologism"))                                                
-                        return(True,res)# finally return results
+                        return res# finally return results
 
                 else:
                         log.warning(str(err) + "\n")
-                        return (False, str(err))
+                        return False
         except subprocess.CalledProcessError as e: # to be done : catch the actual error
                 log.warning(str(e) + "\n")
-                return (False,str(e))
+                return False
 
 
 def hunspell_check_word(s,lang):
@@ -101,7 +107,7 @@ def hunspell_check_word(s,lang):
         + commencer
         & commencear 3 0: commencera, commencer, commencement
         '''
-        cmd = "echo '" + s + "' | hunspell -i UTF-8 --check-apostrophe -d " + hunspell_dico[lang]
+        cmd = "echo '" + s + "' | hunspell -i UTF-8 --check-apostrophe -d " + lang
         log.info("Input : " + s + "\n")
         try:
                 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -148,13 +154,17 @@ def hunspell_check_word(s,lang):
 
 
 
-FORMAT = "%(levelname)s:%(asctime)s:%(message)s[%(filename)s:%(lineno)s - %(funcName)s()]"
-logging.basicConfig(format=FORMAT, datefmt='%m/%d/%Y %I:%M:%S %p', filename="./hunspell.log", filemode='w', level=logging.INFO)
-log = logging.getLogger(__name__)
-(res,info)=hunspell_check_word("toto", "fr")
-log.info(str(res) +"," + info + "\n")
-print(res , info)
 
-(res,info)=hunspell_check_text("tot, c\'est-à-dire cet après-midi, est adminstraté jusqu\'aux bout djfkq fjsf à la maison", "fr")
-log.info(str(res) +"," + str(info) + "\n")
-print(res , info)
+
+if __name__ == "__main__":
+        FORMAT = "%(levelname)s:%(asctime)s:%(message)s[%(filename)s:%(lineno)s - %(funcName)s()]"
+        logging.basicConfig(format=FORMAT, datefmt='%m/%d/%Y %I:%M:%S %p', filename="./hunspell.log", filemode='w', level=logging.INFO)
+        log = logging.getLogger(__name__)
+        
+        (res,info)=hunspell_check_word("toto", hunspell_dico["fr"])
+        log.info(str(res) +"," + info + "\n")
+        print(res , info)
+
+        (res,info)=hunspell_check_text("tot, c\'est-à-dire cet après-midi, est adminstraté jusqu\'aux bout djfkq fjsf à la maison", hunspell_dico["fr"])
+        log.info(str(res) +"," + str(info) + "\n")
+        print(res , info)

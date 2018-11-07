@@ -129,6 +129,8 @@ class rssfeeds(corpus):
         log.info("Retrieving rss feeds from list : ")
         rss= self.feedlist
         log.info(str(len(rss)) + " rss feeds")
+        # neologisms (for hunspell and database save)
+        neologisms = {}
         for url in rss:
             log.info("Retrieving feeds for :" + url)
             #print ("Retrieving feeds for :" + url)
@@ -207,10 +209,9 @@ class rssfeeds(corpus):
                                 "\nAutomatic detection says : [" + langd + "] whereas expected language is " +
                                 str(lang_detect) + "\nSkipping analysis for this document and deleting it from database.")
                     continue
-
                 # now ling_pipeline
                 # spacy (en, fr, de, es,pt, nl)
-                if self.ling_config['type']=='spacy':
+                if self.ling_config['type']=='spacy' or self.ling_config['type']=='spacy+hunspell':
                     # linguistic analysis {'tokens': tokens},{'lemmapos': lemmapos},{'oov': oov},{'ne': entities}
                     ling_analysis = get_nlp(ling_config['spacy_server'], row['contents'])
                     if ling_analysis:
@@ -218,17 +219,14 @@ class rssfeeds(corpus):
                         row['lemmapos'] = " ".join(ling_analysis[1]['lemmapos'])
                         row['lemmapos_dps'] = " ".join(ling_analysis[2]['lemmapos_dps'])
                         row['oov'] = " ".join(ling_analysis[3]['oov'])
-                        row['ne_dps'] = " ".join(ling_analysis[4]['ne_dps'])
-                # polyglot : other languages
-                elif self.ling_config['type']=='polyglot':
-                    ling_analysis = get_polyglot(row['contents'])
-                    if ling_analysis:
-                        #print(type(ling_analysis[0]['tokens']))
-                        #print(ling_analysis[0]['tokens'])
-                        row['tokens'] = " ".join(ling_analysis[0]['tokens'])
-                        row['lemmapos'] = " ".join(ling_analysis[1]['lemmapos'])
-                        row['lemmapos_dps'] = " ".join(ling_analysis[2]['lemmapos_dps'])
-                        row['oov'] = " ".join(ling_analysis[3]['oov'])
+                        
+                        # dict of neologisms : add url of source document
+                        log.info("OOV : " + str(ling_analysis[3]['oov']))
+                        if len(ling_analysis[3]['oov'])>0:
+                            for neo in ling_analysis[3]['oov']:
+                                log.info("Current neologism : " + str(neo) + " : " + row['link'])
+                                #neologisms.get(neo,[]).append(row['link'])
+                                neologisms.setdefault(neo, []).append(row['link'])
                         row['ne_dps'] = " ".join(ling_analysis[4]['ne_dps'])
                 # hunspell : deprecated
                 elif self.ling_config['type']=='hunspell':
@@ -240,8 +238,10 @@ class rssfeeds(corpus):
                         #row['lemmapos'] = " ".join(ling_analysis[1]['lemmapos'])
                         #row['lemmapos_dps'] = " ".join(ling_analysis[2]['lemmapos_dps'])
                         row['oov'] = " ".join(ling_analysis[3]['oov'])
-                        #row['ne_dps'] = " ".join(ling_analysis[4]['ne_dps'])
-                    
+                        # dict of neologisms : add url of source document
+                        for neo in ling_analysis[3]['oov']:
+                            neologisms[neo]= neologisms.get(neo,[]).append(row['link'])
+                        #row['ne_dps'] = " ".join(ling_analysis[4]['ne_dps'])                    
                     
                 res.append(row)
                 #saved_urls[e['link']]=1 # sauvegarde des urls analysees
@@ -251,15 +251,28 @@ class rssfeeds(corpus):
             if save==True:
                 save_rsscorpus_to_DB(res,self.lang_iso) # save links for next retrieval "already indexed"
                 update_to_SOLR(res) # save to Solr
-                neos=[]
-                for row in res:
-                    if len(row['oov'])>0:
-                        #print(row['oov'])
-                        neos.extend(row['oov'].split(" "))
-                
-                log.info("Neologisms detected : " + str(neos))
-                #exit()
+        # neologisms
+        # TBD : add info with neologism to saved data
+        # hunspell check 
+        log.info("All rss feeds processed. Processing neologisms.")
+        if re.search('hunspell',self.ling_config['type']) and len(neologisms)>0:
+            log.info("Neologisms after spacy : " + str(len(neologisms)) + " : " + str(neologisms.keys()))
+            neos = hunspell_check_text(" ".join(neologisms.keys()),ling_config['hunspell'])
+            if len(neos.keys())>0:
+                log.info("Neologisms after hunspell : " + str(len(neos.keys())) + " : " + str(neos))                        
                 add_neologisms_to_db(neos,self.lang_iso.upper()) # save neologisms to database table for the given language
+                # TDB                        
+                #add_neologisms_contexts_to_db(neos,self.lang_iso.upper()) # save neologisms to database table for the given language
+                
+        else:  
+            neos=[]
+            for row in res:
+                if 'oov' in row and len(row['oov'])>0:
+                    #print(row['oov'])
+                    neos.extend(row['oov'].split(" "))
+            log.info("Neologisms detected : " + str(neos))
+            #exit()
+            add_neologisms_to_db(neos,self.lang_iso.upper()) # save neologisms to database table for the given language
 
 
 ################## utility functions 
@@ -313,6 +326,38 @@ def save_rsscorpus_to_DB(res,lang_iso):
     finally:
         cursor.close()
         conn.close()
+
+
+
+
+def add_neologisms2_to_db(neolist,lang):
+    """ add neologisms + info to database for web interface validation """
+    log.info("Saving neologisms to database")
+    proc_name = 'ADD_NEOLOGISM_' + lang 
+    try:
+        conn = mysql.connector.connect(host=mysqlhost,
+                                       database=mysqldb_neo,
+                                       user=mysqluser,
+                                       password=mysqlpassword,
+                                       autocommit=True)
+        if conn.is_connected():
+            for neo in neolist:
+                #print(neo)
+                args=[neo, 1, neolist[neo], 0]
+                cursor = conn.cursor()
+                results = cursor.callproc(proc_name, args)
+                log.info(str(results )+ "\n")
+                cursor.close()
+
+    except Error as e:
+        log.warning(e)
+        return False
+
+    finally:
+        conn.close()
+        return True
+
+
 
 
 
@@ -384,7 +429,7 @@ if __name__ == '__main__':
     log = logging.getLogger(__name__)
     # to log also on the console. Desactivate in production
     stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.DEBUG)
+    stream_handler.setLevel(logging.INFO)
     log.addHandler(stream_handler)    
     
 
@@ -445,15 +490,47 @@ if __name__ == '__main__':
             else:
                 log.info("Spacy server check OK.")
                 #print ('Spacy server check OK.')
+    # SPACY+HUNSPELL
+    elif ling_pipeline == 'spacy+hunspell':
+        ling_config['type']='spacy+hunspell'
+        ling_config['spacy_server']=config['SPACY']['spacy_server']
+        ling_config['model']=config['SPACY']['model']
+        ling_config['token_tags']=[x.strip() for x in config['SPACY']['token_tags'].split(',')]
+        ling_config['hunspell']=config['HUNSPELL']['dictionary']
+        ling_config['word_filter']=config['HUNSPELL']['word_filter']
+        from lib.spacy_client import get_nlp,check_server, check_model
+        from lib.hunspell_client import *
+        # check hunspell dictionaries are ok
+        if not(os.path.isfile(ling_config['hunspell'] + '.dic')) or not(os.path.isfile(ling_config['hunspell'] + '.aff')):
+            log.error("Your path to hunspell dictionaries (" + ling_config['hunspell'] + ") is incorrect!. Please check it. Exiting.")
+            exit()
+        else:
+            log.info("Hunspell dictionaries checked!")
+        # check spacy server is running
+        res = check_server(ling_config['spacy_server'])
+        if res is False:
+            log.error("Spacy server (lib/spacy_server.py <iso_lang>) is not running. Please launch it before running this file. Exiting.")
+            #print("Spacy server (lib/spacy_server.py) is not running. Please launch it before running this file. Exiting.")
+            exit()
+        else:
+            # check model
+            res = check_model(ling_config['spacy_server'],lang_iso)
+            if res is False:
+                log.error("Spacy server model not corresponding to language [" + lang_iso + "]. Launch it again (lib/spacy_server.py <iso_lang>) with the current language. Exiting.")
+                #print("Spacy server model not corresponding to language" + lang_iso + ". Launch it again (lib/spacy_server.py <iso_lang>) with the current language. Exiting.")
+                exit()
+            else:
+                log.info("Spacy server check OK.")
+                #print ('Spacy server check OK.')
+
+
     #elif ling_pipeline =='hunspell':
     #    import mosestokenizer
     #    import pyspellchecker # require loading frequency list
     #    ling_config['type']='hunspell'
     #    ling_config['dictionary']=config['HUNSPELL']['dictionary']        
-    elif ling_pipeline =='polyglot':
-        from lib import polyglot_client
-        ling_config['type']='polyglot'
-        ling_config['tasks']=[x.strip() for x in config['POLYGLOT']['tasks'].split(',')]
+
+
     else:
         log.error("No linguistic pipeline defined. Please define it in the configuration file and rerun!")
         #print(ling_pipeline)
