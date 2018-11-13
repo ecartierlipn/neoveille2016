@@ -1,0 +1,908 @@
+country,subject,source,dateS,count
+Allemagne,Général,Der Spiegel,2017-11-12,30
+Allemagne,Général,Der Spiegel,2017-11-13,72
+Allemagne,Général,Der Spiegel,2017-11-14,82
+Allemagne,Général,Der Spiegel,2017-11-15,83
+Allemagne,Général,Der Spiegel,2017-11-16,60
+Allemagne,Général,Der Spiegel,2017-11-17,90
+Allemagne,Général,Der Spiegel,2017-11-18,70
+Allemagne,Général,Der Spiegel,2017-11-19,63
+Allemagne,Général,Der Spiegel,2017-11-20,83
+Allemagne,Général,Der Spiegel,2017-11-21,60
+Allemagne,Général,Der Spiegel,2017-11-22,60
+Allemagne,Général,Der Spiegel,2017-11-23,90
+Allemagne,Général,Der Spiegel,2017-11-24,58
+Allemagne,Général,Der Spiegel,2017-11-25,82
+Allemagne,Général,Der Spiegel,2017-11-26,76
+Allemagne,Général,Der Spiegel,2017-11-27,82
+Allemagne,Général,Der Spiegel,2017-11-28,82
+Allemagne,Général,Der Spiegel,2017-11-29,86
+Allemagne,Général,Der Spiegel,2017-11-30,86
+Allemagne,Général,Der Spiegel,2017-12-01,76
+Allemagne,Général,Der Spiegel,2017-12-02,73
+Allemagne,Général,Der Spiegel,2017-12-03,65
+Allemagne,Général,Der Spiegel,2017-12-04,85
+Allemagne,Général,Der Spiegel,2017-12-05,90
+Allemagne,Général,Der Spiegel,2017-12-06,84
+Allemagne,Général,Der Spiegel,2017-12-07,90
+Allemagne,Général,Der Spiegel,2017-12-08,60
+Allemagne,Général,Der Spiegel,2017-12-09,55
+Allemagne,Général,Der Spiegel,2017-12-10,71
+Allemagne,Général,Der Spiegel,2017-12-11,81
+Allemagne,Général,Der Spiegel,2017-12-12,85
+Allemagne,Général,Der Spiegel,2017-12-13,23
+Allemagne,Général,Der Spiegel,2017-12-15,30
+Allemagne,Général,Der Spiegel,2017-12-16,67
+Allemagne,Général,Der Spiegel,2017-12-17,74
+Allemagne,Général,Der Spiegel,2017-12-18,85
+Allemagne,Général,Der Spiegel,2017-12-19,57
+Allemagne,Général,Der Spiegel,2017-12-20,87
+Allemagne,Général,Der Spiegel,2017-12-21,90
+Allemagne,Général,Der Spiegel,2017-12-22,80
+Allemagne,Général,Der Spiegel,2017-12-23,61
+Allemagne,Général,Der Spiegel,2017-12-24,51
+Allemagne,Général,Der Spiegel,2017-12-25,49
+Allemagne,Général,Der Spiegel,2017-12-26,41
+Allemagne,Général,Der Spiegel,2017-12-27,76
+Allemagne,Général,Der Spiegel,2017-12-28,85
+Allemagne,Général,Der Spiegel,2017-12-29,77
+Allemagne,Général,Der Spiegel,2017-12-30,61
+Allemagne,Général,Der Spiegel,2017-12-31,62
+Allemagne,Général,Der Spiegel,2018-01-01,47
+Allemagne,Général,Der Spiegel,2018-01-02,85
+Allemagne,Général,Der Spiegel,2018-01-03,86
+Allemagne,Général,Der Spiegel,2018-01-04,89
+Allemagne,Général,Der Spiegel,2018-01-05,89
+Allemagne,Général,Der Spiegel,2018-01-06,69
+Allemagne,Général,Der Spiegel,2018-01-07,71
+Allemagne,Général,Der Spiegel,2018-01-08,81
+Allemagne,Général,Der Spiegel,2018-01-09,83
+Allemagne,Général,Der Spiegel,2018-01-10,87
+Allemagne,Général,Der Spiegel,2018-01-11,90
+Allemagne,Général,Der Spiegel,2018-01-12,82
+Allemagne,Général,Der Spiegel,2018-01-13,63
+Allemagne,Général,Der Spiegel,2018-01-14,70
+Allemagne,Général,Der Spiegel,2018-01-15,85
+Allemagne,Général,Der Spiegel,2018-01-16,88
+Allemagne,Général,Der Spiegel,2018-01-17,83
+Allemagne,Général,Der Spiegel,2018-01-18,89
+Allemagne,Général,Der Spiegel,2018-01-19,83
+Allemagne,Général,Der Spiegel,2018-01-20,75
+Allemagne,Général,Der Spiegel,2018-01-21,71
+Allemagne,Général,Der Spiegel,2018-01-22,80
+Allemagne,Général,Der Spiegel,2018-01-23,55
+Allemagne,Général,Der Spiegel,2018-01-24,81
+Allemagne,Général,Der Spiegel,2018-01-25,89
+Allemagne,Général,Der Spiegel,2018-01-26,90
+Allemagne,Général,Der Spiegel,2018-01-27,69
+Allemagne,Général,Der Spiegel,2018-01-28,67
+Allemagne,Général,Der Spiegel,2018-01-29,84
+Allemagne,Général,Der Spiegel,2018-01-30,78
+Allemagne,Général,Der Spiegel,2018-01-31,84
+Allemagne,Général,Der Spiegel,2018-02-01,87
+Allemagne,Général,Der Spiegel,2018-02-02,82
+Allemagne,Général,Der Spiegel,2018-02-03,66
+Allemagne,Général,Der Spiegel,2018-02-04,64
+Allemagne,Général,Der Spiegel,2018-02-05,76
+Allemagne,Général,Der Spiegel,2018-02-06,90
+Allemagne,Général,Der Spiegel,2018-02-07,86
+Allemagne,Général,Der Spiegel,2018-02-08,90
+Allemagne,Général,Der Spiegel,2018-02-09,83
+Allemagne,Général,Der Spiegel,2018-02-10,69
+Allemagne,Général,Der Spiegel,2018-02-11,63
+Allemagne,Général,Der Spiegel,2018-02-12,81
+Allemagne,Général,Der Spiegel,2018-02-13,90
+Allemagne,Général,Der Spiegel,2018-02-14,89
+Allemagne,Général,Der Spiegel,2018-02-15,90
+Allemagne,Général,Der Spiegel,2018-02-16,90
+Allemagne,Général,Der Spiegel,2018-02-17,81
+Allemagne,Général,Der Spiegel,2018-02-18,77
+Allemagne,Général,Der Spiegel,2018-02-19,87
+Allemagne,Général,Der Spiegel,2018-02-20,89
+Allemagne,Général,Der Spiegel,2018-02-21,90
+Allemagne,Général,Der Spiegel,2018-02-22,88
+Allemagne,Général,Der Spiegel,2018-02-23,90
+Allemagne,Général,Der Spiegel,2018-02-24,75
+Allemagne,Général,Der Spiegel,2018-02-25,80
+Allemagne,Général,Der Spiegel,2018-02-26,84
+Allemagne,Général,Der Spiegel,2018-02-27,85
+Allemagne,Général,Der Spiegel,2018-02-28,89
+Allemagne,Général,Der Spiegel,2018-03-01,88
+Allemagne,Général,Der Spiegel,2018-03-02,77
+Allemagne,Général,Der Spiegel,2018-03-03,45
+Allemagne,Général,Der Spiegel,2018-03-04,62
+Allemagne,Général,Der Spiegel,2018-03-05,86
+Allemagne,Général,Der Spiegel,2018-03-06,90
+Allemagne,Général,Der Spiegel,2018-03-07,88
+Allemagne,Général,Der Spiegel,2018-03-08,90
+Allemagne,Général,Der Spiegel,2018-03-09,90
+Allemagne,Général,Der Spiegel,2018-03-10,76
+Allemagne,Général,Der Spiegel,2018-03-11,70
+Allemagne,Général,Der Spiegel,2018-03-12,82
+Allemagne,Général,Der Spiegel,2018-03-13,89
+Allemagne,Général,Der Spiegel,2018-03-14,89
+Allemagne,Général,Der Spiegel,2018-03-15,90
+Allemagne,Général,Der Spiegel,2018-03-16,90
+Allemagne,Général,Der Spiegel,2018-03-17,77
+Allemagne,Général,Der Spiegel,2018-03-18,54
+Allemagne,Général,Der Spiegel,2018-03-19,90
+Allemagne,Général,Der Spiegel,2018-03-20,90
+Allemagne,Général,Der Spiegel,2018-03-21,89
+Allemagne,Général,Der Spiegel,2018-03-22,90
+Allemagne,Général,Der Spiegel,2018-03-23,89
+Allemagne,Général,Der Spiegel,2018-03-24,78
+Allemagne,Général,Der Spiegel,2018-03-25,56
+Allemagne,Général,Der Spiegel,2018-03-26,73
+Allemagne,Général,Der Spiegel,2018-03-27,84
+Allemagne,Général,Der Spiegel,2018-03-28,52
+Allemagne,Général,Der Spiegel,2018-03-29,30
+Allemagne,Général,Der Spiegel,2018-03-30,73
+Allemagne,Général,Der Spiegel,2018-03-31,72
+Allemagne,Général,Der Spiegel,2018-04-01,65
+Allemagne,Général,Der Spiegel,2018-04-02,60
+Allemagne,Général,Der Spiegel,2018-04-03,85
+Allemagne,Général,Der Spiegel,2018-04-04,88
+Allemagne,Général,Der Spiegel,2018-04-05,90
+Allemagne,Général,Der Spiegel,2018-04-06,89
+Allemagne,Général,Der Spiegel,2018-04-07,69
+Allemagne,Général,Der Spiegel,2018-04-08,59
+Allemagne,Général,Der Spiegel,2018-04-09,87
+Allemagne,Général,Der Spiegel,2018-04-10,82
+Allemagne,Général,Der Spiegel,2018-04-11,90
+Allemagne,Général,Der Spiegel,2018-04-12,60
+Allemagne,Général,Der Spiegel,2018-04-13,60
+Allemagne,Général,Der Spiegel,2018-04-14,42
+Allemagne,Général,Der Spiegel,2018-04-15,21
+Allemagne,Général,Der Spiegel,2018-04-16,30
+Allemagne,Général,Der Spiegel,2018-04-17,30
+Allemagne,Général,Der Spiegel,2018-04-18,30
+Allemagne,Général,Der Spiegel,2018-04-19,30
+Allemagne,Général,Der Spiegel,2018-04-20,30
+Allemagne,Général,Der Spiegel,2018-04-21,30
+Allemagne,Général,Der Spiegel,2018-04-22,30
+Allemagne,Général,Der Spiegel,2018-04-23,30
+Allemagne,Général,Der Spiegel,2018-04-25,30
+Allemagne,Général,Der Spiegel,2018-04-26,30
+Allemagne,Général,Der Spiegel,2018-04-27,30
+Allemagne,Général,Der Spiegel,2018-04-28,30
+Allemagne,Général,Der Spiegel,2018-04-29,30
+Allemagne,Général,Der Spiegel,2018-04-30,30
+Allemagne,Général,Der Spiegel,2018-05-01,30
+Allemagne,Général,Der Spiegel,2018-05-02,30
+Allemagne,Général,Der Spiegel,2018-05-03,30
+Allemagne,Général,Der Spiegel,2018-05-04,30
+Allemagne,Général,Der Spiegel,2018-05-05,30
+Allemagne,Général,Der Spiegel,2018-05-06,30
+Allemagne,Général,Der Spiegel,2018-05-07,30
+Allemagne,Général,Der Spiegel,2018-05-08,30
+Allemagne,Général,Der Spiegel,2018-05-09,30
+Allemagne,Général,Der Spiegel,2018-05-10,30
+Allemagne,Général,Der Spiegel,2018-05-11,30
+Allemagne,Général,Der Spiegel,2018-05-12,30
+Allemagne,Général,Der Spiegel,2018-05-13,30
+Allemagne,Général,Der Spiegel,2018-05-14,30
+Allemagne,Général,Der Spiegel,2018-05-15,30
+Allemagne,Général,Der Spiegel,2018-05-16,30
+Allemagne,Général,Der Spiegel,2018-05-17,30
+Allemagne,Général,Der Spiegel,2018-05-18,30
+Allemagne,Général,Der Spiegel,2018-05-19,30
+Allemagne,Général,Der Spiegel,2018-05-20,30
+Allemagne,Général,Der Spiegel,2018-05-21,30
+Allemagne,Général,Der Spiegel,2018-05-22,30
+Allemagne,Général,Der Spiegel,2018-05-23,30
+Allemagne,Général,Der Spiegel,2018-05-24,30
+Allemagne,Général,Der Spiegel,2018-05-26,30
+Allemagne,Général,Der Spiegel,2018-05-27,30
+Allemagne,Général,Der Spiegel,2018-05-28,29
+Allemagne,Général,Der Spiegel,2018-05-29,30
+Allemagne,Général,Der Spiegel,2018-05-30,30
+Allemagne,Général,Der Spiegel,2018-05-31,30
+Allemagne,Général,Der Spiegel,2018-06-01,30
+Allemagne,Général,Der Spiegel,2018-06-02,30
+Allemagne,Général,Der Spiegel,2018-06-03,29
+Allemagne,Général,Der Spiegel,2018-06-04,30
+Allemagne,Général,Der Spiegel,2018-06-05,30
+Allemagne,Général,Der Spiegel,2018-06-06,30
+Allemagne,Général,Der Spiegel,2018-06-07,30
+Allemagne,Général,Der Spiegel,2018-06-08,30
+Allemagne,Général,Der Spiegel,2018-06-09,30
+Allemagne,Général,Der Spiegel,2018-06-10,30
+Allemagne,Général,Der Spiegel,2018-06-11,30
+Allemagne,Général,Der Spiegel,2018-06-12,30
+Allemagne,Général,Der Spiegel,2018-06-13,30
+Allemagne,Général,Der Spiegel,2018-06-14,30
+Allemagne,Général,Der Spiegel,2018-06-15,30
+Allemagne,Général,Der Spiegel,2018-06-16,29
+Allemagne,Général,Der Spiegel,2018-06-17,30
+Allemagne,Général,Der Spiegel,2018-06-18,30
+Allemagne,Général,Der Spiegel,2018-06-19,30
+Allemagne,Général,Der Spiegel,2018-06-20,29
+Allemagne,Général,Der Spiegel,2018-06-21,30
+Allemagne,Général,Der Spiegel,2018-06-22,30
+Allemagne,Général,Der Spiegel,2018-06-23,30
+Allemagne,Général,Der Spiegel,2018-06-24,30
+Allemagne,Général,Der Spiegel,2018-06-25,30
+Allemagne,Général,Der Spiegel,2018-06-26,30
+Allemagne,Général,Der Spiegel,2018-06-27,30
+Allemagne,Général,Der Spiegel,2018-06-28,30
+Allemagne,Général,Der Spiegel,2018-06-29,30
+Allemagne,Général,Der Spiegel,2018-06-30,30
+Allemagne,Général,Der Spiegel,2018-07-01,30
+Allemagne,Général,Der Spiegel,2018-07-07,30
+Allemagne,Général,Der Spiegel,2018-07-08,30
+Allemagne,Général,Der Spiegel,2018-07-09,29
+Allemagne,Général,Der Spiegel,2018-07-12,30
+Allemagne,Général,Der Spiegel,2018-07-13,30
+Allemagne,Général,Der Spiegel,2018-07-14,30
+Allemagne,Général,Der Spiegel,2018-07-15,30
+Allemagne,Général,Der Spiegel,2018-07-16,30
+Allemagne,Général,Der Spiegel,2018-07-17,30
+Allemagne,Général,Der Spiegel,2018-07-18,30
+Allemagne,Général,Der Spiegel,2018-07-19,30
+Allemagne,Général,Der Spiegel,2018-07-20,30
+Allemagne,Général,Der Spiegel,2018-07-24,30
+Allemagne,Général,Der Spiegel,2018-07-25,30
+Allemagne,Général,Der Spiegel,2018-07-26,30
+Allemagne,Général,Der Spiegel,2018-07-27,30
+Allemagne,Général,Der Spiegel,2018-07-28,30
+Allemagne,Général,Der Spiegel,2018-07-29,30
+Allemagne,Général,Der Spiegel,2018-07-30,30
+Allemagne,Général,Der Spiegel,2018-07-31,30
+Allemagne,Général,Der Spiegel,2018-08-01,30
+Allemagne,Général,Der Spiegel,2018-08-02,30
+Allemagne,Général,Der Spiegel,2018-08-03,30
+Allemagne,Général,Der Spiegel,2018-08-04,30
+Allemagne,Général,Der Spiegel,2018-08-05,30
+Allemagne,Général,Der Spiegel,2018-08-06,30
+Allemagne,Général,Der Spiegel,2018-08-07,30
+Allemagne,Général,Der Spiegel,2018-08-08,30
+Allemagne,Général,Der Spiegel,2018-08-09,30
+Allemagne,Général,Der Spiegel,2018-08-10,30
+Allemagne,Général,Der Spiegel,2018-08-11,30
+Allemagne,Général,Der Spiegel,2018-08-12,30
+Allemagne,Général,Der Spiegel,2018-08-13,30
+Allemagne,Général,Der Spiegel,2018-08-14,30
+Allemagne,Général,Der Spiegel,2018-08-15,30
+Allemagne,Général,Der Spiegel,2018-08-16,30
+Allemagne,Général,Der Spiegel,2018-08-17,30
+Allemagne,Général,Der Spiegel,2018-08-18,30
+Allemagne,Général,Der Spiegel,2018-08-19,30
+Allemagne,Général,Der Spiegel,2018-08-20,29
+Allemagne,Général,Der Spiegel,2018-08-21,30
+Allemagne,Général,Der Spiegel,2018-08-22,30
+Allemagne,Général,Der Spiegel,2018-08-23,30
+Allemagne,Général,Der Spiegel,2018-08-24,30
+Allemagne,Général,Der Spiegel,2018-08-25,30
+Allemagne,Général,Der Spiegel,2018-08-26,30
+Allemagne,Général,Der Spiegel,2018-08-27,30
+Allemagne,Général,Der Spiegel,2018-08-28,30
+Allemagne,Général,Der Spiegel,2018-08-29,30
+Allemagne,Général,Der Spiegel,2018-08-30,30
+Allemagne,Général,Der Spiegel,2018-08-31,30
+Allemagne,Général,Der Spiegel,2018-09-01,30
+Allemagne,Général,Der Spiegel,2018-09-02,30
+Allemagne,Général,Der Spiegel,2018-09-03,30
+Allemagne,Général,Der Spiegel,2018-09-04,30
+Allemagne,Général,Der Spiegel,2018-09-05,30
+Allemagne,Général,Der Spiegel,2018-09-06,30
+Allemagne,Général,Der Spiegel,2018-09-07,30
+Allemagne,Général,Der Spiegel,2018-09-08,30
+Allemagne,Général,Der Spiegel,2018-09-09,30
+Allemagne,Général,Der Spiegel,2018-09-10,30
+Allemagne,Général,Der Spiegel,2018-09-11,30
+Allemagne,Général,Der Spiegel,2018-09-12,30
+Allemagne,Général,Der Spiegel,2018-09-13,30
+Allemagne,Général,Der Spiegel,2018-09-14,30
+Allemagne,Général,Der Spiegel,2018-09-15,30
+Allemagne,Général,Der Spiegel,2018-09-16,30
+Allemagne,Général,Der Spiegel,2018-09-17,29
+Allemagne,Général,Der Spiegel,2018-09-18,30
+Allemagne,Général,Der Spiegel,2018-09-19,30
+Allemagne,Général,Der Spiegel,2018-09-20,30
+Allemagne,Général,Der Spiegel,2018-09-21,30
+Allemagne,Général,Der Spiegel,2018-09-22,30
+Allemagne,Général,Der Spiegel,2018-09-24,30
+Allemagne,Général,Der Spiegel,2018-09-25,30
+Allemagne,Général,Der Spiegel,2018-09-29,30
+Allemagne,Général,Die Welt,2017-11-12,29
+Allemagne,Général,Die Welt,2017-11-13,71
+Allemagne,Général,Die Welt,2017-11-14,86
+Allemagne,Général,Die Welt,2017-11-15,86
+Allemagne,Général,Die Welt,2017-11-16,58
+Allemagne,Général,Die Welt,2017-11-17,87
+Allemagne,Général,Die Welt,2017-11-18,71
+Allemagne,Général,Die Welt,2017-11-19,74
+Allemagne,Général,Die Welt,2017-11-20,86
+Allemagne,Général,Die Welt,2017-11-21,58
+Allemagne,Général,Die Welt,2017-11-22,57
+Allemagne,Général,Die Welt,2017-11-23,85
+Allemagne,Général,Die Welt,2017-11-24,56
+Allemagne,Général,Die Welt,2017-11-25,87
+Allemagne,Général,Die Welt,2017-11-26,80
+Allemagne,Général,Die Welt,2017-11-27,82
+Allemagne,Général,Die Welt,2017-11-28,85
+Allemagne,Général,Die Welt,2017-11-29,76
+Allemagne,Général,Die Welt,2017-11-30,87
+Allemagne,Général,Die Welt,2017-12-01,74
+Allemagne,Général,Die Welt,2017-12-02,77
+Allemagne,Général,Die Welt,2017-12-03,79
+Allemagne,Général,Die Welt,2017-12-04,84
+Allemagne,Général,Die Welt,2017-12-05,86
+Allemagne,Général,Die Welt,2017-12-06,80
+Allemagne,Général,Die Welt,2017-12-07,87
+Allemagne,Général,Die Welt,2017-12-08,58
+Allemagne,Général,Die Welt,2017-12-09,45
+Allemagne,Général,Die Welt,2017-12-10,80
+Allemagne,Général,Die Welt,2017-12-11,87
+Allemagne,Général,Die Welt,2017-12-12,87
+Allemagne,Général,Die Welt,2017-12-13,27
+Allemagne,Général,Die Welt,2017-12-15,29
+Allemagne,Général,Die Welt,2017-12-16,70
+Allemagne,Général,Die Welt,2017-12-17,77
+Allemagne,Général,Die Welt,2017-12-18,85
+Allemagne,Général,Die Welt,2017-12-19,57
+Allemagne,Général,Die Welt,2017-12-20,85
+Allemagne,Général,Die Welt,2017-12-21,83
+Allemagne,Général,Die Welt,2017-12-22,85
+Allemagne,Général,Die Welt,2017-12-23,67
+Allemagne,Général,Die Welt,2017-12-24,58
+Allemagne,Général,Die Welt,2017-12-25,55
+Allemagne,Général,Die Welt,2017-12-26,60
+Allemagne,Général,Die Welt,2017-12-27,80
+Allemagne,Général,Die Welt,2017-12-28,81
+Allemagne,Général,Die Welt,2017-12-29,77
+Allemagne,Général,Die Welt,2017-12-30,76
+Allemagne,Général,Die Welt,2017-12-31,61
+Allemagne,Général,Die Welt,2018-01-01,66
+Allemagne,Général,Die Welt,2018-01-02,85
+Allemagne,Général,Die Welt,2018-01-03,78
+Allemagne,Général,Die Welt,2018-01-04,85
+Allemagne,Général,Die Welt,2018-01-05,78
+Allemagne,Général,Die Welt,2018-01-06,74
+Allemagne,Général,Die Welt,2018-01-07,79
+Allemagne,Général,Die Welt,2018-01-08,79
+Allemagne,Général,Die Welt,2018-01-09,85
+Allemagne,Général,Die Welt,2018-01-10,80
+Allemagne,Général,Die Welt,2018-01-11,85
+Allemagne,Général,Die Welt,2018-01-12,74
+Allemagne,Général,Die Welt,2018-01-13,72
+Allemagne,Général,Die Welt,2018-01-14,72
+Allemagne,Général,Die Welt,2018-01-15,72
+Allemagne,Général,Die Welt,2018-01-16,85
+Allemagne,Général,Die Welt,2018-01-17,87
+Allemagne,Général,Die Welt,2018-01-18,82
+Allemagne,Général,Die Welt,2018-01-19,87
+Allemagne,Général,Die Welt,2018-01-20,72
+Allemagne,Général,Die Welt,2018-01-21,74
+Allemagne,Général,Die Welt,2018-01-22,85
+Allemagne,Général,Die Welt,2018-01-23,54
+Allemagne,Général,Die Welt,2018-01-24,64
+Allemagne,Général,Die Welt,2018-01-25,80
+Allemagne,Général,Die Welt,2018-01-26,77
+Allemagne,Général,Die Welt,2018-01-27,66
+Allemagne,Général,Die Welt,2018-01-28,74
+Allemagne,Général,Die Welt,2018-01-29,79
+Allemagne,Général,Die Welt,2018-01-30,83
+Allemagne,Général,Die Welt,2018-01-31,78
+Allemagne,Général,Die Welt,2018-02-01,84
+Allemagne,Général,Die Welt,2018-02-02,78
+Allemagne,Général,Die Welt,2018-02-03,70
+Allemagne,Général,Die Welt,2018-02-04,79
+Allemagne,Général,Die Welt,2018-02-05,76
+Allemagne,Général,Die Welt,2018-02-06,86
+Allemagne,Général,Die Welt,2018-02-07,83
+Allemagne,Général,Die Welt,2018-02-08,86
+Allemagne,Général,Die Welt,2018-02-09,73
+Allemagne,Général,Die Welt,2018-02-10,72
+Allemagne,Général,Die Welt,2018-02-11,67
+Allemagne,Général,Die Welt,2018-02-12,79
+Allemagne,Général,Die Welt,2018-02-13,86
+Allemagne,Général,Die Welt,2018-02-14,87
+Allemagne,Général,Die Welt,2018-02-15,86
+Allemagne,Général,Die Welt,2018-02-16,86
+Allemagne,Général,Die Welt,2018-02-17,84
+Allemagne,Général,Die Welt,2018-02-18,76
+Allemagne,Général,Die Welt,2018-02-19,70
+Allemagne,Général,Die Welt,2018-02-20,83
+Allemagne,Général,Die Welt,2018-02-21,83
+Allemagne,Général,Die Welt,2018-02-22,83
+Allemagne,Général,Die Welt,2018-02-23,83
+Allemagne,Général,Die Welt,2018-02-24,71
+Allemagne,Général,Die Welt,2018-02-25,84
+Allemagne,Général,Die Welt,2018-02-26,84
+Allemagne,Général,Die Welt,2018-02-27,86
+Allemagne,Général,Die Welt,2018-02-28,85
+Allemagne,Général,Die Welt,2018-03-01,83
+Allemagne,Général,Die Welt,2018-03-02,85
+Allemagne,Général,Die Welt,2018-03-03,50
+Allemagne,Général,Die Welt,2018-03-04,78
+Allemagne,Général,Die Welt,2018-03-05,84
+Allemagne,Général,Die Welt,2018-03-06,86
+Allemagne,Général,Die Welt,2018-03-07,87
+Allemagne,Général,Die Welt,2018-03-08,82
+Allemagne,Général,Die Welt,2018-03-09,86
+Allemagne,Général,Die Welt,2018-03-10,78
+Allemagne,Général,Die Welt,2018-03-11,78
+Allemagne,Général,Die Welt,2018-03-12,89
+Allemagne,Général,Die Welt,2018-03-13,88
+Allemagne,Général,Die Welt,2018-03-14,86
+Allemagne,Général,Die Welt,2018-03-15,86
+Allemagne,Général,Die Welt,2018-03-16,88
+Allemagne,Général,Die Welt,2018-03-17,79
+Allemagne,Général,Die Welt,2018-03-18,89
+Allemagne,Général,Die Welt,2018-03-19,90
+Allemagne,Général,Die Welt,2018-03-20,88
+Allemagne,Général,Die Welt,2018-03-21,85
+Allemagne,Général,Die Welt,2018-03-22,89
+Allemagne,Général,Die Welt,2018-03-23,89
+Allemagne,Général,Die Welt,2018-03-24,81
+Allemagne,Général,Die Welt,2018-03-25,73
+Allemagne,Général,Die Welt,2018-03-26,84
+Allemagne,Général,Die Welt,2018-03-27,89
+Allemagne,Général,Die Welt,2018-03-28,54
+Allemagne,Général,Die Welt,2018-03-29,29
+Allemagne,Général,Die Welt,2018-03-30,79
+Allemagne,Général,Die Welt,2018-03-31,62
+Allemagne,Général,Die Welt,2018-04-01,71
+Allemagne,Général,Die Welt,2018-04-02,70
+Allemagne,Général,Die Welt,2018-04-03,87
+Allemagne,Général,Die Welt,2018-04-04,86
+Allemagne,Général,Die Welt,2018-04-05,84
+Allemagne,Général,Die Welt,2018-04-06,89
+Allemagne,Général,Die Welt,2018-04-07,72
+Allemagne,Général,Die Welt,2018-04-08,80
+Allemagne,Général,Die Welt,2018-04-09,88
+Allemagne,Général,Die Welt,2018-04-10,88
+Allemagne,Général,Die Welt,2018-04-11,88
+Allemagne,Général,Die Welt,2018-04-12,58
+Allemagne,Général,Die Welt,2018-04-13,58
+Allemagne,Général,Die Welt,2018-04-14,58
+Allemagne,Général,Die Welt,2018-04-15,30
+Allemagne,Général,Die Welt,2018-04-16,29
+Allemagne,Général,Die Welt,2018-04-17,30
+Allemagne,Général,Die Welt,2018-04-18,30
+Allemagne,Général,Die Welt,2018-04-19,30
+Allemagne,Général,Die Welt,2018-04-20,29
+Allemagne,Général,Die Welt,2018-04-21,29
+Allemagne,Général,Die Welt,2018-04-22,29
+Allemagne,Général,Die Welt,2018-04-23,30
+Allemagne,Général,Die Welt,2018-04-25,30
+Allemagne,Général,Die Welt,2018-04-26,30
+Allemagne,Général,Die Welt,2018-04-27,30
+Allemagne,Général,Die Welt,2018-04-28,30
+Allemagne,Général,Die Welt,2018-04-29,30
+Allemagne,Général,Die Welt,2018-04-30,29
+Allemagne,Général,Die Welt,2018-05-01,29
+Allemagne,Général,Die Welt,2018-05-02,30
+Allemagne,Général,Die Welt,2018-05-03,30
+Allemagne,Général,Die Welt,2018-05-04,29
+Allemagne,Général,Die Welt,2018-05-05,29
+Allemagne,Général,Die Welt,2018-05-06,29
+Allemagne,Général,Die Welt,2018-05-07,29
+Allemagne,Général,Die Welt,2018-05-08,28
+Allemagne,Général,Die Welt,2018-05-09,29
+Allemagne,Général,Die Welt,2018-05-10,29
+Allemagne,Général,Die Welt,2018-05-11,28
+Allemagne,Général,Die Welt,2018-05-12,29
+Allemagne,Général,Die Welt,2018-05-13,29
+Allemagne,Général,Die Welt,2018-05-14,29
+Allemagne,Général,Die Welt,2018-05-15,29
+Allemagne,Général,Die Welt,2018-05-16,29
+Allemagne,Général,Die Welt,2018-05-17,29
+Allemagne,Général,Die Welt,2018-05-18,29
+Allemagne,Général,Die Welt,2018-05-19,29
+Allemagne,Général,Die Welt,2018-05-20,29
+Allemagne,Général,Die Welt,2018-05-21,29
+Allemagne,Général,Die Welt,2018-05-22,28
+Allemagne,Général,Die Welt,2018-05-23,28
+Allemagne,Général,Die Welt,2018-05-24,29
+Allemagne,Général,Die Welt,2018-05-26,29
+Allemagne,Général,Die Welt,2018-05-27,29
+Allemagne,Général,Die Welt,2018-05-28,29
+Allemagne,Général,Die Welt,2018-05-29,29
+Allemagne,Général,Die Welt,2018-05-30,29
+Allemagne,Général,Die Welt,2018-05-31,28
+Allemagne,Général,Die Welt,2018-06-01,28
+Allemagne,Général,Die Welt,2018-06-02,29
+Allemagne,Général,Die Welt,2018-06-03,29
+Allemagne,Général,Die Welt,2018-06-04,28
+Allemagne,Général,Die Welt,2018-06-05,29
+Allemagne,Général,Die Welt,2018-06-06,29
+Allemagne,Général,Die Welt,2018-06-07,28
+Allemagne,Général,Die Welt,2018-06-08,29
+Allemagne,Général,Die Welt,2018-06-09,29
+Allemagne,Général,Die Welt,2018-06-10,29
+Allemagne,Général,Die Welt,2018-06-11,28
+Allemagne,Général,Die Welt,2018-06-12,29
+Allemagne,Général,Die Welt,2018-06-13,29
+Allemagne,Général,Die Welt,2018-06-14,28
+Allemagne,Général,Die Welt,2018-06-15,29
+Allemagne,Général,Die Welt,2018-06-16,29
+Allemagne,Général,Die Welt,2018-06-17,29
+Allemagne,Général,Die Welt,2018-06-18,29
+Allemagne,Général,Die Welt,2018-06-19,29
+Allemagne,Général,Die Welt,2018-06-20,29
+Allemagne,Général,Die Welt,2018-06-21,29
+Allemagne,Général,Die Welt,2018-06-22,29
+Allemagne,Général,Die Welt,2018-06-23,29
+Allemagne,Général,Die Welt,2018-06-24,29
+Allemagne,Général,Die Welt,2018-06-25,28
+Allemagne,Général,Die Welt,2018-06-26,29
+Allemagne,Général,Die Welt,2018-06-27,28
+Allemagne,Général,Die Welt,2018-06-28,29
+Allemagne,Général,Die Welt,2018-06-29,29
+Allemagne,Général,Die Welt,2018-06-30,29
+Allemagne,Général,Die Welt,2018-07-01,29
+Allemagne,Général,Die Welt,2018-07-07,29
+Allemagne,Général,Die Welt,2018-07-08,29
+Allemagne,Général,Die Welt,2018-07-09,28
+Allemagne,Général,Die Welt,2018-07-12,28
+Allemagne,Général,Die Welt,2018-07-13,29
+Allemagne,Général,Die Welt,2018-07-14,29
+Allemagne,Général,Die Welt,2018-07-15,29
+Allemagne,Général,Die Welt,2018-07-16,29
+Allemagne,Général,Die Welt,2018-07-17,29
+Allemagne,Général,Die Welt,2018-07-18,29
+Allemagne,Général,Die Welt,2018-07-19,29
+Allemagne,Général,Die Welt,2018-07-20,28
+Allemagne,Général,Die Welt,2018-07-24,28
+Allemagne,Général,Die Welt,2018-07-25,28
+Allemagne,Général,Die Welt,2018-07-26,29
+Allemagne,Général,Die Welt,2018-07-27,29
+Allemagne,Général,Die Welt,2018-07-28,29
+Allemagne,Général,Die Welt,2018-07-29,29
+Allemagne,Général,Die Welt,2018-07-30,29
+Allemagne,Général,Die Welt,2018-07-31,29
+Allemagne,Général,Die Welt,2018-08-01,29
+Allemagne,Général,Die Welt,2018-08-02,29
+Allemagne,Général,Die Welt,2018-08-03,29
+Allemagne,Général,Die Welt,2018-08-04,29
+Allemagne,Général,Die Welt,2018-08-05,29
+Allemagne,Général,Die Welt,2018-08-06,28
+Allemagne,Général,Die Welt,2018-08-07,29
+Allemagne,Général,Die Welt,2018-08-08,29
+Allemagne,Général,Die Welt,2018-08-09,29
+Allemagne,Général,Die Welt,2018-08-10,28
+Allemagne,Général,Die Welt,2018-08-11,29
+Allemagne,Général,Die Welt,2018-08-12,29
+Allemagne,Général,Die Welt,2018-08-13,29
+Allemagne,Général,Die Welt,2018-08-14,29
+Allemagne,Général,Die Welt,2018-08-15,27
+Allemagne,Général,Die Welt,2018-08-16,28
+Allemagne,Général,Die Welt,2018-08-17,29
+Allemagne,Général,Die Welt,2018-08-18,29
+Allemagne,Général,Die Welt,2018-08-19,29
+Allemagne,Général,Die Welt,2018-08-20,29
+Allemagne,Général,Die Welt,2018-08-21,29
+Allemagne,Général,Die Welt,2018-08-22,27
+Allemagne,Général,Die Welt,2018-08-23,29
+Allemagne,Général,Die Welt,2018-08-24,28
+Allemagne,Général,Die Welt,2018-08-25,29
+Allemagne,Général,Die Welt,2018-08-26,29
+Allemagne,Général,Die Welt,2018-08-27,29
+Allemagne,Général,Die Welt,2018-08-28,29
+Allemagne,Général,Die Welt,2018-08-29,29
+Allemagne,Général,Die Welt,2018-08-30,29
+Allemagne,Général,Die Welt,2018-08-31,29
+Allemagne,Général,Die Welt,2018-09-01,29
+Allemagne,Général,Die Welt,2018-09-02,29
+Allemagne,Général,Die Welt,2018-09-03,29
+Allemagne,Général,Die Welt,2018-09-04,29
+Allemagne,Général,Die Welt,2018-09-05,29
+Allemagne,Général,Die Welt,2018-09-06,29
+Allemagne,Général,Die Welt,2018-09-07,29
+Allemagne,Général,Die Welt,2018-09-08,29
+Allemagne,Général,Die Welt,2018-09-09,29
+Allemagne,Général,Die Welt,2018-09-10,29
+Allemagne,Général,Die Welt,2018-09-11,29
+Allemagne,Général,Die Welt,2018-09-12,29
+Allemagne,Général,Die Welt,2018-09-13,29
+Allemagne,Général,Die Welt,2018-09-14,29
+Allemagne,Général,Die Welt,2018-09-15,29
+Allemagne,Général,Die Welt,2018-09-16,29
+Allemagne,Général,Die Welt,2018-09-17,29
+Allemagne,Général,Die Welt,2018-09-18,29
+Allemagne,Général,Die Welt,2018-09-19,29
+Allemagne,Général,Die Welt,2018-09-20,29
+Allemagne,Général,Die Welt,2018-09-21,28
+Allemagne,Général,Die Welt,2018-09-22,29
+Allemagne,Général,Die Welt,2018-09-24,28
+Allemagne,Général,Die Welt,2018-09-25,29
+Allemagne,Général,Die Welt,2018-09-29,30
+Allemagne,Général,Bild,2017-11-20,25
+Allemagne,Général,Bild,2017-11-21,25
+Allemagne,Général,Bild,2017-11-22,18
+Allemagne,Général,Bild,2017-11-23,15
+Allemagne,Général,Bild,2017-11-24,14
+Allemagne,Général,Bild,2017-11-25,16
+Allemagne,Général,Bild,2017-11-26,11
+Allemagne,Général,Bild,2017-11-27,18
+Allemagne,Général,Bild,2017-11-28,29
+Allemagne,Général,Bild,2017-11-29,15
+Allemagne,Général,Bild,2017-11-30,20
+Allemagne,Général,Bild,2017-12-01,24
+Allemagne,Général,Bild,2017-12-02,20
+Allemagne,Général,Bild,2017-12-03,14
+Allemagne,Général,Bild,2017-12-04,24
+Allemagne,Général,Bild,2017-12-05,20
+Allemagne,Général,Bild,2017-12-06,21
+Allemagne,Général,Bild,2017-12-07,11
+Allemagne,Général,Bild,2017-12-08,22
+Allemagne,Général,Bild,2017-12-09,9
+Allemagne,Général,Bild,2017-12-10,19
+Allemagne,Général,Bild,2017-12-11,16
+Allemagne,Général,Bild,2017-12-12,23
+Allemagne,Général,Bild,2017-12-13,12
+Allemagne,Général,Bild,2017-12-15,13
+Allemagne,Général,Bild,2017-12-16,16
+Allemagne,Général,Bild,2017-12-17,22
+Allemagne,Général,Bild,2017-12-18,21
+Allemagne,Général,Bild,2017-12-19,19
+Allemagne,Général,Bild,2017-12-20,25
+Allemagne,Général,Bild,2017-12-21,24
+Allemagne,Général,Bild,2017-12-22,22
+Allemagne,Général,Bild,2017-12-23,19
+Allemagne,Général,Bild,2017-12-24,19
+Allemagne,Général,Bild,2017-12-25,20
+Allemagne,Général,Bild,2017-12-26,25
+Allemagne,Général,Bild,2017-12-27,25
+Allemagne,Général,Bild,2017-12-28,23
+Allemagne,Général,Bild,2017-12-29,24
+Allemagne,Général,Bild,2017-12-30,14
+Allemagne,Général,Bild,2017-12-31,18
+Allemagne,Général,Bild,2018-01-01,19
+Allemagne,Général,Bild,2018-01-02,28
+Allemagne,Général,Bild,2018-01-03,23
+Allemagne,Général,Bild,2018-01-04,26
+Allemagne,Général,Bild,2018-01-05,22
+Allemagne,Général,Bild,2018-01-06,18
+Allemagne,Général,Bild,2018-01-07,22
+Allemagne,Général,Bild,2018-01-08,22
+Allemagne,Général,Bild,2018-01-09,17
+Allemagne,Général,Bild,2018-01-10,28
+Allemagne,Général,Bild,2018-01-11,29
+Allemagne,Général,Bild,2018-01-12,25
+Allemagne,Général,Bild,2018-01-13,12
+Allemagne,Général,Bild,2018-01-14,25
+Allemagne,Général,Bild,2018-01-15,22
+Allemagne,Général,Bild,2018-01-16,18
+Allemagne,Général,Bild,2018-01-17,21
+Allemagne,Général,Bild,2018-01-18,19
+Allemagne,Général,Bild,2018-01-19,19
+Allemagne,Général,Bild,2018-01-20,19
+Allemagne,Général,Bild,2018-01-21,26
+Allemagne,Général,Bild,2018-01-22,26
+Allemagne,Général,Bild,2018-01-23,21
+Allemagne,Général,Bild,2018-01-24,21
+Allemagne,Général,Bild,2018-01-25,25
+Allemagne,Général,Bild,2018-01-26,18
+Allemagne,Général,Bild,2018-01-27,9
+Allemagne,Général,Bild,2018-01-28,19
+Allemagne,Général,Bild,2018-01-29,23
+Allemagne,Général,Bild,2018-01-30,26
+Allemagne,Général,Bild,2018-01-31,20
+Allemagne,Général,Bild,2018-02-01,25
+Allemagne,Général,Bild,2018-02-02,24
+Allemagne,Général,Bild,2018-02-03,9
+Allemagne,Général,Bild,2018-02-04,15
+Allemagne,Général,Bild,2018-02-05,14
+Allemagne,Général,Bild,2018-02-06,26
+Allemagne,Général,Bild,2018-02-07,18
+Allemagne,Général,Bild,2018-02-08,29
+Allemagne,Général,Bild,2018-02-09,7
+Allemagne,Général,Bild,2018-02-10,11
+Allemagne,Général,Bild,2018-02-11,21
+Allemagne,Général,Bild,2018-02-12,27
+Allemagne,Général,Bild,2018-02-13,21
+Allemagne,Général,Bild,2018-02-14,24
+Allemagne,Général,Bild,2018-02-15,38
+Allemagne,Général,Bild,2018-02-16,17
+Allemagne,Général,Bild,2018-02-17,18
+Allemagne,Général,Bild,2018-02-18,16
+Allemagne,Général,Bild,2018-02-19,39
+Allemagne,Général,Bild,2018-02-20,22
+Allemagne,Général,Bild,2018-02-21,30
+Allemagne,Général,Bild,2018-02-22,32
+Allemagne,Général,Bild,2018-02-23,21
+Allemagne,Général,Bild,2018-02-24,14
+Allemagne,Général,Bild,2018-02-25,16
+Allemagne,Général,Bild,2018-02-26,65
+Allemagne,Général,Bild,2018-02-27,20
+Allemagne,Général,Bild,2018-02-28,17
+Allemagne,Général,Bild,2018-03-01,32
+Allemagne,Général,Bild,2018-03-02,25
+Allemagne,Général,Bild,2018-03-03,9
+Allemagne,Général,Bild,2018-03-04,17
+Allemagne,Général,Bild,2018-03-05,27
+Allemagne,Général,Bild,2018-03-06,31
+Allemagne,Général,Bild,2018-03-07,19
+Allemagne,Général,Bild,2018-03-08,17
+Allemagne,Général,Bild,2018-03-09,20
+Allemagne,Général,Bild,2018-03-10,15
+Allemagne,Général,Bild,2018-03-11,25
+Allemagne,Général,Bild,2018-03-12,30
+Allemagne,Général,Bild,2018-03-13,24
+Allemagne,Général,Bild,2018-03-14,24
+Allemagne,Général,Bild,2018-03-15,15
+Allemagne,Général,Bild,2018-03-16,22
+Allemagne,Général,Bild,2018-03-17,18
+Allemagne,Général,Bild,2018-03-18,19
+Allemagne,Général,Bild,2018-03-19,25
+Allemagne,Général,Bild,2018-03-20,25
+Allemagne,Général,Bild,2018-03-21,20
+Allemagne,Général,Bild,2018-03-22,20
+Allemagne,Général,Bild,2018-03-23,17
+Allemagne,Général,Bild,2018-03-24,19
+Allemagne,Général,Bild,2018-03-25,27
+Allemagne,Général,Bild,2018-03-26,28
+Allemagne,Général,Bild,2018-03-27,28
+Allemagne,Général,Bild,2018-03-28,19
+Allemagne,Général,Bild,2018-03-29,7
+Allemagne,Général,Bild,2018-03-30,17
+Allemagne,Général,Bild,2018-03-31,19
+Allemagne,Général,Bild,2018-04-01,21
+Allemagne,Général,Bild,2018-04-02,20
+Allemagne,Général,Bild,2018-04-03,18
+Allemagne,Général,Bild,2018-04-04,34
+Allemagne,Général,Bild,2018-04-05,14
+Allemagne,Général,Bild,2018-04-06,20
+Allemagne,Général,Bild,2018-04-07,20
+Allemagne,Général,Bild,2018-04-08,22
+Allemagne,Général,Bild,2018-04-09,17
+Allemagne,Général,Bild,2018-04-10,17
+Allemagne,Général,Bild,2018-04-11,27
+Allemagne,Général,Bild,2018-04-12,29
+Allemagne,Général,Bild,2018-04-13,15
+Allemagne,Général,Bild,2018-04-14,14
+Allemagne,Général,Bild,2018-04-15,9
+Allemagne,Général,Bild,2018-04-16,21
+Allemagne,Général,Bild,2018-04-17,16
+Allemagne,Général,Bild,2018-04-18,19
+Allemagne,Général,Bild,2018-04-19,18
+Allemagne,Général,Bild,2018-04-20,16
+Allemagne,Général,Bild,2018-04-21,10
+Allemagne,Général,Bild,2018-04-22,20
+Allemagne,Général,Bild,2018-04-23,22
+Allemagne,Général,Bild,2018-04-25,21
+Allemagne,Général,Bild,2018-04-26,15
+Allemagne,Général,Bild,2018-04-27,17
+Allemagne,Général,Bild,2018-04-28,8
+Allemagne,Général,Bild,2018-04-29,17
+Allemagne,Général,Bild,2018-04-30,15
+Allemagne,Général,Bild,2018-05-01,17
+Allemagne,Général,Bild,2018-05-02,13
+Allemagne,Général,Bild,2018-05-03,19
+Allemagne,Général,Bild,2018-05-04,16
+Allemagne,Général,Bild,2018-05-05,9
+Allemagne,Général,Bild,2018-05-06,18
+Allemagne,Général,Bild,2018-05-07,15
+Allemagne,Général,Bild,2018-05-08,16
+Allemagne,Général,Bild,2018-05-09,17
+Allemagne,Général,Bild,2018-05-10,16
+Allemagne,Général,Bild,2018-05-11,11
+Allemagne,Général,Bild,2018-05-12,14
+Allemagne,Général,Bild,2018-05-13,22
+Allemagne,Général,Bild,2018-05-14,17
+Allemagne,Général,Bild,2018-05-15,14
+Allemagne,Général,Bild,2018-05-16,16
+Allemagne,Général,Bild,2018-05-17,21
+Allemagne,Général,Bild,2018-05-18,18
+Allemagne,Général,Bild,2018-05-19,7
+Allemagne,Général,Bild,2018-05-20,17
+Allemagne,Général,Bild,2018-05-21,10
+Allemagne,Général,Bild,2018-05-22,15
+Allemagne,Général,Bild,2018-05-23,18
+Allemagne,Général,Bild,2018-05-24,17
+Allemagne,Général,Bild,2018-05-26,20
+Allemagne,Général,Bild,2018-05-27,10
+Allemagne,Général,Bild,2018-05-28,15
+Allemagne,Général,Bild,2018-05-29,20
+Allemagne,Général,Bild,2018-05-30,13
+Allemagne,Général,Bild,2018-05-31,22
+Allemagne,Général,Bild,2018-06-01,14
+Allemagne,Général,Bild,2018-06-02,15
+Allemagne,Général,Bild,2018-06-03,20
+Allemagne,Général,Bild,2018-06-04,13
+Allemagne,Général,Bild,2018-06-05,19
+Allemagne,Général,Bild,2018-06-06,14
+Allemagne,Général,Bild,2018-06-07,16
+Allemagne,Général,Bild,2018-06-08,18
+Allemagne,Général,Bild,2018-06-09,11
+Allemagne,Général,Bild,2018-06-10,19
+Allemagne,Général,Bild,2018-06-11,14
+Allemagne,Général,Bild,2018-06-12,20
+Allemagne,Général,Bild,2018-06-13,15
+Allemagne,Général,Bild,2018-06-14,16
+Allemagne,Général,Bild,2018-06-15,17
+Allemagne,Général,Bild,2018-06-16,10
+Allemagne,Général,Bild,2018-06-17,18
+Allemagne,Général,Bild,2018-06-18,12
+Allemagne,Général,Bild,2018-06-19,22
+Allemagne,Général,Bild,2018-06-20,19
+Allemagne,Général,Bild,2018-06-21,9
+Allemagne,Général,Bild,2018-06-22,16
+Allemagne,Général,Bild,2018-06-23,12
+Allemagne,Général,Bild,2018-06-24,19
+Allemagne,Général,Bild,2018-06-25,14
+Allemagne,Général,Bild,2018-06-26,21
+Allemagne,Général,Bild,2018-06-27,16
+Allemagne,Général,Bild,2018-06-28,18
+Allemagne,Général,Bild,2018-06-29,16
+Allemagne,Général,Bild,2018-06-30,12
+Allemagne,Général,Bild,2018-07-01,28
+Allemagne,Général,Bild,2018-07-07,17
+Allemagne,Général,Bild,2018-07-08,10
+Allemagne,Général,Bild,2018-07-09,29
+Allemagne,Général,Bild,2018-07-12,17
+Allemagne,Général,Bild,2018-07-13,18
+Allemagne,Général,Bild,2018-07-14,13
+Allemagne,Général,Bild,2018-07-15,20
+Allemagne,Général,Bild,2018-07-16,13
+Allemagne,Général,Bild,2018-07-17,99
+Allemagne,Général,Bild,2018-07-18,93
+Allemagne,Général,Bild,2018-07-19,82
+Allemagne,Général,Bild,2018-07-20,106
+Allemagne,Général,Bild,2018-07-24,100
+Allemagne,Général,Bild,2018-07-25,74
+Allemagne,Général,Bild,2018-07-26,100
+Allemagne,Général,Bild,2018-07-27,60
+Allemagne,Général,Bild,2018-07-28,81
+Allemagne,Général,Bild,2018-07-29,68
+Allemagne,Général,Bild,2018-07-30,94
+Allemagne,Général,Bild,2018-07-31,95
+Allemagne,Général,Bild,2018-08-01,80
+Allemagne,Général,Bild,2018-08-02,101
+Allemagne,Général,Bild,2018-08-03,83
+Allemagne,Général,Bild,2018-08-04,49
+Allemagne,Général,Bild,2018-08-05,101
+Allemagne,Général,Bild,2018-08-06,85
+Allemagne,Général,Bild,2018-08-07,95
+Allemagne,Général,Bild,2018-08-08,81
+Allemagne,Général,Bild,2018-08-09,99
+Allemagne,Général,Bild,2018-08-10,72
+Allemagne,Général,Bild,2018-08-11,81
+Allemagne,Général,Bild,2018-08-12,72
+Allemagne,Général,Bild,2018-08-13,90
+Allemagne,Général,Bild,2018-08-14,83
+Allemagne,Général,Bild,2018-08-15,88
+Allemagne,Général,Bild,2018-08-16,84
+Allemagne,Général,Bild,2018-08-17,80
+Allemagne,Général,Bild,2018-08-18,71
+Allemagne,Général,Bild,2018-08-19,97
+Allemagne,Général,Bild,2018-08-20,80
+Allemagne,Général,Bild,2018-08-21,99
+Allemagne,Général,Bild,2018-08-22,69
+Allemagne,Général,Bild,2018-08-23,107
+Allemagne,Général,Bild,2018-08-24,87
+Allemagne,Général,Bild,2018-08-25,46
+Allemagne,Général,Bild,2018-08-26,103
+Allemagne,Général,Bild,2018-08-27,90
+Allemagne,Général,Bild,2018-08-28,85
+Allemagne,Général,Bild,2018-08-29,89
+Allemagne,Général,Bild,2018-08-30,92
+Allemagne,Général,Bild,2018-08-31,83
+Allemagne,Général,Bild,2018-09-01,41
+Allemagne,Général,Bild,2018-09-02,97
+Allemagne,Général,Bild,2018-09-03,95
+Allemagne,Général,Bild,2018-09-04,90
+Allemagne,Général,Bild,2018-09-05,87
+Allemagne,Général,Bild,2018-09-06,92
+Allemagne,Général,Bild,2018-09-07,76
+Allemagne,Général,Bild,2018-09-08,55
+Allemagne,Général,Bild,2018-09-09,94
+Allemagne,Général,Bild,2018-09-10,92
+Allemagne,Général,Bild,2018-09-11,86
+Allemagne,Général,Bild,2018-09-12,91
+Allemagne,Général,Bild,2018-09-13,84
+Allemagne,Général,Bild,2018-09-14,82
+Allemagne,Général,Bild,2018-09-15,47
+Allemagne,Général,Bild,2018-09-16,89
+Allemagne,Général,Bild,2018-09-17,82
+Allemagne,Général,Bild,2018-09-18,91
+Allemagne,Général,Bild,2018-09-19,88
+Allemagne,Général,Bild,2018-09-20,87
+Allemagne,Général,Bild,2018-09-21,88
+Allemagne,Général,Bild,2018-09-22,79
+Allemagne,Général,Bild,2018-09-24,105
+Allemagne,Général,Bild,2018-09-25,76
+Allemagne,Général,Bild,2018-09-29,123

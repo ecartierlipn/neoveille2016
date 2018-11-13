@@ -1,0 +1,498 @@
+svg.attr({
+    "width": "100%",
+    "height": "100%",
+    "viewBox": "0 0 250 250"
+})
+
+div.DTE_Field.DTE_Field_Type_title label {
+  width: 100% !important;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 1px solid #aaa; }
+
+div.DTE_Field.DTE_Field_Type_title div {
+  display: none; }
+
+div.DTE_Field.DTE_Field_Type_title:hover {
+  background-color: white;
+  border: 1px solid transparent; }
+
+
+td.editorNeoTools_edit {
+    background: url('./images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+
+td.editorNeo_edit {
+    background: url('./images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorNeo_details2 {
+    background: url('./images/google2.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorNeo_remove {
+    background: url('./images/drop.png') no-repeat center center;
+    cursor: pointer;}
+
+td.editorCorpus_edit {
+    background: url('./images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorCorpus_remove {
+    background: url('./images/drop.png') no-repeat center center;
+    cursor: pointer;}
+    
+td.details-control {
+    background: url('./images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('./images/details_close.png') no-repeat center center;
+}
+
+td.details-control {
+    background: url('./images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+td.details-control3 {
+    background: url('./images/google2.png') no-repeat center center;
+    cursor: pointer;
+}
+td.details-control2 {
+    background: url('./images/statistiques-neo.png') no-repeat center center;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+}
+
+tr.shown td.details-control2 {
+    #background: url('./images/details_close.png') no-repeat center center;
+}
+
+td.details-control4 {
+    background: url('./images/statistiques-neo-nlp.png') no-repeat center center;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+}
+
+
+
+td.editor_edit {
+    background: url('./images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editor_remove {
+    background: url('./images/drop.png') no-repeat center center;
+    cursor: pointer;
+    
+}
+td.editorU_edit {
+    background: url('./images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorU_remove {
+    background: url('./images/drop.png') no-repeat center center;
+    cursor: pointer;
+
+td.corpus-details {
+    background: url('./images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+td.corpus-details.shown {
+    background: url('./images/details_close.png') no-repeat center center;
+}
+
+
+ .axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: lightblue ;
+}
+
+#dc-country-chart g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-25deg);
+}
+[id*=dc-neo-chart] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-25deg);
+}
+[id*=dc-neo-chart] g.row text {
+      fill: black;
+    }
+
+
+ .axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: lightblue ;
+}
+
+#dc-country-chart g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-25deg);
+}
+[id*=dc-neo-chart] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-25deg);
+}
+
+
+
+[id*=dc-neo-chart] g.row text {
+      fill: black;
+    }
+
+[id*=range-] { width: 100%; }
+[id*=dc-]{ width: 100%; }
+
+[id^=dc-]g.row text {fill: black;}
+
+
+
+ .axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: lightblue ;
+}
+
+[id*=dc-] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+[id*=dc-] g.row text {
+      fill: black;
+    }
+
+
+[id*=dc-l] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+[id*=dc-r] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+[id*=dc-core] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+
+[id*=dc-l] g.row text {
+      fill: black;
+    }
+
+[id*=dc-r] g.row text {
+      fill: black;
+    }
+
+[id*=dc-core] g.row text {
+      fill: red;
+    }
+
+
+
+
+
+td.editorNeoTools_edit {
+    background: url('images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+
+td.editorNeo_edit {
+    background: url('images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorNeo_details2 {
+    background: url('images/google2.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorNeo_remove {
+    background: url('images/drop.png') no-repeat center center;
+    cursor: pointer;}
+
+td.editorCorpus_edit {
+    background: url('images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorCorpus_remove {
+    background: url('images/drop.png') no-repeat center center;
+    cursor: pointer;}
+    
+td.details-control {
+    background: url('images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('images/details_close.png') no-repeat center center;
+}
+
+td.details-control {
+    background: url('images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+td.details-control3 {
+    background: url('images/google2.png') no-repeat center center;
+    cursor: pointer;
+}
+td.details-control2 {
+    background: url('images/statistiques-neo.png') no-repeat center center;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+}
+
+tr.shown td.details-control2 {
+    #background: url('images/details_close.png') no-repeat center center;
+}
+
+td.details-control4 {
+    background: url('images/statistiques-neo-nlp.png') no-repeat center center;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+}
+
+tr.shown td.details-control3 {
+    #background: url('images/details_close.png') no-repeat center center;
+}
+
+
+td.editor_edit {
+    background: url('images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editor_remove {
+    background: url('images/drop.png') no-repeat center center;
+    cursor: pointer;
+    
+}
+td.editorU_edit {
+    background: url('images/pencil_small.png') no-repeat center center;
+    cursor: pointer;
+}
+td.editorU_remove {
+    background: url('images/drop.png') no-repeat center center;
+    cursor: pointer;
+
+td.corpus-details {
+    background: url('images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+td.corpus-details.shown {
+    background: url('images/details_close.png') no-repeat center center;
+}
+
+
+ .axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }
+/*.bar {
+  fill: orange;
+}*/
+
+.bar:hover {
+  fill: lightblue ;
+}
+
+[id*=dc-neo-chart] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-25deg);
+}
+[id*=dc-neo-chart] g.row text {
+      fill: black;
+}
+[id*=dc-newspaper-chart] g.row text {
+      fill: black;
+}
+/* timeline  */
+[id*=dc-range-chart] { width: 100%; }
+[id*=dc-time-chart] { width: 100%; }
+[id*=dc-time-chart] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-25deg);
+}
+[id*=dc-range-chart] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-25deg);
+}
+
+[id*=dc-] g.row text {fill: black !important;}
+
+[id*=range-] { width: 100%; }
+[id*=dc-]{ width: 100%; }
+
+[id*=dc-] g.row rect {
+      min-width: 10px !important;
+    }
+
+
+
+ .axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: lightblue ;
+}
+
+[id*=dc-] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+[id*=dc-] g.row text {
+      fill: black;
+    }
+
+
+[id*=dc-l] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+[id*=dc-r] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+[id*=dc-core] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+
+[id*=dc-l] g.row text {
+      fill: black;
+    }
+
+[id*=dc-r] g.row text {
+      fill: black;
+    }
+
+[id*=dc-core] g.row text {
+      fill: red !important;
+    }
+
+[id*=dc-] g.row text {fill: black !important;}
+
+[id*=range-] { width: 100%; }
+[id*=dc-]{ width: 100%; }
+
+[id*=dc-] g.row rect {
+      min-width: 10px !important;
+    }
+
+
+
+ .axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: lightblue ;
+}
+
+[id*=dc-] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+[id*=dc-] g.row text {
+      fill: black;
+    }
+
+
+[id*=dc-l] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+[id*=dc-r] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+[id*=dc-core] g.axis g text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+
+
+[id*=dc-l] g.row text {
+      fill: black;
+    }
+
+[id*=dc-r] g.row text {
+      fill: black;
+    }
+
+[id*=dc-core] g.row text {
+      fill: red !important;
+    }
