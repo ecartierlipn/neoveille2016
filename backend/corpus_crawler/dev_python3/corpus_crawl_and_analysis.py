@@ -10,7 +10,7 @@ import configparser
 import mysql.connector
 from mysql.connector import Error
 import logging
-import pickle
+import pickle,json
 import feedparser
 feedparser.USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:10.0) Gecko/20100101 Firefox/10.0'
 from langdetect import detect
@@ -254,28 +254,60 @@ class rssfeeds(corpus):
         # neologisms
         # TBD : add info with neologism to saved data
         # hunspell check 
-        log.info("All rss feeds processed. Processing neologisms.")
+        log.info("All rss feeds processed. Processing neologisms : " + str(neologisms))
         if re.search('hunspell',self.ling_config['type']) and len(neologisms)>0:
             log.info("Neologisms after spacy : " + str(len(neologisms)) + " : " + str(neologisms.keys()))
-            neos = hunspell_check_text(" ".join(neologisms.keys()),ling_config['hunspell'])
-            if len(neos.keys())>0:
-                log.info("Neologisms after hunspell : " + str(len(neos.keys())) + " : " + str(neos))                        
-                add_neologisms_to_db(neos,self.lang_iso.upper()) # save neologisms to database table for the given language
-                # TDB                        
-                #add_neologisms_contexts_to_db(neos,self.lang_iso.upper()) # save neologisms to database table for the given language
-                
-        else:  
-            neos=[]
-            for row in res:
-                if 'oov' in row and len(row['oov'])>0:
-                    #print(row['oov'])
-                    neos.extend(row['oov'].split(" "))
-            log.info("Neologisms detected : " + str(neos))
-            #exit()
-            add_neologisms_to_db(neos,self.lang_iso.upper()) # save neologisms to database table for the given language
+            neos_info = hunspell_check_text(" ".join(neologisms.keys()),ling_config['hunspell'])
+            log.info("Neologisms after hunspell : " + str(len(neos_info.keys())) + " : " + str(neos_info))                        
+            if len(neos_info.keys())>0:
+                add_neologisms_to_db_with_docs(neologisms,neos_info,self.lang_iso.upper()) # save neologisms to database table for the given language
+        # exclusion dico
+        if re.search('exclusiondico',self.ling_config['type']) and len(neologisms)>0:
+            log.info("Neologisms after spacy/hunspell : " + str(len(neologisms)) + " : " + str(neologisms.keys()))
+            neos_info = [k for k in neologisms.keys() if not(lc(k) in ling_config['exclusiondico'].keys())]
+            for key in neologisms:
+                if not(key in neos_info):
+                    delete(neologisms[key])            
+            log.info("Neologisms after exclusion dico : " + str(len(neos_info.keys())) + " : " + str(neos_info))                        
+            if len(neos_info.keys())>0:
+                add_neologisms_to_db_with_docs(neologisms,neos_info,self.lang_iso.upper()) # save neologisms to database table for the given language
+                                
+        else:
+            #add_neologisms_to_db(neologisms,{}, self.lang_iso.upper()) # save neologisms to database table for the given language
+            add_neologisms_to_db_with_docs(neologisms,{}, self.lang_iso.upper()) # save neologisms to database table for the given language
 
 
-################## utility functions 
+################## utility functions
+            
+def load_exclusion_dico(lang):
+    """ Connect to MySQL database and return a dictionary with all the excluded forms as keys from all dictionaries 
+    for this language lang"""
+    dict_exclusion={}
+    try:
+        conn = mysql.connector.connect(host=mysqlhost,
+                                       database=mysqldb_corpus,
+                                       user=mysqluser,
+                                       password=mysqlpassword)
+        if conn.is_connected():
+            #log.info('Connected to Mysql database' + "\n")
+            cursor = conn.cursor()
+            args = [lang]
+            results = cursor.callproc('get_dicos_generic', args)
+            for result in cursor.stored_results():
+                for row in result.fetchall():
+                    dict_exclusion[row[0]]=1
+            cursor.close()
+            conn.close()
+            log.info("Exclusion dico loaded : " + str(len(dict_exclusion)) + " entries.")
+            return dict_exclusion
+
+    except Error as e:
+        log.exception(str(e))
+        return False
+
+            
+            
+
 def update_to_SOLR(res):
     ''' update solr with all data with pysolr'''
     # delete ID_RSS from res (useless for solr)
@@ -330,10 +362,14 @@ def save_rsscorpus_to_DB(res,lang_iso):
 
 
 
-def add_neologisms2_to_db(neolist,lang):
-    """ add neologisms + info to database for web interface validation """
-    log.info("Saving neologisms to database")
-    proc_name = 'ADD_NEOLOGISM_' + lang 
+def add_neologisms_to_db_with_docs(neolist,neosinfo,lang):
+    """ add neologisms to database for web interface validation """
+    log.info("Saving neologisms to database" + str(neolist) + ' : and info : ' + str(neosinfo))
+    #for  neo in neolist:
+    #    log.info("Saving neologism : " + neo + " : " + str(len(neolist[neo])) + ' : ' + neosinfo.get(neo,'spacy:oov'))
+
+    proc_name = 'ADD_NEOLOGISM_DOCS_' + lang
+    log.info("Saving with procedure : " + proc_name)
     try:
         conn = mysql.connector.connect(host=mysqlhost,
                                        database=mysqldb_neo,
@@ -341,30 +377,35 @@ def add_neologisms2_to_db(neolist,lang):
                                        password=mysqlpassword,
                                        autocommit=True)
         if conn.is_connected():
-            for neo in neolist:
-                #print(neo)
-                args=[neo, 1, neolist[neo], 0]
+            for neo in neolist.keys():
+                #log.info("Saving neologism : " + neo + " : " + str(len(neolist[neo])) + ' : ' + neosinfo.get(neo,'spacy:oov'))
+                args=[neo, len(neolist[neo]), neosinfo.get(neo,'spacy:oov'), json.dumps(neolist[neo]), 0]
+                log.info("Saving neologism with following data : " + str(args))
                 cursor = conn.cursor()
                 results = cursor.callproc(proc_name, args)
                 log.info(str(results )+ "\n")
                 cursor.close()
 
     except Error as e:
-        log.warning(e)
+        log.warning(str(e))
         return False
 
     finally:
         conn.close()
         return True
+ 
 
 
 
 
-
-def add_neologisms_to_db(neolist,lang):
+def add_neologisms_to_db(neolist,neosinfo, lang):
     """ add neologisms to database for web interface validation """
-    log.info("Saving neologisms to database")
+    log.info("Saving neologisms to database" + str(neolist) + ' : and info : ' + str(neosinfo))
+    #for  neo in neolist:
+    #    log.info("Saving neologism : " + neo + " : " + str(len(neolist[neo])) + ' : ' + neosinfo.get(neo,'spacy:oov'))
+
     proc_name = 'ADD_NEOLOGISM_' + lang 
+    log.info("Saving with procedure : " + proc_name)
     try:
         conn = mysql.connector.connect(host=mysqlhost,
                                        database=mysqldb_neo,
@@ -372,16 +413,17 @@ def add_neologisms_to_db(neolist,lang):
                                        password=mysqlpassword,
                                        autocommit=True)
         if conn.is_connected():
-            for neo in neolist:
-                #print(neo)
-                args=[neo, 1, "", 0]
+            for neo in neolist.keys():
+                #log.info("Saving neologism : " + neo + " : " + str(len(neolist[neo])) + ' : ' + neosinfo.get(neo,'spacy:oov'))
+                args=[neo, len(neolist[neo]), neosinfo.get(neo,'spacy:oov'), 0]
+                log.info("Saving neologism with following data : " + str(args))
                 cursor = conn.cursor()
                 results = cursor.callproc(proc_name, args)
                 log.info(str(results )+ "\n")
                 cursor.close()
 
     except Error as e:
-        log.warning(e)
+        log.warning(str(e))
         return False
 
     finally:
@@ -523,6 +565,30 @@ if __name__ == '__main__':
                 log.info("Spacy server check OK.")
                 #print ('Spacy server check OK.')
 
+    # SPACY+EXCLUSIONDICO
+    elif ling_pipeline == 'spacy+exclusiondico':
+        ling_config['type']='spacy+exclusiondico'
+        ling_config['spacy_server']=config['SPACY']['spacy_server']
+        ling_config['model']=config['SPACY']['model']
+        ling_config['token_tags']=[x.strip() for x in config['SPACY']['token_tags'].split(',')]
+        ling_config['exclusiondico']=load_exclusion_dico(lang_iso)
+        from lib.spacy_client import get_nlp,check_server, check_model
+        # check spacy server is running
+        res = check_server(ling_config['spacy_server'])
+        if res is False:
+            log.error("Spacy server (lib/spacy_server.py <iso_lang>) is not running. Please launch it before running this file. Exiting.")
+            #print("Spacy server (lib/spacy_server.py) is not running. Please launch it before running this file. Exiting.")
+            exit()
+        else:
+            # check model
+            res = check_model(ling_config['spacy_server'],lang_iso)
+            if res is False:
+                log.error("Spacy server model not corresponding to language [" + lang_iso + "]. Launch it again (lib/spacy_server.py <iso_lang>) with the current language. Exiting.")
+                #print("Spacy server model not corresponding to language" + lang_iso + ". Launch it again (lib/spacy_server.py <iso_lang>) with the current language. Exiting.")
+                exit()
+            else:
+                log.info("Spacy server check OK.")
+                #print ('Spacy server check OK.')
 
     #elif ling_pipeline =='hunspell':
     #    import mosestokenizer
@@ -532,8 +598,7 @@ if __name__ == '__main__':
 
 
     else:
-        log.error("No linguistic pipeline defined. Please define it in the configuration file and rerun!")
-        #print(ling_pipeline)
+        log.error("No or ill-defined linguistic pipeline [" + ling_pipeline + "]. Please define it in the configuration file and rerun!")
         exit()
     
     main()

@@ -4,36 +4,49 @@ log = logging.getLogger(__name__)
 
 def check_server(url):
     '''Function to check spacy server available'''
-    response = requests.get(url + '/check')
-    log.info(response.json())
-    if response.raise_for_status(): # bad response
-        log.error(response.raise_for_status())
+    try:
+        response = requests.get(url + '/check')
+        log.info(response.json())
+        if response.raise_for_status(): # bad response
+            log.error(response.raise_for_status())
+            return False
+        else:
+            return True
+    except Exception as e:
+        log.error("Error with Spacy server : " + str(e))
         return False
-    else:
-        return True    
 
 def check_model(url,lang):
     '''Function to check spacy server model loaded'''
-    response = requests.get(url + '/model')
-    log.info(response.json() + " : "+ lang)
-    if response.raise_for_status(): # bad response
-        log.error(response.raise_for_status())
+    try:
+        response = requests.get(url + '/model')
+        log.info(response.json() + " : "+ lang)
+        if response.raise_for_status(): # bad response
+            log.error(response.raise_for_status())
+            return False
+        elif not(response.json() == lang):
+            log.error("Bad model loaded [" + str(response.json()) + ']. Please relaunch server with [' + lang + '] model.')
+            return False
+        else:
+            return True
+    except Exception as e:
+        log.error("Error with Spacy model : " + str(e))
         return False
-    elif not(response.json() == lang):
-        log.error("Bad model loaded [" + str(response.json()) + ']. Please relaunch server with [' + lang + '] model.')
-        return False
-    else:
-        return True    
 
 
 def get_nlp(url,text):
-    response = requests.post(url + "/parse/", data={"sentence":text})
-    log.info(response)
-    if response.raise_for_status(): # bad response
-        log.error(response.raise_for_status())
+    try:
+        response = requests.post(url + "/parse/", data={"sentence":text})
+        log.info(response)
+        if response.raise_for_status(): # bad response
+            log.error(response.raise_for_status())
+            return False
+        else:
+            return response.json()
+    except Exception as e:
+        log.error("Error with Spacy analysis : " + str(e))
         return False
-    else:
-        return response.json()
+        
 
     
 if __name__ == "__main__":
