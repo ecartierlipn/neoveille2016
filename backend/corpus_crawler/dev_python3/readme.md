@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 # Usage
 
-You must first tune a configuration file before running the main program. Here is an example file (```lib/settings.en.ini```):
+You must first tune a configuration file before running the main program. Here is an example file (```config/settings.en.ini```):
 
 ```Python
 
