@@ -58,6 +58,7 @@ echo "<script>console.log( 'SESSION VARIABLES - LANGUAGE : " . $_SESSION['langua
 	<link rel="stylesheet" type="text/css" href="css/editor.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css">
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/themes/flat-blue.css">
@@ -721,11 +722,8 @@ function togglevisible(id, currentvalue) {
             <!-- Javascript Libs -->
             <script type="text/javascript" src="../lib/js/jquery.min.js"></script>
             <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
-<!-- 010118            <script type="text/javascript" src="../lib/js/Chart.min.js"></script> -->
             <script type="text/javascript" src="../lib/js/bootstrap-switch.min.js"></script>
-<!--            <script type="text/javascript" src="../lib/js/jquery.matchHeight-min.js"></script> -->
  	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/s/dt/jqc-1.12.0,moment-2.11.2,dt-1.10.11,b-1.1.2,se-1.1.2/datatables.min.js"></script> 
-<!--            <script type="text/javascript" src="../lib/js/jquery.dataTables.min.js"></script>-->
             <script type="text/javascript" src="../lib/js/dataTables.bootstrap.min.js"></script>
             <script type="text/javascript" charset="utf-8" src="js/dataTables.editor.min.js"></script>
             <script type="text/javascript" charset="utf-8" src="js/editor.title.js"></script>
@@ -735,6 +733,7 @@ function togglevisible(id, currentvalue) {
             <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js"></script>
             <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
 	    	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.colVis.min.js"></script>
+	    	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
 <!--            <script type="text/javascript" src="../lib/js/select2.full.min.js"></script> -->
 <!-- too heavy            <script src='../lib/js/pdfmake.min.js'></script> -->
  			<script src='../lib/js/vfs_fonts.js'></script>

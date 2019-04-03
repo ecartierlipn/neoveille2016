@@ -23,43 +23,51 @@ $(document).ready(function() {
 			{
 				"label": "Pays",
 				"name": "RSS_INFO.ID_PAYS",
-				"type": "select",
-				"placeholder":"Sélectionnez un pays"
+				"type": "select2",
+				//"placeholder":"Sélectionnez un pays",
+				"opts":{tags: true,placeholder: "Sélectionnez un pays"}
 			},
 			{
 				"label": "Langue",
 				"name": "RSS_INFO.ID_LANGUE",
-				"type": "select",
-				"placeholder":"Sélectionnez une langue"
+				"type": "select2",
+				//"placeholder":"Sélectionnez une langue"
+				"opts":{tags: true,placeholder: "Sélectionnez une langue"}
 			},
 			{
 				"label": "Journal",
 				"name": "RSS_INFO.ID_JOURNAL",
-				"type": "select",
-				"placeholder":"Sélectionnez un journal"
+				"type": "select2",
+				//"placeholder":"Sélectionnez un journal"
+				"opts":{tags: true,placeholder: "Sélectionnez un journal"}
 			},
 			{
 				"label": "Domaine",
 				"name": "RSS_INFO.ID_TYPE",
-				"type": "select",
-				"placeholder":"Sélectionnez une catégorie"
+				"type": "select2",
+				//"placeholder":"Sélectionnez une catégorie"
+				"opts":{tags: true,placeholder: "Sélectionnez un ou des domaines", multiple:true}
 			},
 			{
 				"label": "Fr&eacute;quence de parution",
 				"name": "RSS_INFO.ID_FREQUENCE",
-				"type": "select",
-				"placeholder":"Sélectionnez une fréquence"			},
+				"type": "select2",
+				//"placeholder":"Sélectionnez une fréquence"
+				"opts":{tags: true,placeholder: "Sélectionnez une fréquence de parution"}
+			},
 			{
 				"label": "National\/R&eacute;gional",
 				"name": "RSS_INFO.ID_LOCALITE",
-				"type": "select",
-				"placeholder":"Sélectionnez le type"
+				"type": "select2",
+				//"placeholder":"Sélectionnez le type"
+				"opts":{tags: true,placeholder: "Sélectionnez la portée géographique"}
 			},
 			{
 				"label": "Type corpus",
 				"name": "RSS_INFO.ID_FORMAT",
-				"type": "select",
-				"placeholder":"Sélectionnez le type de ressource"
+				"type": "select2",
+				//"placeholder":"Sélectionnez le type de ressource"
+				"opts":{tags: true,placeholder: "Sélectionnez le format de la source"}
 			},
 			{
 				"label": "Encodage",
@@ -269,8 +277,8 @@ $(document).ready(function() {
         }
     } );
     
-    // filter for each column
-    $('#RSS_INFO').dataTable().columnFilter({
+	// filter for each column
+	$('#RSS_INFO').dataTable().columnFilter({
 					aoColumns: [ 
 						{sSelector: "#filter_url",type: "text", bRegex: true, bSmart: true },
 						{sSelector: "#filter_pays",type: "text", bRegex: true, bSmart: true },
@@ -288,13 +296,14 @@ $(document).ready(function() {
 //  corpus details for newspaper details
 function getinfo2(d,callback) 
 {
+// TBD : parameters for NAME_LANGUE (collections[editor.lang] from settings.php)
 		var langues = {'12':'rss_spanish','13':'rss_german','14':'rss_netherlands','10':"rss_italian",'5':"rss_french", '7':"RSS_polish", 
 			'8':'RSS_brasilian', '4':'RSS_chinese', '3':'RSS_russian', '2':'RSS_czech', '6':'RSS_greek'};
 		//alert(langues[d.RSS_INFO.ID_LANGUE]);
 		query= d.RSS_JOURNAL.NAME_JOURNAL;
         var request= $.ajax({
 //        url:'http://tal.lipn.univ-paris13.fr/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
-        url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[d.RSS_INFO.ID_LANGUE] + '/select',
+        url : solr_host  + langues[d.RSS_INFO.ID_LANGUE] + '/select',
         data:{  "q":'source:"'+ d.RSS_JOURNAL.NAME_JOURNAL + '"',
         		rows:300000,
 //        		df:"dateS",
@@ -503,189 +512,37 @@ function find_rss(url) {
 
 
 
-/* Simple statistics table for all corpora (Toutes langues tab) */
-
-/* Toutes langues */
-$("#corpusinfoBtn2").click(function() {
-       $.ajax({
-           url : "./data/rescorpus.txt",
-           dataType: "text",
-           success : function (data) {
-               $("#corpusResultsAll").html(data);
-               $("#corpusResultsAll").show();
-               $("#corpusinfoBtn2").toggle();
-           }
-       });
-   });
-
-// corpus synthesis toggler   
-$(document).on('click', 'td.toggler', function(e){
-        e.preventDefault();
-        console.log(this);
-         if ( $(this).hasClass('shown') ) {
-         	$(this).removeClass('shown');
-         }
-         else {
-        	$(this).addClass('shown');
-         }
-        $('.cat_'+$(this).attr('data-corpus-cat')).toggle();
-    });
-
-
-
 /* CORPUS INFO BY LANGUAGE */
-
-// event trigger
-
-$("#corpusinfoBtnBr").on('click',function(){
-	$("#corpusinfoBtnBr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnBr"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('Br', function(data)
+// buttons for each language
+$("a[id^='corpusinfoBtn']").on('click',function(){ // #corpusinfoBtn.."
+	language = $(this).attr("language") ;
+	thisId = $(this).id
+	console.log("button corpusinfoBtn triggered");
+	console.log($(this).id);
+	console.log($(this).attr("language"));
+	$(thisId).replaceWith('<a  class="btn btn-info" id="' + thisId + '"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
+    get_corpus_info_jsondata_gen(language, function(data)
             {
             	if (typeof data == 'number'){
-					$("#corpusinfoBtnBr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnBr"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsBr").show();
+					$(thisId).replaceWith('<div>Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</div>');
+					//$(thisId).replaceWith('<div  class="btn btn-info" id="' + thisId + '2"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</div>');
+				    $("#corpusResults" + language).show();
 				}
 				else{
-					$("#corpusinfoBtnBr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnBr2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnFr").on('click',function(){
-	$("#corpusinfoBtnFr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnFr"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données (français)...</a>');
-    get_corpus_info_jsondata2('Fr', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnFr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnFr"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsFr").show();
-				}
-				else{
-					$("#corpusinfoBtnFr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnFr2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnCh").on('click',function(){
-	$("#corpusinfoBtnCh").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnCh"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données chinois)...</a>');
-	console.log("get_corpus_info_jsondata2 function");
-    get_corpus_info_jsondata2('Ch', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnCh").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnCh"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsCh").show();
-				}
-				else{
-					$("#corpusinfoBtnCh").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnCh2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnGr").on('click',function(){
-	$("#corpusinfoBtnGr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnGr"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('Gr', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnGr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnGr"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsGr").show();
-				}
-				else{
-					$("#corpusinfoBtnGr").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnGr2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnPl").on('click',function(){
-	$("#corpusinfoBtnPl").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnPl"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('Pl', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnPl").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnPl"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsPl").show();
-				}
-				else{
-					$("#corpusinfoBtnPl").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnPl2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnRu").on('click',function(){
-	$("#corpusinfoBtnRu").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnRu"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('Ru', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnRu").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnRu"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsRu").show();
-				}
-				else{
-					$("#corpusinfoBtnRu").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnRu2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnCz").on('click',function(){
-	$("#corpusinfoBtnCz").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnCz"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('Cz', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnCz").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnCz"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsCz").show();
-				}
-				else{
-					$("#corpusinfoBtnCz").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnCz2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnIt").on('click',function(){
-	$("#corpusinfoBtnIt").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnIt"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('It', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnIt").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnIt"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsIt").show();
-				}
-				else{
-					$("#corpusinfoBtnIt").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnIt2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnDe").on('click',function(){
-	$("#corpusinfoBtnDe").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnDe"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('De', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnDe").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnDe"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsDe").show();
-				}
-				else{
-					$("#corpusinfoBtnDe").replaceWith('<a  class="btn btn-info" id="corpusinfoBtnDe2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnNl").on('click',function(){
-	$("#corpusinfoBtnNl").replaceWith('<a href="" class="btn btn-info" id="corpusinfoBtnNl"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata2('Nl', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnNl").replaceWith('<a href="" class="btn btn-info" id="corpusinfoBtnNl"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsNl").show();
-				}
-				else{
-					$("#corpusinfoBtnNl").replaceWith('<a href="" class="btn btn-info" id="corpusinfoBtnNl2"></i>' + data + '</a>');				
+					$(thisId).replaceWith('<div></i>' + data + '</div>');				
 				}
             }
             );
 });
 
-
-function get_corpus_info_jsondata2(lang,callback) 
+// retrieve data from csv file
+// TBD : exception handler for d3.csv
+function get_corpus_info_jsondata_gen(lang,callback) 
 {
-		var langCSV = {'Nl':'rss_netherlands.csv','De':'rss_german.csv','It':"rss_italian.csv",'Fr':"rss_french.csv", 'Pl':"RSS_polish.csv", 'Br':'RSS_brasilian.csv', 'Ch':'RSS_chinese.csv', 'Ru':'RSS_russian.csv', 'Cz':'RSS_czech.csv', 'Gr':'RSS_greek.csv'};
-		var langues = {'It':"RSS_italian.json",'Fr':"rss_french.json", 'Pl':"RSS_polish.json", 'Br':'RSS_brasilian.json', 'Ch':'RSS_chinese.json', 'Ru':'RSS_russian.json', 'Cz':'RSS_czech.json', 'Gr':'RSS_greek.json'};
-		//alert(langues[d.RSS_INFO.ID_LANGUE]); langues[lang]
-		file = "data/" + langCSV[lang]
+		//var langCSV = {'Nl':'rss_netherlands.csv','De':'rss_german.csv','It':"rss_italian.csv",'Fr':"rss_french.csv", 'Pl':"RSS_polish.csv", 'Br':'RSS_brasilian.csv', 'Ch':'RSS_chinese.csv', 'Ru':'RSS_russian.csv', 'Cz':'RSS_czech.csv', 'Gr':'RSS_greek.csv'};
+		//var langues = {'It':"RSS_italian.json",'Fr':"rss_french.json", 'Pl':"RSS_polish.json", 'Br':'RSS_brasilian.json', 'Ch':'RSS_chinese.json', 'Ru':'RSS_russian.json', 'Cz':'RSS_czech.json', 'Gr':'RSS_greek.json'};
+		console.log(corpus_synthesis[lang]);
+		file = corpus_synthesis[lang] // from settings.php => corpus_synthesis global variable
 		console.log(file); 
 		d3.csv(file,function(data){
     		console.log(data[0]);
@@ -699,12 +556,15 @@ function get_corpus_info_jsondata2(lang,callback)
 	            console.log(num + "build_corpus_info_lang_cnt function")
 	            build_corpus_info_lang_cnt(data,lang);
 	        }
-    });
+    	}
+    	/*, function(error, rows) {
+        	callback("Probleme au chargement du fichier [" + file + "] : " + error);
+        	console.log(error);
+		}*/
+    );
 }
 
-
-
-// call in case of ajax success to build the graph (with country info)
+// build the graph for the given lang corpus
 function build_corpus_info_lang_cnt(jsondata, lang){
 
 //console.log(jsondata[0]);

@@ -1,7 +1,10 @@
 <?php
-include '../credentials.php';
 session_start();
 error_reporting(E_ALL);
+include '../credentials.php';
+// global variables
+require('../settings.php'); 
+
 if (is_ajax()) {
   if (isset($_GET["action"]) && !empty($_GET["action"])) { //Checks if action value exists
     $action = $_GET["action"];

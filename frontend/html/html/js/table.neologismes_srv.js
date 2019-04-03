@@ -1,11 +1,14 @@
 //$(document).ready(function() {
+// display global variables
 console.log("Working Language : " + languageW);
+console.log("Solr Host : " + solr_host);
+console.log("Available collections : " + collections);
 
 jQuery.support.cors = true;
 var editor; // use a global for the submit and return data rendering in the examples
 var table;
 $(document).ready(function() {
-	editor = new $.fn.dataTable.Editor( {
+editor = new $.fn.dataTable.Editor( {
 		//ajax: "php/neologismes2.php?lang="+languageW,
 		ajax: {url:"./php/neologismes2.php?lang="+languageW,type:"POST"},
 		table: "#example",
@@ -69,7 +72,7 @@ $(document).ready(function() {
 editor.lang=languageW;
 
 // New record
-    $('a.editor_create').on('click', function (e) {
+$('a.editor_create').on('click', function (e) {
         e.preventDefault();
  
         editor.create( {
@@ -79,7 +82,7 @@ editor.lang=languageW;
     } );
     
 // Edit record
-    $('#example').on('click', 'td.editor_edit', function (e) {
+$('#example').on('click', 'td.editor_edit', function (e) {
         e.preventDefault();
  
         editor.edit( $(this).closest('tr'), {
@@ -89,9 +92,9 @@ editor.lang=languageW;
     } );
  
 // Delete a record
-    $('#example').on('click', 'td.editor_remove', function (e) {
+$('#example').on('click', 'td.editor_remove', function (e) {
         e.preventDefault();
- 
+ 		//console.log($(this))
         editor.remove( $(this).closest('tr'), {
             title: "Suppression d'une entrée",
             message: 'Etes-vous certain de vouloir supprimer cette entrée (êtes-vous sûr qu\'il ne s\'agit pas d\'une lexie à intégrer à l\'un des dictionnaires d\'exclusion)?',
@@ -122,7 +125,7 @@ $('body').on('change',"#langDisplay",function(){
             });
 
 
-// fonction pour changer de langue source pour interface neologismes
+// function to change language results
 $('body').on('change',"#lang",function(){
                 val = this.value;
                 console.log(val);
@@ -137,28 +140,28 @@ $('body').on('change',"#lang",function(){
                 document.getElementById("validate2b").lang=val;
             });
 
-
-
-// Setup - add a text input to each footer cell
+// Setup - add a text input to each header cell (filter row)
 $('#example thead tr:eq(1) th').each( function () {
-	var title = $(this).text();
+	title = $(this).text();
 	if (title.length > 0){
-        $(this).html( '<input type="text" placeholder="'+title+'" class="column_search form-control"  />' ); // form-control-sm"
+        $(this).html( '<input type="text" class="column_search form-control" style="width:1OO%" placeholder="'+title+'"  />' ); // form-control-sm"  
+	}
+	else{
+        $(this).html( '&nbsp;' );  	
 	}
     } );
 
+
 table = $('#example').DataTable( {
+		fixedHeader: true,
 		dom: '<B>lrtip',
 		orderCellsTop: true,
 		fixedHeader: true,
 		scrollY: '150vh',
-	        scrollCollapse: true,
+	    scrollCollapse: true,
 		processing:true,
 		serverSide:true,
 		search: {regex: true},
-		//deferLoading:10,
-		//"deferLoading": [ 57, 100 ],
-//		deferRender: true,
 		ajax: {url:"./php/neologismes2.php?lang="+languageW,type:"POST"},
 		lengthMenu: [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100,200, "Tous"]],
 		lengthChange: true,
@@ -229,8 +232,8 @@ table = $('#example').DataTable( {
 		language:{url:"//cdn.datatables.net/plug-ins/1.10.13/i18n/French.json"}
 	} );
 	
-// Apply the search
-    $( 'input.column_search'  ).on( 'keyup',function () {
+// Apply the filter
+$( 'input.column_search').on( 'keyup',function () {
     	//columindex = $(this).parent().index();
     	//columnvalue = columindex.value;
    		//console.log("["+this.value+"]");
@@ -238,8 +241,9 @@ table = $('#example').DataTable( {
             .column( $(this).parent().index() )
             .search( this.value ,true, false) //
             .draw();
-        //console.log(table.search())
     } );
+
+
 
 // Add event listener for opening and closing details
 $('#example tbody').on('click', 'td.details-control', function () {
@@ -252,7 +256,7 @@ $('#example tbody').on('click', 'td.details-control', function () {
             tr.removeClass('shown');
         }
         else {
-            // Open this row
+            // main function =>
             formatajax(row.data(), function(data)
             {
 	            //alert(data)
@@ -279,6 +283,7 @@ $('#example tbody').on('click', 'td.details-control2', function () {
         else {
             // Open this row
             //alert(row.data())
+            // main function =>
             get_neologism_stat(editor.lang, row.data(), function(data)
             {
 	            //alert(data)
@@ -287,8 +292,8 @@ $('#example tbody').on('click', 'td.details-control2', function () {
         	    details.addClass('shown');
         	    details.addClass('stat_res');
             	if (typeof data == 'number'){
-				    $('#corpusResults'+ editor.lang).clone().appendTo('.stat_res td');
-				    $("#corpusResults" + editor.lang).show();
+				    $('#corpusResults').clone().appendTo('.stat_res td');
+				    $("#corpusResults").show();
 				}
         	    
             }
@@ -296,39 +301,18 @@ $('#example tbody').on('click', 'td.details-control2', function () {
         }
     } );
  
+ // external app to have additional information on the neologism
 $('#example tbody').on('click', '.details-control3', function () {
         var tr = $(this).closest('tr');
         var row = table.row( tr );
-        d = row.data()
+        d = row.data() // to get d.lexie
         console.log(d);
-	console.log(editor.lang);
-        codesG = {'it':'22','fr':'19','ru':'25','ch':'11','es':'21','de':'20'}
-
-if (editor.lang=='pl'){
-//	url2 = 'http://nkjp.pl/poliqarp/nkjp1800/query/?query=' + d.lexie;
-//	jQuery.post("http://nkjp.pl/poliqarp/nkjp1800/query/", { query : d.lexie },
-//              function(html) {
-                  // open new window here
-//		  window.open(html,"_searchpl");
-//              }
-//);
-
-//	jQuery("#dynForm input#query").val = d.lexie;
-	jQuery("#dynForm input#query").val(d.lexie);
-   	jQuery("#dynForm").submit();
-//	window.open("searchpl");
-	console.log($("#dynForm"));
-
-}
-
-else {
-	url2 = 'https://books.google.com/ngrams/graph?case_insensitive=on&year_start=1800&year_end=2008&corpus=' + codesG[editor.lang] + '&smoothing=3&content=' + d.lexie;
-        window.open(url2,"_details");
-}
+		console.log(editor.lang);
+		url = external_apps[editor.lang] + d.lexie;
+        window.open(url,"external_corpus");
     } );
-   
-    
-} );
+});
+
 
 //////////////   STATS FOR SPECIFIC NEOLOGISM 
 
@@ -338,42 +322,28 @@ function get_neologism_stat(lang,neo,callback)
 {
 		//alert(d.lexie)
 		if (editor.lang == undefined){editor.lang='fr';}
-		var langues = {'es':'rss_spanish','it':"rss_italian",'fr':"rss_french", 'pl':"RSS_polish", 'br':'RSS_brasilian', 'ch':'RSS_chinese', 'ru':'RSS_russian', 'cz':'RSS_czech', 'gr':'RSS_greek'};
-		console.log("get_neologism_stat : " + langues[editor.lang] + " : " + neo);
+//		var langues = {'es':'rss_spanish','it':"rss_italian",'fr':"rss_french", 'pl':"RSS_polish", 'br':'RSS_brasilian', 'ch':'RSS_chinese', 'ru':'RSS_russian', 'cz':'RSS_czech', 'gr':'RSS_greek'};
+		console.log("get_neologism_stat at : " +solr_host + collections[editor.lang] + ", for : " + neo.lexie);
         var request= $.ajax({
-//        url:'http://tal.lipn.univ-paris13.fr/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
-        url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[editor.lang] + '/select',
-//        data:{  "q":'dateS:* AND neologismes:"' +neo.lexie+ '"',
-//        data:{  "q":'"' +neo.lexie+ '"',
-        data:{  q: '"' +neo.lexie + '"',
+        url:solr_host + collections[editor.lang] + '/select',
+//        url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[editor.lang] + '/select',
+        data:{  q: 'contents:"' +neo.lexie + '"',
         		rows:1000,
-        		//fl:"dateS,source,link,subject,subject2, neologismes, country, contents",
         		"wt":"json",
-        		//"df":"contents",
         		"indent":"false",
-        		//"hl":"true",
-        		//"hl.fl":"*",
-        		//"hl.simple.pre":'<span style="background-color: #FFFF00">',
-        		//"hl.simple.post":"</span>"
         		},
         dataType: "jsonp",
         jsonp:'json.wrf',
         type:'GET',
-     //   async:false,
         success: function( result) {
-        	//alert(JSON.stringify(result));
             docsdata =result.response.docs;/// main results
-           // highlight = result.highlighting;
-            //alert(highlight)
-//            alert(docsdata);
             num = result.response.numFound;
-            //alert(num)
             if (num == 0){
-            	callback("Il n'y a pas de données disponibles pour ce néologisme pour cette langue actuellement. Réessayer plus tard. Vous pouvez consulter le corpus complet dans l'onglet 'Toutes les langues'.");
+            	callback("Il n'y a pas de données disponibles pour ce néologisme dans le corpus disponible à : " + solr_host + collections[editor.lang]);
             }
             else{
 	            callback(num);
-	            build_corpus_info_lang(docsdata,lang, neo.lexie);
+	            build_corpus_info_lang(docsdata, neo.lexie);
 	        }
     	},
         error: function (request) {
@@ -385,7 +355,7 @@ function get_neologism_stat(lang,neo,callback)
 }
 
 // call in case of ajax success : build the graphs
-function build_corpus_info_lang(jsondata, lang, lexie){
+function build_corpus_info_lang(jsondata, lexie){
 
 console.log(jsondata[0]);
 
@@ -404,19 +374,7 @@ console.log(jsondata[0]);
     	d.article= d.link;
     	d.country= d.country
     	d.contents = d.contents
-    	//alert(d.country)
-    	//d.country= [48.856614, 2.352222]
-    	/*if (d.neologismes == null)
-    	{
-      		//d.neolist   = "";
-      		d.neocount=0;
-    	}
-    	else
-    	{
-    		d.neolist   = d.neologismes[0];
-//    		d.neolist   = d.neologismes.join(", ");
-    		d.neocount= d.neologismes.length;
-    	}*/
+//    	console.log(d);
   }); 
  console.log("Data Loaded");
 
@@ -428,7 +386,7 @@ console.log(jsondata[0]);
 
 /*************** TOTAL CHART *********************************/
   
-totalCount = dc.dataCount('.dc-data-count'+lang);
+totalCount = dc.dataCount('.dc-data-count');
 totalCount 
         .dimension(facts)
         .group(all)  
@@ -438,7 +396,7 @@ totalCount
             all: 'Tous les articles sélectionnés. Cliquez sur les graphes pour effectuer des filtres.'
         });
   
-totalCount2 = dc.dataCount('.dc-data-count2'+lang);
+totalCount2 = dc.dataCount('.dc-data-count2');
 totalCount2 
         .dimension(facts)
         .group(all)  
@@ -453,7 +411,7 @@ console.log("Count chart built");
 console.log(totalCount);
 /***************************** COUNTRY ROW BAR CHART ***********************/
 
-var neoChart = dc.rowChart("#dc-neo-chart"+lang);
+var neoChart = dc.rowChart("#dc-neo-chart");
 
 // neologismes dimensions : attention buggy as field = array!!!
 var neoDim = facts.dimension(function(d){ return d.country;});
@@ -507,7 +465,7 @@ console.log(neoChart);
 // see http://dc-js.github.io/dc.js/docs/html/dc.lineChart.html
 
 // Create the dc.js chart objects & link to div
-var timeChart = dc.lineChart("#dc-time-chart"+lang);
+var timeChart = dc.lineChart("#dc-time-chart");
 
 // create timeline chart dimensions
 	var volumeByDay = facts.dimension(function(d) {
@@ -569,7 +527,7 @@ var timeChart = dc.lineChart("#dc-time-chart"+lang);
 /***************************** SUBJECT PIE CHART ***********************/
 
 // Create the dc.js chart objects & link to div
-var subjectChart = dc.pieChart("#dc-subject-chart"+lang);
+var subjectChart = dc.pieChart("#dc-subject-chart");
 
 
 //  subjectchart  dimensions
@@ -603,7 +561,7 @@ console.log(subjectChart);
 
 /***************************** NEWSPAPER ROW BAR CHART ***********************/
 
-var newspaperChart = dc.rowChart("#dc-newspaper-chart"+lang);
+var newspaperChart = dc.rowChart("#dc-newspaper-chart");
 //var newspaperChartLow = dc.rowChart("#dc-newspaper-chart-low");
 
 //  newspaperchart dimensions (with a fake group to keep just top and bottom 15
@@ -669,7 +627,7 @@ console.log(newspaperChart);
 /***************************** DATATABLES CHART ***********************/
 
 // sauvegarde version limitée datatables
-var dataTableDC = dc.dataTable("#dc-table-chart"+lang);
+var dataTableDC = dc.dataTable("#dc-table-chart");
 
   // Create dataTable dimension
   var timeDimension = facts.dimension(function (d) {
@@ -703,10 +661,10 @@ var dataTableDC = dc.dataTable("#dc-table-chart"+lang);
 function highlight(text, neo){
 	
 	var regexp = new RegExp( "(.{0,70})(" + neo.toString() + ")(.{0,70})", 'g');
-	console.log(text);
+	//console.log(text);
 	console.log(typeof text);
-	console.log(regexp);
-	console.log(typeof regexp)
+	//console.log(regexp);
+	//console.log(typeof regexp)
 	var res = text.match(regexp);
 	match = regexp.exec(text);
 	var res = ''
@@ -714,32 +672,17 @@ function highlight(text, neo){
 		res = res + "<br/>..." + match[1] + "<mark>" + match[2] + "</mark>" + match[3] + "...";
 		match = regexp.exec(text);
 	}
-	console.log(res);
+	//console.log("Results : " + res);
 	return res;
 }    
     
 console.log("Datatable chart built");
 console.log(timeDimension);
 
-
-
-
-
-
 /***************************** RENDER ALL THE CHARTS  ***********************/
-
-    // make visible the zone : does not work
-    
-//    $("#corpusresults").show();
-     //$("#corpusresults").css( "display", "visible !important");
-	$("#corpusinfoBtn"+lang).replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtn2Done">Chargement effectué</a>');
-    // Render the Charts
-  	dc.renderAll(); 
+dc.renderAll(); 
 
 }
-
-
-
 
 
 /// details
@@ -748,11 +691,9 @@ function formatajax(d,callback)
 		//alert(d.lexie)
 		if (editor.lang == undefined){editor.lang='fr';}
 		var restable='';
-		var langues = {'es':'rss_spanish','it':"rss_italian",'fr':"rss_french", 'pl':"RSS_polish", 'br':'RSS_brasilian', 'ch':'RSS_chinese', 'ru':'RSS_russian', 'cz':'RSS_czech', 'gr':'RSS_greek'};
         var request= $.ajax({
-//        url:'http://tal.lipn.univ-paris13.fr/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
-        url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[editor.lang] + '/select',
-        data:{  q: '"'+d.lexie+'"',
+	        url:solr_host + collections[editor.lang] + '/select',
+	        data:{  q: 'contents:"'+d.lexie+'"',
         		rows:20,
         		df:"contents",
         		wt:"json",
@@ -791,11 +732,6 @@ function formatajax(d,callback)
 
 
             }
-             //   $.each(data, function (i, d) {
-            //	   tbody += d.contents +'<br/>' ;
-            //	   });
-
-           // tbody += '</td></tr>';
             restable = '<table width="100%">' + thead + tbody + '</table>';
             callback(restable);
     	},
@@ -808,24 +744,6 @@ function formatajax(d,callback)
 	//return restable;
 }
 
-// gestion childrow
-function format ( d ) {
-    // `d` is the original data object for the row
-    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-        '<tr>'+
-            '<td>Lexie</td>'+
-            '<td>'+d.lexie+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Type</td>'+
-            '<td>'+d.type+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Extra info:</td>'+
-            '<td>And any further details here (images etc)...</td>'+
-        '</tr>'+
-    '</table>';
-}
 
 
 
@@ -924,74 +842,6 @@ function save_to_dict(lang) {
 	}
 		
 
-
-
-
-/// details
-function formatajax2(d,callback) 
-{
-		console.log(d);
-		if (editor.lang == undefined){editor.lang='fr';}
-		var restable='';
-		var langues = {'it':"rss_italian",'fr':"rss_french", 'pl':"RSS_polish", 'br':'RSS_brasilian', 'ch':'RSS_chinese', 'ru':'RSS_russian', 'cz':'RSS_czech', 'gr':'RSS_greek'};
-        var request= $.ajax({
-//        url:'http://localhost:8983/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
-        url:'http://localhost:8983/solr/' + langues[editor.lang] + '/select',
-        data:{  q: d.lexie,
-        		rows:100,
-        		df:"contents",
-        		sort:"dateS asc",
-        		debug:"true",
-        		wt:"json",
-        		indent:"false",
-        		"hl":"true",
-        		"hl.fl":"*",
-        		"hl.simple.pre":'<span style="background-color: #FFFF00">',
-        		"hl.simple.post":"</span>"
-        		},
-        dataType: "jsonp",
-        jsonp:'json.wrf',
-        type:'GET',
-       // async:false,
-        success: function( result) {
-        	console.log(result);
-         //   data = result.highlighting;
-            meta = result.response;
-            docs = result.response.docs;
-            rawquery = result.debug.parsedquery_toString;
-            num = meta.numFound;
-            totalocc=0;
-            totaldoc=0;
-            var tbody = '';
-            for (var key in docs) 
-            {
-             	console.log(docs[key]);
-             	res = highlight_neo(docs[key].contents[0], d.lexie,rawquery.substring(9).replace(/^.+\((.+?) .+$/,"$1"));
-             	if (res[1] > 0){
-             		totaldoc = totaldoc + 1;
-             		totalocc = totalocc + res[1];
-             		var link = docs[key].link.substring(0,30);
-                	var dateL = docs[key].dateS.substring(0,10);
-                	tbody += '<tr><td>' + dateL + '</td><td><a title="Voir la source" href="' + docs[key].link + '" target="source">' + link+ '...</a></td><td>';
-             		tbody+=res[0];
-             	    tbody += '</td></tr>';
-             	}
-//            tbody += '</td></tr>';
-            }
-            var thead = '<div>' + totalocc + ' occurrences(s) dans ' + totaldoc + ' article(s). Requête étendue : "' + rawquery.substring(9).replace(/^.+\((.+?) .+$/,"$1") + '"</div><th>Date</th><th>Source</th><th>Extrait</th>';
-//            var thead = '<div>' + num + ' article(s) pour requête brute : '+ rawquery + '</div><th>Date</th><th>Source</th><th>Extrait</th>';
-           // tbody += '</td></tr>';
-            restable = '<table width="100%">' + thead + tbody + '</table>';
-            callback(restable);
-    	},
-        error: function (request) {
-            alert("Error : " + request.status + ". Response : " +  request.statusText);
-            restable= '<div>Problème :'+ request.status + ". Response : " +  request.statusText + '</div>';
-            callback(restable)
-        }
-    });
-	//return restable;
-}
 
 
 function highlight_neo(text, neo,rawquery){

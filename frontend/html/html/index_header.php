@@ -71,25 +71,34 @@ echo "<script>console.log( 'SESSION VARIABLES - LANGUAGE : " . $_SESSION['langua
 
 <style>
 /*
-.dataTables_wrapper .dataTables_processing {
-position: absolute;
-top: 1%;
-color:white;
-background:green;
-border-radius: 25px;
-background: #73AD21;
-//text-shadow:3px 2px black;
-left: 50%;
-width: 30%;
-height: 40px;
-margin-left: -20%;
-margin-top: -25px;
-padding-top: 20px;
-text-align: center;
-font-size: 1.2em;
+button.dt-button, button.btn,button.btn-default {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 0.333em;
+    padding: 0.5em 1em;
+    border: 1px solid #999;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.88em;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #e9e9e9;
+    background-image: -webkit-linear-gradient(top, #fff 0%, #e9e9e9 100%);
+    background-image: -moz-linear-gradient(top, #fff 0%, #e9e9e9 100%);
+    background-image: -ms-linear-gradient(top, #fff 0%, #e9e9e9 100%);
+    background-image: -o-linear-gradient(top, #fff 0%, #e9e9e9 100%);
+    background-image: linear-gradient(top, #fff 0%, #e9e9e9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='white', EndColorStr='#e9e9e9');
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    outline: none;
 }
 */
-
  .axis {
    font: 10px sans-serif;
  }

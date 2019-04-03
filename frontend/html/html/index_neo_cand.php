@@ -1,4 +1,11 @@
-<?php require('index_header.php'); ?>
+<?php 
+error_reporting(E_ALL);
+require('index_header.php'); 
+// global variables
+require('settings.php'); 
+?>
+
+
 
             <!-- Main Content neologismes candidates-->
             <div class="container-fluid" id="container-fluid">
@@ -40,25 +47,22 @@ elseif ($_SESSION['user_rights'] == 1){
 ?>
 <hr/>
 
-          <!-- choix langue -->
+          <!-- language select box -->
            <h5>Choisissez une langue : 
-			<select name="lang" id="lang" class="lang">
-			<option value="de" <?php if ($_SESSION['language']== 'de'){echo 'selected';}?>>Allemand</option>
-			<option value="en" <?php if ($_SESSION['language']== 'en'){echo 'selected';}?>>Anglais</option>
-      			<option value="ch" <?php if ($_SESSION['language']== 'ch'){echo 'selected';}?>>Chinois</option>
-			<option value="es" <?php if ($_SESSION['language']== 'es'){echo 'selected';}?>>Espagnol</option>
-      			<option value="fr" <?php if ($_SESSION['language']== 'fr'){echo 'selected';}?>>Français</option>
-      			<option value="gr" <?php if ($_SESSION['language']== 'gr'){echo 'selected';}?>>Grec</option>
-      			<option value="it" <?php if ($_SESSION['language']== 'it'){echo 'selected';}?>>Italien</option>
-			<option value="nl" <?php if ($_SESSION['language']== 'nl'){echo 'selected';}?>>Néerlandais</option>
-     			<option value="pl" <?php if ($_SESSION['language']== 'pl'){echo 'selected';}?>>Polonais</option>
-      			<option value="br" <?php if ($_SESSION['language']== 'br'){echo 'selected';}?>>Portugais du Brésil</option>
-      			<option value="ru" <?php if ($_SESSION['language']== 'ru'){echo 'selected';}?>>Russe</option>
-      			<option value="cz" <?php if ($_SESSION['language']== 'cz'){echo 'selected';}?>>Tchèque</option>
+			<select name="lang" id="lang" class="lang"  style="width:150px;">
+			<?php 
+			// echo language select box from $GLOBALS['language']
+			ksort($GLOBALS['language']);
+			foreach ($GLOBALS['language'] as $lang => $lang_iso) {
+				echo '<option value="' . $lang_iso . '" ';
+				if ($_SESSION['language']== $lang_iso){echo 'selected';}
+				echo '>' . $lang . '</option>';
+			}
+			?>			
     		</select>
 		  </h5>
 
-            <div class="row">
+           <div class="row">
             	<div class="col-xs-12">
                 	<div class="card">
                     	<div class="card-body">
@@ -112,23 +116,21 @@ elseif ($_SESSION['user_rights'] == 1){
                 </div>
             </div> 
             <!-- statistics pane for neologism details-->
-            <div class="row row-example" id="corpusResultsfr" style="display:none;">
-                                        <!-- neologismes rowschart-->
+            <div class="row row-example" id="corpusResults" style="display:none;">
+                                        <!-- country rowschart-->
                                         <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
+                                            <div class="panel panel-primary">
                                                 <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
+                                                	<a data-toggle="collapse" data-target="#togglecountry">
+                                                		Répartition par pays
+                                                	</a>
                                                 	<div>														
                                                 		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
 														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
 													</div>
 												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartfr">
+                                                <div class="panel-body collapse in"  id="togglecountry">
+		                                            <div id="dc-neo-chart">
           												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
 		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
 		                                            </div>
@@ -138,199 +140,34 @@ elseif ($_SESSION['user_rights'] == 1){
                                         <!-- timeline -->
                                         <div class="col-sm-8">
                                             <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countfr'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-		                                            <div id="dc-time-chartfr">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartfr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartfr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2fr'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartfr'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>
-            <div class="row row-example" id="corpusResultsit" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
                                                 <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartit">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
+                                                <a data-toggle="collapse" data-target="#toggletime">
+                                                Evolution temporelle
+                                                </a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countfr'>
+                                                	<div id="toggletime" class="panel-body collapse in">
+                                                	<div class='dc-data-count'>
                                                 		<span class='filter-count'></span>
  														 sur <span class='total-count'></span> articles.
 													</div>
-		                                            <div id="dc-time-chartit">
+		                                            <div id="dc-time-chart">
           												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
 		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
 		                                            </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                         <!-- Domaine pie chart -->
                                         <div class="col-sm-6">
                                             <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartit">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartit">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2it'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartit'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>
-            <div class="row row-example" id="corpusResultscz" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
                                                 <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartcz">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
+                                                	<a data-toggle="collapse" data-target="#toggledomain">
+                                                		Répartition par domaine
+                                                	</a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countcz'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-		                                            <div id="dc-time-chartcz">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartcz">
+                                                <div id="toggledomain" class="panel-body collapse in">
+		                                            <div id="dc-subject-chart">
           												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
 		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
 		                                            </div>
@@ -340,96 +177,13 @@ elseif ($_SESSION['user_rights'] == 1){
                                         <!-- journaux rowschart-->
                                         <div class="col-sm-6">
                                             <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartcz">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2cz'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartcz'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>
-            <div class="row row-example" id="corpusResultspl" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
                                                 <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartpl">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
+                                                	<a data-toggle="collapse" data-target="#togglenewspaper">
+                                                		Répartition par journaux (10 plus importants)
+                                                	</a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countpl'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-		                                            <div id="dc-time-chartpl">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartpl">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartpl">
+                                                <div id="togglenewspaper" class="panel-body collapse in">
+		                                            <div id="dc-newspaper-chart">
           												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
 		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
 		                                            </div>
@@ -439,448 +193,17 @@ elseif ($_SESSION['user_rights'] == 1){
                                         <!-- datatables -->
                                         <div class="col-sm-12">
                                             <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2pl'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartpl'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>
-            <div class="row row-example" id="corpusResultsbr" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
                                                 <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartbr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
+                                                	<a data-toggle="collapse" data-target="#toggledata">
+                                                		Données
+                                                	</a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countbr'>
+                                                <div id="toggledata" class="panel-body collapse in">
+                                                	<div class='dc-data-count2'>
                                                 		<span class='filter-count'></span>
  														 sur <span class='total-count'></span> articles.
 													</div>
-		                                            <div id="dc-time-chartbr">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartbr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartbr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2br'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartbr'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>
-            <div class="row row-example" id="corpusResultsgr" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
-                                                <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartgr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countgr'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-		                                            <div id="dc-time-chartgr">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartgr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartgr">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2gr'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartgr'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>
-            <div class="row row-example" id="corpusResultsch" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
-                                                <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartch">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countch'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-		                                            <div id="dc-time-chartch">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartch">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartch">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2ch'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartch'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>
-            <div class="row row-example" id="corpusResultsru" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
-                                                <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartru">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countru'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-		                                            <div id="dc-time-chartru">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartru">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartru">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2ru'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartru'>
-                                                	<thead>
-                                                	<tr class='header'>
-                                                		<th>Pays</th>
-                                                		<th>Domaine</th>
-                                                		<th>Journal</th>
-                                                		<th>Date</th>
-                                                		<th>Extraits</th>
-                                                	</tr></thead>
-                                                </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-		  		</div>		  		
-            <div class="row row-example" id="corpusResultses" style="display:none;">
-                                        <!-- neologismes rowschart-->
-                                        <div class="col-sm-4">
-                                            <div class="panel panel-primary" id="neopanel">
-                                                <div class="panel-heading">
-                                                	Répartition par pays
-                        							<button type="button" class="close" data-target="#neopanel" data-dismiss="alert">
-                        							<span aria-hidden="true">&times;</span>
-                        							<span class="sr-only">Close</span>
-                        							</button>
-                                                	<div>														
-                                                		<div id='moreitems' style="position:absolute !important;right:0;top:0;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div>
-														<div id='lessitems' style="position:absolute !important;left:97%;"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></div>
-													</div>
-												</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-neo-chartes">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- timeline -->
-                                        <div class="col-sm-8">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Evolution temporelle</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-countes'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-		                                            <div id="dc-time-chartes">
-          												<span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a>
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Domaine pie chart -->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par domaine</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-subject-chartes">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>		                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- journaux rowschart-->
-                                        <div class="col-sm-6">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Répartition par journaux (10 plus importants)</div>
-                                                <div class="panel-body">
-		                                            <div id="dc-newspaper-chartes">
-          												<b><span class='reset' style='visibility: hidden;'>Filtre(s): <span class='filter'></span></span> 
-		               									<a class='reset' href='javascript:dc.filterAll();dc.redrawAll();' style='visibility: hidden;'>Réinitialiser</a></b>                                            
-		                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- datatables -->
-                                        <div class="col-sm-12">
-                                            <div class="panel panel-primary">
-                                                <div class="panel-heading">Données</div>
-                                                <div class="panel-body">
-                                                	<div class='dc-data-count2es'>
-                                                		<span class='filter-count'></span>
- 														 sur <span class='total-count'></span> articles.
-													</div>
-                                                <table class='table table-hover' id='dc-table-chartes'>
+                                                <table class='table table-hover' id='dc-table-chart'>
                                                 	<thead>
                                                 	<tr class='header'>
                                                 		<th>Pays</th>
@@ -897,27 +220,28 @@ elseif ($_SESSION['user_rights'] == 1){
 		  		</div>
 
         </div>
-
-<!-- form for National Polish corpus -->
-<form id="dynForm" action="http://nkjp.pl/poliqarp/nkjp1800/query/" target="searchpl"  method="post">
-<input type="hidden" id="query" name="query" value="">
-</form>
-
-
-
             </div>
         </div>
 
 <?php require('index_footer.php'); ?>
 <!-- specific javascripts -->
-	<!-- dev version with crossfilter and dc.js libraries to visualize data -->
+	<!-- js librairies for visualization and column filter on datatables editor (filter snippet) -->
 		<script type="text/javascript" charset="utf-8" src="../js/d3.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="../js/crossfilter.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="../js/dc.min.js"></script>
-
+		<script type="text/javascript" src="js/jquery.dataTables.columnFilter.js"></script>
+	<!--  global variables from settings.php to send them to js scripts -->
+		<script type="text/javascript" charset="utf-8">
+		solr_host = <?php echo "'" . $GLOBALS['search_engine']['host'] . "';"; ?>
+		collections = <?php echo json_encode($GLOBALS['search_engine']['collection']) . ";"; ?>
+		external_apps = <?php echo json_encode($GLOBALS['external_app']) . ";"; ?>
+		//var lang = <?php echo "'" .  $_SESSION['language'] . "';"; ?>
+		//console.log(solr_host);
+		//console.log(collections);
+		//console.log(lang);
+		</script>
+	<!-- then load the main javascript -->
         <script type="text/javascript" charset="utf-8" src="js/table.neologismes_srv.js"></script>
-
-
 
 </body>
 

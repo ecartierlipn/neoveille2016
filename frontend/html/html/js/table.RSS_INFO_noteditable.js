@@ -184,8 +184,9 @@ $(document).ready(function() {
             }
         }
 	} );
+
 // Add event listener for opening and closing details (datatable details)
-$('#RSS_INFO tbody').on('click', 'td.details-control', function () {
+	$('#RSS_INFO tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
         var row = tableCorpus.row( tr );
  
@@ -208,10 +209,8 @@ $('#RSS_INFO tbody').on('click', 'td.details-control', function () {
             );
         }
     } );
-});
 
 // filter for each column
-$(document).ready( function () {
 	$('#RSS_INFO').dataTable().columnFilter({
 					aoColumns: [ 
 						{sSelector: "#filter_url",type: "text", bRegex: true, bSmart: true },
@@ -225,7 +224,8 @@ $(document).ready( function () {
             			{sSelector: "#filter_encoding", type: "text", bRegex: true, bSmart: true  }
 					]
 		});
-} );
+
+});
 
 
 /* CORPUS INFO  */
@@ -324,17 +324,6 @@ var svg = d3.select("#chartCorpus").append("svg")
 
 	}
 
-
-/* CORPUS INFO V2  */
-/*$("#corpusinfoBtn2").click(function(){
-// use $.get when works
-	//get_composite_graph();
-	getinfo3("Pologne", function(data)
-            {
-    	        $("#corpusinfo-info2").html(data);        	    
-            }
-    );
-});*/
 
 $("#corpusinfoBtn2").on('click',function(){
 	$("#corpusinfoBtn2").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtn2"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
@@ -677,714 +666,6 @@ console.log(timeDimension);
 }
 
 
-/* CORPUS INFO BY LANGUAGE */
-
-// event trigger
-$("#corpusinfoBtnBr").on('click',function(){
-	$("#corpusinfoBtnBr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnBr"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata('Br', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnBr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnBr"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsBr").show();
-				}
-				else{
-					$("#corpusinfoBtnBr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnBr2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnFr").on('click',function(){
-	$("#corpusinfoBtnFr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnFr"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données (français)...</a>');
-    get_corpus_info_jsondata('Fr', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnFr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnFr"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsFr").show();
-				}
-				else{
-					$("#corpusinfoBtnFr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnFr2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnCh").on('click',function(){
-	$("#corpusinfoBtnCh").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnCh"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données chinois)...</a>');
-    get_corpus_info_jsondata('Ch', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnCh").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnCh"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsCh").show();
-				}
-				else{
-					$("#corpusinfoBtnCh").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnCh2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnGr").on('click',function(){
-	$("#corpusinfoBtnGr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnGr"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata('Gr', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnGr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnGr"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsGr").show();
-				}
-				else{
-					$("#corpusinfoBtnGr").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnGr2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnPl").on('click',function(){
-	$("#corpusinfoBtnPl").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnPl"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata('Pl', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnPl").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnPl"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsPl").show();
-				}
-				else{
-					$("#corpusinfoBtnPl").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnPl2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnRu").on('click',function(){
-	$("#corpusinfoBtnRu").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnRu"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata('Ru', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnRu").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnRu"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsRu").show();
-				}
-				else{
-					$("#corpusinfoBtnRu").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnRu2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-$("#corpusinfoBtnCz").on('click',function(){
-	$("#corpusinfoBtnCz").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnCz"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
-    get_corpus_info_jsondata('Cz', function(data)
-            {
-            	if (typeof data == 'number'){
-					$("#corpusinfoBtnCz").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnCz"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</a>');
-				    $("#corpusResultsCz").show();
-				}
-				else{
-					$("#corpusinfoBtnCz").replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtnCz2"></i>' + data + '</a>');				
-				}
-            }
-            );
-});
-
-// ajax call to retrieve from apache solr the json data for the given language and given neologism 4/11/2016
-function get_neo_info_jsondata(lang,neo,callback) 
-{
-		var langues = {'Fr':"rss_french", 'Pl':"RSS_polish", 'Br':'RSS_brasilian', 'Ch':'RSS_chinese', 'Ru':'RSS_russian', 'Cz':'RSS_czech', 'Gr':'RSS_greek'};
-		//alert(langues[d.RSS_INFO.ID_LANGUE]);
-        var request= $.ajax({
-//        url:'http://tal.lipn.univ-paris13.fr/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
-        url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[lang] + '/select',
-        data:{  "q":'dateS:* AND neologismes:"' +neo+ '"',
-        		rows:300000,
-        		fl:"dateS,source,link,subject,subject2, neologismes",
-        		"wt":"json",
-        		"indent":"false",
-        		},
-        dataType: "jsonp",
-        jsonp:'json.wrf',
-        type:'GET',
-        async:false,
-        success: function( result) {
-        	//alert(JSON.stringify(result));
-            docsdata =result.response.docs;/// main results
-//            alert(docsdata);
-            num = result.response.numFound;
-            if (num == 0){
-            	callback("Il n'y a pas d'article avec des néologismes pour cette langue actuellement. Réessayer plus tard. Vous pouvez consulter le corpus complet dans l'onglet 'Toutes les langues'.");
-            }
-            else{
-	            callback(num);
-	            build_corpus_info_lang(docsdata,lang);
-	        }
-    	},
-        error: function (request) {
-            alert("Error : " + request.status + ". Response : " +  request.statusText);
-            res= '<div>Problème :'+ request.status + ". Response : " +  request.statusText + '</div>';
-            callback(res);
-        }
-    });
-}
-
-// ajax call to retrieve from apache solr the json data for the given language
-function get_corpus_info_jsondata(lang,callback) 
-{
-		var langues = {'Fr':"rss_french", 'Pl':"RSS_polish", 'Br':'RSS_brasilian', 'Ch':'RSS_chinese', 'Ru':'RSS_russian', 'Cz':'RSS_czech', 'Gr':'RSS_greek'};
-		//alert(langues[d.RSS_INFO.ID_LANGUE]);
-        var request= $.ajax({
-//        url:'http://tal.lipn.univ-paris13.fr/solr/rss_french/select?q=neologismes%3A' + d.lexie + '&rows=5&df=contents&wt=json&indent=true&hl=true&hl.fl=contents&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E',
-        url:'http://tal.lipn.univ-paris13.fr/solr/' + langues[lang] + '/select',
-        data:{  "q":'dateS:* AND neologismes:*',
-        		rows:300000,
-        		fl:"dateS,source,link,subject,subject2, neologismes",
-        		"wt":"json",
-        		"indent":"false",
-        		},
-        dataType: "jsonp",
-        jsonp:'json.wrf',
-        type:'GET',
-        async:false,
-        success: function( result) {
-        	//alert(JSON.stringify(result));
-            docsdata =result.response.docs;/// main results
-//            alert(docsdata);
-            num = result.response.numFound;
-            if (num == 0){
-            	callback("Il n'y a pas d'article avec des néologismes pour cette langue actuellement. Réessayer plus tard. Vous pouvez consulter le corpus complet dans l'onglet 'Toutes les langues'.");
-            }
-            else{
-	            callback(num);
-	            build_corpus_info_lang(docsdata,lang);
-	        }
-    	},
-        error: function (request) {
-            alert("Error : " + request.status + ". Response : " +  request.statusText);
-            res= '<div>Problème :'+ request.status + ". Response : " +  request.statusText + '</div>';
-            callback(res);
-        }
-    });
-}
-// call in case of ajax success to build the graphs
-function build_corpus_info_lang(jsondata, lang){
-
-console.log(jsondata[0]);
-
-/********************* GET THE JSON DATA AND TRANSFORM WHEN NECESSARY ***********/
-  // format our data : dateS,source,link,subject,subject2, neologisms
-  
-  
-  var dtgFormat = d3.time.format("%Y-%m-%dT%H:%M:%S");
-  var dtgFormat2 = d3.time.format("%a %e %b %H:%M");
-  
-  jsondata.forEach(function(d) { 
-    	d.dtg   = dtgFormat.parse(d.dateS.substr(0,19));
- 		d.newspaper   = d.source;
- 		d.subject2= d.subject2;
-    	d.subject  = d.subject;
-    	d.article= d.link;
-    	if (d.neologismes == null)
-    	{
-      		//d.neolist   = "";
-      		d.neocount=0;
-    	}
-    	else
-    	{
-    		d.neolist   = d.neologismes[0];
-//    		d.neolist   = d.neologismes.join(", ");
-    		d.neocount= d.neologismes.length;
-    	}
-  }); 
- console.log("Data Loaded");
-
-/*******************  GLOBAL DIMENSIONS ****************************/
-  // Run the data through crossfilter and load our 'facts'
-  var facts = crossfilter(jsondata);
-  var all = facts.groupAll();
-  
-
-/*************** TOTAL CHART *********************************/
-  
-totalCount = dc.dataCount('.dc-data-count'+lang);
-totalCount 
-        .dimension(facts)
-        .group(all)  
-        .html({
-            some: '<strong>%filter-count</strong> sélectionnés sur <strong>%total-count</strong> articles' +
-                ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();\'>Réinitialiser</a>',
-            all: 'Tous les articles sélectionnés. Cliquez sur les graphes pour effectuer des filtres.'
-        });
-  
-totalCount2 = dc.dataCount('.dc-data-count2'+lang);
-totalCount2 
-        .dimension(facts)
-        .group(all)  
-        .html({
-            some: '<strong>%filter-count</strong> sélectionnés sur <strong>%total-count</strong> articles' +
-                ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();\'>Réinitialiser</a>',
-            all: 'Tous les articles sélectionnés. Cliquez sur les graphes pour effectuer des filtres.'
-        });
-  
-  
-console.log("Count chart built"); 		   
-console.log(totalCount);
-/***************************** NEO ROW BAR CHART ***********************/
-
-// helper functions to deal with field as arrays (neologismes)
-/*
-//function reduceAdd(p, v) {
-  if (v.neologismes[0] === "") return p;    // skip empty values
-  v.neologismes.forEach (function(val, idx) {
-     p[val] = (p[val] || 0) + 1; //increment counts
-  });
-  return p;
-}
-//function reduceRemove(p, v) {
-  if (v.neologismes[0] === "") return p;    // skip empty values
-  v.neologismes.forEach (function(val, idx) {
-     p[val] = (p[val] || 0) - 1; //decrement counts
-  });
-  return p;
-   
-}
-//function reduceInitial() {
-  return {};  
-}
-*/
-
-var neoChart = dc.rowChart("#dc-neo-chart"+lang);
-
-// neologismes dimensions : attention buggy as field = array!!!
-var neoDim = facts.dimension(function(d){ return d.neolist;});
-var neoGroup = neoDim.group().reduceCount(function(d) { return d.neolist; });
-
-/*
-//var neoDim = facts.dimension(function(d){ return d.neologismes;});
-//var neoGroup = neoDim.groupAll().reduce(reduceAdd, reduceRemove, reduceInitial).value();
-// hack to make dc.js charts work
-//neoGroup.all = function() {
-  var newObject = [];
-  for (var key in this) {
-    if (this.hasOwnProperty(key) && key != "all") {
-      newObject.push({
-        key: key,
-        value: this[key]
-      });
-    }
-  }
-  return newObject;
-};
-//neoGroup.top = function(count) {
-    var newObject = this.all();
-     newObject.sort(function(a, b){return b.value - a.value});
-    return newObject.slice(0, count);
-};
-
-//console.log(neoGroup);
-*/
-
-/// for top	
-function remove_empty_bins_top(source_group) {
-    function non_zero_pred(d) {
-        return d.value != 0;
-    }
-    return {
-        all: function () {
-            return source_group.all().filter(non_zero_pred);
-        },
-        top: function(n) {
-            return source_group.top(Infinity)
-                .filter(non_zero_pred)
-                .slice(0, n);
-        }
-    };
-}
-var neoGroupTop = remove_empty_bins_top(neoGroup);
-
-// neo chart
-	neoChart
-			.width(350)
-            .height(300)
-            .dimension(neoDim)
-            .group(neoGroupTop)
-            .rowsCap(15)
-            .othersGrouper(false)
-            .label(function(d){return d.key + ' (' + d.value + ')';})
-            //.title(function(d){return d.key + ' (' + d.value + ')';})
-            .renderLabel(true)
-            .gap(0.1)
-            //.renderTitleLabel(true)
-            .ordering(function (d) {
-    			return -d.value
-			})
-    		.elasticX(true)
-		    .turnOnControls(true)
-	        .controlsUseVisibility(true);		   
-
-/*
-//neoChart.filterHandler (function (dimension, filters) {
-       dimension.filter(null);   
-        if (filters.length === 0)
-            dimension.filter(null);
-        else
-            dimension.filterFunction(function (d) {
-                for (var i=0; i < d.length; i++) {
-                    if (filters.indexOf(d[i]) >= 0) return true;
-                }
-                return false;
-            });
-    return filters; 
-    });
-//neoChart.render();
-*/		   
-neoId = "#dc-neo-chart"+lang + "div#moreitems"
-// events linked to the chart
-$('#stats').on('click',neoId , function(){
-	alert("hi guy");
-	neoChart.rowsCap = neoChart.rowsCap() + 10;
-	neoChart.redraw();
-});
-console.log("Neo chart built");
-console.log(neoChart);
-
-
-/***************************** TIMELINE ***********************/
-// see http://dc-js.github.io/dc.js/docs/html/dc.lineChart.html
-
-// Create the dc.js chart objects & link to div
-var timeChart = dc.lineChart("#dc-time-chart"+lang);
-
-// create timeline chart dimensions
-	var volumeByDay = facts.dimension(function(d) {
-    return d3.time.day(d.dtg);
-  });
-  var volumeByDayGroup = volumeByDay.group()
-    .reduceCount(function(d) { return d.dtg; });
-    console.log("Day groups :" + volumeByDayGroup.size());
-    
-    // min and max date
-    var minDate = volumeByDay.bottom(1)[0].date;
- 	var maxDate = volumeByDay.top(1)[0].date;
-	console.log(String(minDate) + ":" + String(maxDate));
-
-  // setup timeline graph
-  timeChart
-  	.width(700)
-    .height(300)
-    .margins({top: 10, right: 10, bottom: 20, left: 40})
-    .dotRadius(5) //
-    .dimension(volumeByDay)
-    .group(volumeByDayGroup)
-    .transitionDuration(500)
-    //.brushOn(true)
-    .xyTipsOn(true) // incompatible with the preceding attribute
-    .renderDataPoints({radius: 3, fillOpacity: 0.8, strokeOpacity: 0.8})
-    .title(function(d){
-      return dtgFormat2(d.jsondata.key)
-      + "\nTotal : " + d.jsondata.value;
-      })
-    //.yAxisLabel("Période temporelle")
-    //.xAxisLabel("Nombre d'articles")
-    .elasticY(true)
-    .elasticX(true)
-    .turnOnControls(true)
-    .controlsUseVisibility(true)
-//    .mouseZoomable(true)
-    .x(d3.time.scale().domain([minDate, maxDate]))
-    //.x(d3.time.scale().domain([new Date(2016, 6, 01), new Date()]))
-    .xAxis();
-  
-  
-  console.log("Time chart built");
-  console.log(timeChart);
-  
-  /***************************** TIMELINE ***********************/
-
-/***************************** SUBJECT PIE CHART ***********************/
-
-// Create the dc.js chart objects & link to div
-var subjectChart = dc.pieChart("#dc-subject-chart"+lang);
-
-
-//  subjectchart  dimensions
-    var subjectDimension = facts.dimension(function (d) { return d.subject; });
-    var subjectGroup = subjectDimension.group();
-	console.log("Subject groups :" + subjectGroup.size());
-  
-// subject chart
- 	subjectChart
- 		.width(500)
-        .height(250)
-        .cx(300)
-        .slicesCap(10)
-        .ordering(function (d) {
-    			return -d.value
-			})
-        .innerRadius(30)
-        .externalLabels(30)
-        .externalRadiusPadding(20)
-        .minAngleForLabel(0.5)
-        .drawPaths(true)
-        .transitionDuration(500)
-        .turnOnControls(true)
-	    .controlsUseVisibility(true)
-        .dimension(subjectDimension)
-        .group(subjectGroup)
- 	    .legend(dc.legend().x(0).y(20).itemHeight(10).gap(5));
-        
-console.log("Subject chart built");
-console.log(subjectChart);
-
-/***************************** NEWSPAPER ROW BAR CHART ***********************/
-
-var newspaperChart = dc.rowChart("#dc-newspaper-chart"+lang);
-//var newspaperChartLow = dc.rowChart("#dc-newspaper-chart-low");
-
-//  newspaperchart dimensions (with a fake group to keep just top and bottom 15
-    var newspaperDimension = facts.dimension(function (d) { return d.newspaper; });
-    //var newspaperDimensionless100 = facts.dimension(function (d) { return d.newspaper; }).filterRange([0, 100]);
-    var newspaperGroup = newspaperDimension.group().reduceCount(function (d) { return d.newspaper; });
-//    var newspaperTopGroup = newspaperGroup.top(15);
-
-/// for top	
-function remove_empty_bins(source_group) {
-    function non_zero_pred(d) {
-        return d.value != 0;
-    }
-    return {
-        all: function () {
-            return source_group.all().filter(non_zero_pred);
-        },
-        top: function(n) {
-            return source_group.top(Infinity)
-                .filter(non_zero_pred)
-                .slice(0, n);
-        }
-    };
-}
-//// for low
-/*function remove_empty_bins_low(source_group) {
-    function non_zero_pred(d) {
-        return d.value != 0;
-    }
-    return {
-        all: function () {
-            return source_group.all().filter(non_zero_pred);
-        },
-        bottom: function(n) {
-            return source_group.bottom(Infinity)
-                .filter(non_zero_pred)
-                .slice(0, n);
-        }
-    };
-}*/
-var newspaperGroupTop = remove_empty_bins(newspaperGroup);
-//var newspaperGroupLow = remove_empty_bins_low(newspaperGroup);
-
-console.log("newspaper groups :" + newspaperGroup.size());
-
-// newspaper setup rowschart (TOP)
-    newspaperChart
-    		.width(500)
-            .height(250)
-            .dimension(newspaperDimension)
-            .group(newspaperGroupTop)
-            .rowsCap(10)
-            .othersGrouper(false)
-            .renderLabel(true)
-    		.elasticX(true)
-    		.ordering(function (d) {
-    			return -d.value
-			})
-		    .turnOnControls(true)
-	        .controlsUseVisibility(true);
-
-
-
-// x axis label rotation  	: does not work	
-newspaperChart.on("renderlet",function (chart) {
-   // rotate x-axis labels
-   chart.selectAll('g.x text')
-     .attr('transform', 'translate(-10,10) rotate(315)');
-  });   
-
-// newspaper setup rowschart (LOW)
- /*   newspaperChartLow
-    		.width(300)
-            .height(200)
-            .dimension(newspaperDimension)
-            .group(newspaperGroupLow)
-            .rowsCap(10)
-            .othersGrouper(false)
-            .renderLabel(true)
-    		.elasticX(true)
-    		.ordering(function (d) {
-    			return +d.value
-			})
-		    .turnOnControls(true)
-	        .controlsUseVisibility(true);
-
-*/
-
-// x axis label rotation  	: does not work	
-/*newspaperChartLow.on("renderlet",function (chart) {
-   chart.selectAll('g.x text')
-     .attr('transform', 'translate(-10,10) rotate(315)');
-  });   
-
-*/
-
-console.log("Newspapers chart built");
-//console.log(newspaperChartLow);
-console.log(newspaperChart);
-
-
-/***************************** DATATABLES CHART ***********************/
-/*
-var dataTableDC = dc.dataTable("#dc-table-chart"+lang);
-
-
-// for search
-var tableDimension = facts.dimension(function (d) { return d.neolist.toLowerCase() + ' ' +
-													d.subject.toLowerCase() + ' ' +
-													d.newspaper.toLowerCase();});
-
-//set datatable
-var datatable = $("#dc-table-chart"+lang).DataTable( {
-		dom: '<B>flrtip',
-		data:tableDimension.top(Infinity),
-		columnDefs: [
-			{
-				targets: 0,
-				data: function (d) { return d.neolist; }
-			},
-			{
-				targets: 1,
-				data: function (d) { return d.subject; },
-				defaultContent: ''
-			},
-			{
-				targets: 2,
-				data: function (d) { return d.newspaper; },
-				defaultContent: ''
-			},
-			{
-				targets: 3,
-				data: function (d) { return d.dtg;},
-				defaultContent: ''
-			},
-			{
-				targets: 4,
-				data: function (d) {return '<a href=\"' + d.article + "\" target=\"_blank\">Article bis</a>"},
-				defaultContent: ''
-			}
-		],
-		select: true,
-		lengthChange: true,
-		language: {
-            search:         "Rechercher&nbsp;:",
-            lengthMenu:     "Afficher _MENU_ &eacute;l&eacute;ments",
-            info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
-            infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
-            infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
-            infoPostFix:    "",
-            loadingRecords: "Chargement en cours...",
-            zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
-            emptyTable:     "Aucune donnée disponible dans le tableau",
-            paginate: {
-                first:      "Premier",
-                previous:   "Pr&eacute;c&eacute;dent",
-                next:       "Suivant",
-                last:       "Dernier"
-            },
-            aria: {
-                sortAscending:  ": activer pour trier la colonne par ordre croissant",
-                sortDescending: ": activer pour trier la colonne par ordre décroissant"
-            }
-        }
-	} );
-  
-  console.log("Dimensions created");
-
- //custom refresh function, see http://stackoverflow.com/questions/21113513/dcjs-reorder-datatable-by-column/21116676#21116676
-function RefreshTable() {
-            dc.events.trigger(function () {
-                alldata = tableDimension.top(Infinity);
-                datatableDC.fnClearTable();
-                datatableDC.fnAddData(alldata);
-                datatableDC.fnDraw();
-            });
-        }
-	
-//call RefreshTable when dc-charts are filtered
-for (var i = 0; i < dc.chartRegistry.list().length; i++) {
-		var chartI = dc.chartRegistry.list()[i];
-		chartI.on("filtered", RefreshTable);
-}
-	
-//filter all charts when using the datatables search box
-$(":input").on('keyup',function(){
-		text_filter(tableDimension, this.value);//cities is the dimension for the data table
-
-		function text_filter(dim,q){
-		if (q!='') {
-			dim.filter(function(d){
-				return d.indexOf (q.toLowerCase()) !== -1;
-			});
-		} else {
-			dim.filterAll();
-			}
-		RefreshTable();
-		dc.redrawAll();}
-});
-
-RefreshTable();
-
-console.log("Datatable chart built");
-console.log(timeDimension);
-
-*/
-
-// sauvegarde version limitée datatables
-var dataTableDC = dc.dataTable("#dc-table-chart"+lang);
-
-  // Create dataTable dimension
-  var timeDimension = facts.dimension(function (d) {
-    return d.dtg;
-  });
-  
-  console.log("Dimensions created");
-
-  /// render the datatable
-    dataTableDC
-//    .width(960).height(800)
-    .dimension(timeDimension)
-	.group(function(d) { return "Données"})
-	.size(10)
-	.turnOnControls(true)
-    .controlsUseVisibility(true)
-    .columns([
-      function(d) { return d.neolist; },
-      function(d) { return d.subject; },
-      function(d) { return d.newspaper; },
-      function(d) { return d.dtg; },
-      function(d) { 
-          return '<a href=\"' + d.article + "\" target=\"_blank\">Article</a>"}
-    ])
-    .sortBy(function(d){ return d.dtg; })
-    .order(d3.descending);
-    //console.log(dataTableDC);
-    
-console.log("Datatable chart built");
-console.log(timeDimension);
-
-
-/***************************** RENDER ALL THE CHARTS  ***********************/
-
-    // make visible the zone : does not work
-    
-//    $("#corpusresults").show();
-     //$("#corpusresults").css( "display", "visible !important");
-	$("#corpusinfoBtn"+lang).replaceWith('<a href="#" class="btn btn-info" id="corpusinfoBtn2Done">Chargement effectué</a>');
-    // Render the Charts
-  	dc.renderAll(); 
-
-}
-
-/* END CORPUS INFO BY LANGUAGE */
-
-
 /* test for composite graph */
 // get composite lines (test)
 function get_composite_graph(){
@@ -1673,3 +954,388 @@ function find_rss(url) {
 
 	}
 
+/**************************** CORPUS STATISTICS INFO (second tab )  *****************************/
+
+
+
+/* Simple statistics table for all corpora (Toutes langues tab) */
+
+// corpus synthesis toggler   
+$(document).on('click', 'td.toggler', function(e){
+        e.preventDefault();
+        console.log(this);
+         if ( $(this).hasClass('shown') ) {
+         	$(this).removeClass('shown');
+         }
+         else {
+        	$(this).addClass('shown');
+         }
+        $('.cat_'+$(this).attr('data-corpus-cat')).toggle();
+    });
+
+/* CORPUS INFO BY LANGUAGE */
+// buttons for each language
+$("a[id^='corpusinfoBtn']").on('click',function(){ // #corpusinfoBtn.."
+	language = $(this).attr("language") ;
+	thisId = $(this).id
+	console.log("button corpusinfoBtn triggered");
+	console.log($(this).id);
+	console.log($(this).attr("language"));
+	$(thisId).replaceWith('<a  class="btn btn-info" id="' + thisId + '"><i class="fa fa-circle-o-notch fa-spin"></i> Chargement des données...</a>');
+    get_corpus_info_jsondata_gen(language, function(data)
+            {
+            	if (typeof data == 'number'){
+					$(thisId).replaceWith('<div>Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</div>');
+					//$(thisId).replaceWith('<div  class="btn btn-info" id="' + thisId + '2"><i class="fa fa-circle-o-notch fa-spin"></i> Récupération des données effectuées : ' + data + ' articles. Création des graphes en cours...</div>');
+				    $("#corpusResults" + language).show();
+				}
+				else{
+					$(thisId).replaceWith('<div></i>' + data + '</div>');				
+				}
+            }
+            );
+});
+
+// retrieve data from csv file
+function get_corpus_info_jsondata_gen(lang,callback) 
+{
+		//var langCSV = {'Nl':'rss_netherlands.csv','De':'rss_german.csv','It':"rss_italian.csv",'Fr':"rss_french.csv", 'Pl':"RSS_polish.csv", 'Br':'RSS_brasilian.csv', 'Ch':'RSS_chinese.csv', 'Ru':'RSS_russian.csv', 'Cz':'RSS_czech.csv', 'Gr':'RSS_greek.csv'};
+		//var langues = {'It':"RSS_italian.json",'Fr':"rss_french.json", 'Pl':"RSS_polish.json", 'Br':'RSS_brasilian.json', 'Ch':'RSS_chinese.json', 'Ru':'RSS_russian.json', 'Cz':'RSS_czech.json', 'Gr':'RSS_greek.json'};
+		console.log(corpus_synthesis[lang]);
+		file = corpus_synthesis[lang] // from settings.php => corpus_synthesis global variable
+		console.log(file); 
+		d3.csv(file,function(data){
+    		console.log(data[0]);
+            num = data.length;
+            console.log(num)
+            if (num == 0){
+            	callback("Il n'y a pas d'article pour cette langue actuellement. Réessayer plus tard. Vous pouvez consulter les données consolidées sur ce corpus dans l'onglet 'Toutes les langues'.");
+            }
+            else{
+	            callback(num);
+	            console.log(num + "build_corpus_info_lang_cnt function")
+	            build_corpus_info_lang_cnt(data,lang);
+	        }
+    });
+}
+
+// build the graph for the given lang corpus
+function build_corpus_info_lang_cnt(jsondata, lang){
+
+//console.log(jsondata[0]);
+
+/********************* GET THE JSON DATA AND TRANSFORM WHEN NECESSARY ***********/
+  // format our data : dateS,source,link,subject,subject2, neologisms
+  var dtgFormat = d3.time.format("%Y-%m-%d");
+  var dtgFormat_bk = d3.time.format("%Y-%m-%dT%H:%M:%S");
+  var dtgFormat2 = d3.time.format("%a %e %b");
+  
+  jsondata.forEach(function(d) { 
+  		
+  		if (d.dateS.length!=10){console.log(d.dateS);}
+    	//d.dtg   = dtgFormat.parse(d.dateS);
+    	d.dtg   = dtgFormat.parse(d.dateS.substr(0,10));
+    	d.month = d3.time.month(d.dtg);
+ 		d.newspaper   = d.source;
+ 		d.country  = d.country;
+    	d.subject  = d.subject;
+    	d.count = +d.count; // pre-aggregated data by month
+  }); 
+ console.log("Data Loaded");
+ console.log(jsondata[0]);
+
+/*******************  GLOBAL DIMENSIONS ****************************/
+  // Run the data through crossfilter and load our 'facts'
+  var facts = crossfilter(jsondata);
+  var all = facts.groupAll().reduceSum(function(d){return d.count;});
+  var allv = Number(facts.groupAll().reduceSum(function(d){return d.count;}).value()); //.toLocaleString();
+  //var all = facts.group().reduceSum(function(d){return d.count;});
+  //var facts2 = facts.dimension(function (d) { return d.country; });
+  //var all = facts2.group().reduceSum(function(d){return d.count;});
+
+
+/*************** TOTAL CHART *********************************/
+  
+totalCount = dc.dataCount('.dc-data-count'+lang);
+totalCount 
+        .dimension(facts)
+        .group(all)  
+        .html({
+            some: '<strong>%filter-count</strong> sélectionnés sur <strong>' + allv +'</strong> articles' +
+                ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();\'>Réinitialiser tout</a>',
+            all: 'Tous les articles sélectionnés. Cliquez sur les graphes pour effectuer des filtres.'
+        });
+  
+totalCount2 = dc.dataCount('.dc-data-count2'+lang);
+totalCount2 
+        .dimension(facts)
+        .group(all)  
+        .html({
+            some: '<strong>%filter-count</strong> sélectionnés sur <strong>' + allv +'</strong> articles' +
+                ' | <a href=\'javascript:dc.filterAll(); dc.renderAll();\'>Réinitialiser</a>',
+            all: 'Tous les articles sélectionnés. Cliquez sur les graphes pour effectuer des filtres.'
+        });
+  
+  
+console.log("Count chart built"); 		   
+console.log(totalCount);
+
+/***************************** COUNTRY PIE CHART ***********************/
+
+// Create the dc.js chart objects & link to div
+var countryChart = dc.pieChart("#dc-country-chart"+lang);
+
+
+//  countrychart  dimensions
+    var countryDimension = facts.dimension(function (d) { return d.country; });
+    var countryGroup = countryDimension.group().reduceSum(function(d){return d.count;});
+	console.log("Country groups :" + countryGroup.size());
+  
+// country chart
+ 	countryChart
+ 		.width(500)
+        .height(250)
+        .cx(300)
+        .slicesCap(10)
+        .ordering(function (d) {
+    			return -d.value
+			})
+        .innerRadius(30)
+        .externalLabels(30)
+        .externalRadiusPadding(20)
+        .minAngleForLabel(0.5)
+        .drawPaths(true)
+        .transitionDuration(500)
+        .turnOnControls(true)
+	    .controlsUseVisibility(true)
+        .dimension(countryDimension)
+        .group(countryGroup)
+ 	    .legend(dc.legend().x(0).y(20).itemHeight(10).gap(5));
+        
+console.log("country chart built");
+console.log(countryChart);
+
+
+/***************************** TIMELINE ***********************/
+// see http://dc-js.github.io/dc.js/docs/html/dc.lineChart.html
+
+// Create the dc.js chart objects & link to div
+var timeChart = dc.lineChart("#dc-time-chart"+lang);
+var periodChart = dc.barChart("#range-chart"+lang);
+
+// create timeline chart dimensions
+	var volumeByDay = facts.dimension(function(d) {
+    return d3.time.day(d.dtg);
+  });
+  //console.log(volumeByDay);
+  var volumeByDayGroup = volumeByDay.group()
+    .reduceSum(function(d) { return d.count; });
+    console.log("Week groups :" + volumeByDayGroup.size());
+
+    
+    // min and max date
+    var minDate = volumeByDay.bottom(1)[0].dtg;
+ 	var maxDate = volumeByDay.top(1)[0].dtg;
+	console.log("Min Date : ");
+	console.log(minDate);
+	console.log("Max Date : ");
+	console.log(maxDate);
+
+  // setup timeline graph
+  timeChart
+  	//.width($("#dc-time-chart"+lang).parent().width()) => see css
+    .height(300)
+    .margins({top: 10, right: 0, bottom: 20, left: 40})
+    .dotRadius(5) //
+    .dimension(volumeByDay)
+    .group(volumeByDayGroup)
+    .transitionDuration(500)
+    .mouseZoomable(true)
+    .brushOn(false)
+    //.xyTipsOn(true) // incompatible with the preceding attribute
+    .renderDataPoints({radius: 3, fillOpacity: 0.8, strokeOpacity: 0.8})
+    .title(function(d){
+      return d.key
+      + "\nTotal : " + d.value;
+      })
+    //.yAxisLabel("Période temporelle")
+    //.xAxisLabel("Nombre d'articles")
+    .elasticY(true)
+    //.elasticX(true)
+    .xUnits(d3.time.month)
+    //.turnOnControls(true)
+    .renderHorizontalGridLines(true)
+    //.controlsUseVisibility(true)
+    .rangeChart(periodChart)
+    .x(d3.time.scale().domain([minDate, maxDate]));
+//    .xAxis();
+  
+  
+  console.log("Time chart built");
+  console.log(timeChart);
+  
+/***************************** range Chart test *******************/
+
+
+periodChart /* dc.barChart('#monthly-volume-chart', 'chartGroup'); */
+        .height(100)
+        .margins({top: 0, right: 0, bottom: 20, left: 40})
+	    .dimension(volumeByDay)
+    	.group(volumeByDayGroup)
+        .centerBar(true)
+        .elasticY(true)
+        //.gap(1)
+        .x(d3.time.scale().domain([minDate, maxDate]))
+        //.round(d3.time.month.round)
+        .alwaysUseRounding(true)
+        .xUnits(d3.time.month);
+/***************************** SUBJECT PIE CHART ***********************/
+
+// Create the dc.js chart objects & link to div
+var subjectChart = dc.pieChart("#dc-subject-chart"+lang);
+
+
+//  subjectchart  dimensions
+    var subjectDimension = facts.dimension(function (d) { return d.subject; });
+    var subjectGroup = subjectDimension.group().reduceSum(function(d){return d.count;});
+	console.log("Subject groups :" + subjectGroup.size());
+  
+// subject chart
+ 	subjectChart
+ 		.width(500)
+        .height(250)
+        .cx(300)
+        .slicesCap(10)
+        .ordering(function (d) {
+    			return -d.value
+			})
+        .innerRadius(30)
+        .externalLabels(30)
+        .externalRadiusPadding(20)
+        .minAngleForLabel(0.5)
+        .drawPaths(true)
+        .transitionDuration(500)
+        .turnOnControls(true)
+	    .controlsUseVisibility(true)
+        .dimension(subjectDimension)
+        .group(subjectGroup)
+ 	    .legend(dc.legend().x(0).y(20).itemHeight(10).gap(5));
+        
+console.log("Subject chart built");
+console.log(subjectChart);
+
+/***************************** NEWSPAPER ROW BAR CHART ***********************/
+
+var newspaperChart = dc.rowChart("#dc-newspaper-chart"+lang);
+//var newspaperChartLow = dc.rowChart("#dc-newspaper-chart-low");
+
+//  newspaperchart dimensions (with a fake group to keep just top and bottom 15
+    var newspaperDimension = facts.dimension(function (d) { return d.newspaper; });
+    //var newspaperDimensionless100 = facts.dimension(function (d) { return d.newspaper; }).filterRange([0, 100]);
+    //var newspaperGroup = newspaperDimension.group().reduceCount(function (d) { return d.newspaper; });
+    var newspaperGroup = newspaperDimension.group().reduceSum(function(d){return d.count;})
+//    var newspaperTopGroup = newspaperGroup.top(15);
+
+/// for top	
+function remove_empty_bins(source_group) {
+    function non_zero_pred(d) {
+        return d.value != 0;
+    }
+    return {
+        all: function () {
+            return source_group.all().filter(non_zero_pred);
+        },
+        top: function(n) {
+            return source_group.top(Infinity)
+                .filter(non_zero_pred)
+                .slice(0, n);
+        }
+    };
+}
+//// for low
+
+var newspaperGroupTop = remove_empty_bins(newspaperGroup);
+//var newspaperGroupLow = remove_empty_bins_low(newspaperGroup);
+
+console.log("newspaper groups :" + newspaperGroup.size());
+
+// newspaper setup rowschart (TOP)
+    newspaperChart
+    		.width(500)
+            .height(250)
+            .dimension(newspaperDimension)
+            .group(newspaperGroupTop)
+            .rowsCap(15)
+            .othersGrouper(false)
+            .renderLabel(true)
+    		.elasticX(true)
+    		.ordering(function (d) {
+    			return -d.value
+			})
+		    .turnOnControls(true)
+	        .controlsUseVisibility(true);
+
+
+
+// x axis label rotation  	: does not work	
+newspaperChart.on("renderlet",function (chart) {
+   // rotate x-axis labels
+   chart.selectAll('g.x text')
+     .attr('transform', 'translate(-10,10) rotate(315)');
+  });   
+
+
+console.log("Newspapers chart built");
+//console.log(newspaperChartLow);
+console.log(newspaperChart);
+
+/***************************** DATATABLES CHART ***********************/
+
+
+// sauvegarde version limitée datatables
+var dataTableDC = dc.dataTable("#dc-table-chart"+lang);
+
+  // Create dataTable dimension
+  var timeDimension = facts.dimension(function (d) {
+    return d.dtg;
+  });
+  
+  console.log("Dimensions created");
+
+  /// render the datatable
+    dataTableDC
+//    .width(960).height(800)
+    .dimension(timeDimension)
+	.group(function(d) { return "Données"})
+	.size(20)
+	.turnOnControls(true)
+    .controlsUseVisibility(true)
+    .columns([
+     // function(d) { return d.neolist; },
+      function(d) { return d.country; },
+      function(d) { return d.subject; },
+      function(d) { return d.newspaper; },
+      function(d) { return d.dateS; },
+      function(d) { return d.count; }
+    ])
+    .sortBy(function(d){ return d.count; })
+    .order(d3.descending);
+    //console.log(dataTableDC);
+    
+console.log("Datatable chart built");
+console.log(timeDimension);
+
+
+
+/***************************** RENDER ALL THE CHARTS  ***********************/
+
+    // make visible the zone : does not work
+    
+//    $("#corpusresults").show();
+     //$("#corpusresults").css( "display", "visible !important");
+	$("#corpusinfoBtn"+lang).replaceWith('<a href="" class="btn btn-info" id="corpusinfoBtn2Done">Chargement effectué. ' + allv + ' articles. Début de période : ' + minDate.toLocaleString() + '.</a>');
+    // Render the Charts
+  	dc.renderAll(); 
+  	console.log("All is done");
+
+}

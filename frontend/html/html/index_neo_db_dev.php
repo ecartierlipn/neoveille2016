@@ -1,4 +1,9 @@
-<?php require('index_header.php'); ?>
+<?php 
+require('index_header.php'); 
+// global variables
+require('settings.php'); 
+?>
+
 <style>
 [id*=dc-] g.row text {fill: black !important;}
 
@@ -100,19 +105,18 @@ Vous pouvez également supprimer une entrée (<img src="images/drop.png" width="
         		<div class="description">
           <!-- choix langue -->
            <h5>Choisissez une langue : 
-                        <select name="langA" id="langA" class="langA">
-                        <option value="de" <?php if ($_SESSION['language']== 'de'){echo 'selected';}?>>Allemand</option>
-                        <option value="ch" <?php if ($_SESSION['language']== 'ch'){echo 'selected';}?>>Chinois</option>
-			<option value="es" <?php if ($_SESSION['language']== 'es'){echo 'selected';}?>>Espagnol</option>
-                        <option value="fr" <?php if ($_SESSION['language']== 'fr'){echo 'selected';}?>>Français</option>
-                        <option value="gr" <?php if ($_SESSION['language']== 'gr'){echo 'selected';}?>>Grec</option>
-                        <option value="it" <?php if ($_SESSION['language']== 'it'){echo 'selected';}?>>Italien</option>
-                        <option value="nl" <?php if ($_SESSION['language']== 'nl'){echo 'selected';}?>>Néerlandais</option>
-                        <option value="pl" <?php if ($_SESSION['language']== 'pl'){echo 'selected';}?>>Polonais</option>
-                        <option value="br" <?php if ($_SESSION['language']== 'br'){echo 'selected';}?>>Portugais du Brésil</option>
-                        <option value="ru" <?php if ($_SESSION['language']== 'ru'){echo 'selected';}?>>Russe</option>
-                        <option value="cz" <?php if ($_SESSION['language']== 'cz'){echo 'selected';}?>>Tchèque</option>
-                </select>
+			<select name="langA" id="langA" class="langA"  style="width:150px;">
+			<?php 
+			// echo language select box from $GLOBALS['language']
+			ksort($GLOBALS['language']);
+			foreach ($GLOBALS['language'] as $lang => $lang_iso) {
+				echo '<option value="' . $lang_iso . '" ';
+				if ($_SESSION['language']== $lang_iso){echo 'selected';}
+				echo '>' . $lang . '</option>';
+			}
+			?>			
+    		</select>
+		  </h5>
 
 
 
