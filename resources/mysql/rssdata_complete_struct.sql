@@ -312,6 +312,27 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+-- insert first admin / user for web interface
+INSERT INTO `users`
+(`username`,
+`password`,
+`email`,
+`firstname`,
+`lastname`,
+`language`,
+`user_rights`,
+)
+VALUES
+(
+'admin',
+'admin',
+'admin@neoveille.org',
+'admin',
+'admin',
+5,
+2,
+);
+
 --
 -- Table structure for table `users_right_def`
 --
@@ -393,6 +414,29 @@ V_keywords
 SELECT LAST_INSERT_ID() INTO V_ID_LINK;
 
 END ;;
+
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ADD_RSS_DATA`(				  
+IN  V_link         VARCHAR(255)   ,
+IN  V_country         VARCHAR(250)      ,
+OUT V_ID_LINK      INT(5)      
+)
+BEGIN
+
+INSERT IGNORE INTO rss_data2 (
+				source_link,
+				country
+              )
+              VALUES(
+V_link,
+V_country
+              );
+
+SELECT LAST_INSERT_ID() INTO V_ID_LINK;
+
+END ;;
+
+
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
