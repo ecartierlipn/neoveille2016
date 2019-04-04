@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # https://dzone.com/articles/restful-web-services-with-python-flask
 '''
 please check that you first download the model you would like to use! For instructions : https://spacy.io/usage/models

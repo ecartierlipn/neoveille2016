@@ -9,4 +9,5 @@ editdistance==0.5.2
 langdetect==1.0.7
 Flask==0.12.2
 beautifulsoup4==4.6.3
+mysql_connector==2.1.6
 mysql_connector_repackaged==0.3.1
