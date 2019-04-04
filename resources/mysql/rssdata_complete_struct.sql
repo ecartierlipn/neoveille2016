@@ -330,7 +330,7 @@ VALUES
 'admin',
 'admin',
 5,
-2,
+2
 );
 
 --
