@@ -314,24 +314,9 @@ CREATE TABLE `users` (
 
 -- insert first admin / user for web interface
 INSERT INTO `users`
-(`username`,
-`password`,
-`email`,
-`firstname`,
-`lastname`,
-`language`,
-`user_rights`,
-)
+(`username`,`password`,`email`,`firstname`,`lastname`,`language`,`user_rights`)
 VALUES
-(
-'admin',
-'admin',
-'admin@neoveille.org',
-'admin',
-'admin',
-5,
-2
-);
+('admin','admin','admin@neoveille.org','admin','admin',5,2);
 
 --
 -- Table structure for table `users_right_def`
