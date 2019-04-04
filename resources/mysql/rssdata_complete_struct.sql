@@ -399,7 +399,7 @@ V_keywords
 SELECT LAST_INSERT_ID() INTO V_ID_LINK;
 
 END ;;
-
+DELIMITER ;
 /*!50003 DROP PROCEDURE IF EXISTS `ADD_RSS_DATA` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
