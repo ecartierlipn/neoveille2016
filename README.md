@@ -6,7 +6,7 @@ Neoveille is a Sorbonne Paris Cité-funded  Research Project from 2015 to 2018. 
 1. to develop programs to detect, analyse and track neologisms in big monitor corpora, in several languages;
 2. to develop a web-based front-end to enable linguists to interact with the main modules : corpus management, neologisms detection results (both formal and semantic neologisms), neologisms manual description and finally analysing neologism lifecycle;
 
-To obtain more information on the project, please refer to documentation on the website : [www.neoveille.org](www.neoveille.org). The present documentation will focus on technical details. A more detailed documentation (in French, at the moment) is available in [/docs/neoveille-web-doc.pdf](/docs/neoveille-web-doc.pdf "Detailled documentation").
+To obtain more information on the project, please refer to documentation and references on the website : [www.neoveille.org](www.neoveille.org). The present file will focus on technical details. A more detailed documentation (in French, at the moment) is available in [/docs/neoveille-web-doc.pdf](/docs/neoveille-web-doc.pdf "Detailled documentation").
 
 This documentation has three main sections :
 
@@ -14,6 +14,9 @@ This documentation has three main sections :
 2. Requirements
 3. Installation
 4. Quick Start
+
+# News
+A new version of the whole package will be soon available, notably easying the installation process. Check this page!
 
 
 # Architecture of the project
@@ -73,9 +76,12 @@ See detailed installation instructions in (/docs/neoveille-web-doc.pdf "Detaille
 
 ******
 # References
+
+If you use this software, please be kind enough to cite the following articles :
+
 Cartier, Emmanuel (2017), Neoveille, a Web Platform for Neologism Tracking, Proceedings of the EACL 2017, Software Demonstrations, Valencia, Spain, April 3-7 2017. [https://www.aclweb.org/anthology/E/E17/E17-3024.pdf]
 
-Cartier, Emmanuel (2018), « Neoveille, plateforme de détection, de repérage et de suivi des néologismes en dix langues », 
+Cartier, Emmanuel (2019), « Neoveille, plateforme de détection, de repérage et de suivi des néologismes en onze langues », Neologica, 13-2019, [https://tal.lipn.univ-paris13.fr/neoveille/docs/Neoveille_neologica2019.pdf]
 
 ******
 # Licence
