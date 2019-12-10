@@ -6,7 +6,7 @@ Neoveille is a Sorbonne Paris Cité-funded  Research Project from 2015 to 2018. 
 1. to develop programs to detect, analyse and track neologisms in big monitor corpora, in several languages;
 2. to develop a web-based front-end to enable linguists to interact with the main modules : corpus management, neologisms detection results (both formal and semantic neologisms), neologisms manual description and finally analysing neologism lifecycle;
 
-To obtain more information on the project, please refer to documentation and references on the website : [www.neoveille.org](www.neoveille.org). The present file will focus on technical details. A more detailed documentation (in French, at the moment) is available in [/docs/neoveille-web-doc.pdf](/docs/neoveille-web-doc.pdf "Detailled documentation").
+To obtain more information on the project, please refer to documentation and references on the website : [http://www.neoveille.org](www.neoveille.org). The present file will focus on technical details. A more detailed documentation (in French, at the moment) is available in [/docs/neoveille-web-doc.pdf](/docs/neoveille-web-doc.pdf "Detailled documentation").
 
 This documentation has three main sections :
 
