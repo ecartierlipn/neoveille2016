@@ -15,8 +15,8 @@ This documentation has three main sections :
 3. Installation
 4. Quick Start
 
-# News
-A new version of the whole package will be soon available, notably easying the installation process. Check this page!
+# News / Warning
+A new version of the whole package will be soon available, notably easying the installation process. Check this page! The current version can be tricky to install!
 
 
 # Architecture of the project
